@@ -1,3 +1,3 @@
 # SP2019-TEDDY
-Development Branch #2
+Development Branch
 A repo for the senior project team TEDDY.
