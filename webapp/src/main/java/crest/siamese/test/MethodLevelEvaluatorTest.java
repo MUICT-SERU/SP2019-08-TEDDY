@@ -1,9 +1,9 @@
-package src.main.java.crest.siamese.test;
+package crest.siamese.test;
 
 /**
  * Created by Chaiyong on 7/17/17.
  */
-import src.main.java.crest.siamese.helpers.MethodLevelEvaluator;
+import crest.siamese.helpers.MethodLevelEvaluator;
 
 import java.io.File;
 

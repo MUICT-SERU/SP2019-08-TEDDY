@@ -1,7 +1,7 @@
-package src.main.java.crest.siamese.document;
+package crest.siamese.document;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  * Created by Chaiyong on 4/29/17.

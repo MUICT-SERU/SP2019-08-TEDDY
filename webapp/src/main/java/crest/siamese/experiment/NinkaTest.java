@@ -1,6 +1,6 @@
-package src.main.java.crest.siamese.experiment;
+package crest.siamese.experiment;
 
-import src.main.java.crest.siamese.helpers.LicenseExtractor;
+import crest.siamese.helpers.LicenseExtractor;
 
 public class NinkaTest {
     public static void main(String[] args) {

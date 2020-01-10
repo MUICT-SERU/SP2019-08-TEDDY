@@ -1,4 +1,6 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
+
+import crest.siamese.settings.NormalizerMode;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -31,9 +33,9 @@ public class JavaTokenizer implements Tokenizer {
     public ArrayList<String> tokenize(String s) throws Exception {
         tokens = new ArrayList<>();
         InputStream stream = new ByteArrayInputStream(s.getBytes(StandardCharsets.UTF_8));
-        crest.siamese.language.java.JavaLexer lexer = new  crest.siamese.language.java.JavaLexer(CharStreams.fromStream(stream, StandardCharsets.UTF_8));
+        JavaLexer lexer = new JavaLexer(CharStreams.fromStream(stream, StandardCharsets.UTF_8));
         List<? extends Token> tokenList = lexer.getAllTokens();
-        String[] symbols =  crest.siamese.language.java.JavaLexer._SYMBOLIC_NAMES;
+        String[] symbols = JavaLexer._SYMBOLIC_NAMES;
         for(Token token : tokenList){
             // normalize the token except white space (skip)
             if (!symbols[token.getType()].equals("WS")) {

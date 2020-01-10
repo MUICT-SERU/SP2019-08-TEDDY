@@ -1,6 +1,5 @@
-package src.main.java.crest.siamese.test;
-
-import src.main.java.crest.siamese.main.Siamese;
+package crest.siamese.test;
+import crest.siamese.main.Siamese;
 import org.elasticsearch.client.transport.NoNodeAvailableException;
 import org.junit.Test;
 

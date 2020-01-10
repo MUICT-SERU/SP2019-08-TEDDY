@@ -1,66 +1,56 @@
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\JavaTermComparator.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\MethodClone.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\settings\NormalizerMode.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\JavaMethodParser.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\MethodLevelEvaluatorTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\main\Siamese.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\BCBDocument.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\LicenseExtractor.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\com\siamesex\standalone\StandaloneApplication.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\settings\IndexSettings.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\DocumentTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Tokenizer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\echotest\EchoTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\Method.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Python3Normalizer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Python3MethodParser.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Python3Tokenizer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\JavaNormalizerTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\target\generated-sources\crest\siamese\language\python3\Python3Lexer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\GitHubIndexing.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\FileLevelEvaluator.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\TestSuite.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\Experiment.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Evaluator.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\JavaMethodParserTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\target\generated-sources\crest\siamese\language\java\JavaLexer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Normalizer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\OutputFormatter.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\NormalizerMode.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\JSONFormatter.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\JavaLexerTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\NinkaTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\com\siamesex\standalone\controller\SearchController.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\settings\Settings.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\BCBEvaluator.java
-E:\Documents, Projects, Others\SiameseX\webapp\target\generated-sources\crest\siamese\language\python3\Python3Parser.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\EvalResult.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\Python3NormalizerMode.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\MethodParser.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\BCBExperiment.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\MethodLevelEvaluator.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\LicenseExtractorTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\ESConnector.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\Parameter.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\settings\CustomSettings.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\TermFreqAnalyser.java
-E:\Documents, Projects, Others\SiameseX\webapp\target\generated-sources\crest\siamese\language\python3\Python3BaseListener.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\main\Main.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\MyUtils.java
-E:\Documents, Projects, Others\SiameseX\webapp\target\generated-sources\crest\siamese\language\python3\Python3Listener.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\JavaNormalizer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\com\siamesex\standalone\model\Search.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\Document.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\SearchResultChecker.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\JavaTokenizer.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\experiment\Antlr4Test.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\BCBEvaluatorTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\SiameseTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\IndexCreator.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\XMLFormatter.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\document\JavaTerm.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\test\nGramGeneratorTest.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\SiameseIndexReader.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\com\siamesex\standalone\model\EchoText.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\JavaNormalizerMode.java
-E:\Documents, Projects, Others\SiameseX\webapp\src\main\java\crest\siamese\helpers\nGramGenerator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\controller\SearchController.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\GitHubIndexing.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaMethodParser.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\IndexSettings.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaTokenizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaMethodParserTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\OutputFormatter.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JSONFormatter.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\Evaluator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Document.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\CustomSettings.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\echotest\EchoTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\EchoText.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaNormalizerTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaNormalizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\FileLevelEvaluator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Search.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\BCBDocument.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\Tokenizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\main\Siamese.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\TestSuite.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\LicenseExtractorTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\SearchResultChecker.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MethodParser.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\LicenseExtractor.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MethodLevelEvaluator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\NinkaTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\MethodClone.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\Antlr4Test.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\StandaloneApplication.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\BCBEvaluatorTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\Normalizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\BCBEvaluator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\Settings.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\main\Main.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\SiameseTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\XMLFormatter.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Parameter.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Method.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\MethodLevelEvaluatorTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\TermFreqAnalyser.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\nGramGenerator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MyUtils.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\SiameseIndexReader.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaLexer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\NormalizerMode.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\IndexCreator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTermComparator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTerm.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\ESConnector.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\EvalResult.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\BCBExperiment.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaLexerTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\nGramGeneratorTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\Experiment.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\DocumentTest.java

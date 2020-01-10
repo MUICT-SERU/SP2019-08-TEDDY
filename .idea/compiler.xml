@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SP2019-TEDDY" />
+        <module name="standalone" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SP2019-TEDDY" target="1.8" />
       <module name="SP2019-TEDDY.main" target="1.8" />
       <module name="SP2019-TEDDY.test" target="1.8" />
+      <module name="standalone" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SP2019-TEDDY" options="-parameters" />
+      <module name="standalone" options="-parameters" />
     </option>
   </component>
 </project>

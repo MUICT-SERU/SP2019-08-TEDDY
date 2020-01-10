@@ -1,8 +1,8 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
 import au.com.bytecode.opencsv.CSVReader;
-import src.main.java.crest.siamese.document.BCBDocument;
-import src.main.java.crest.siamese.document.Document;
+import crest.siamese.document.BCBDocument;
+import crest.siamese.document.Document;
 
 import java.io.FileReader;
 import java.io.IOException;

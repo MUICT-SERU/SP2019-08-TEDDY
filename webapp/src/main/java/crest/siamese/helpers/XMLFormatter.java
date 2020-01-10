@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -80,7 +80,7 @@ public class XMLFormatter {
         }
     }
 
-    public void addCloneClass(int id, int sim, ArrayList<src.main.java.crest.siamese.document.Document> results) {
+    public void addCloneClass(int id, int sim, ArrayList<crest.siamese.document.Document> results) {
         // create data elements and place them under root
         Element cc = this.dom.createElement("CLONECLASS");
         Element e = this.dom.createElement("ID");
@@ -89,13 +89,13 @@ public class XMLFormatter {
         s.setTextContent(String.valueOf(sim));
         cc.appendChild(e);
         cc.appendChild(s);
-        for (src.main.java.crest.siamese.document.Document r: results) {
+        for (crest.siamese.document.Document r: results) {
             cc.appendChild(createClone(r));
         }
         this.root.appendChild(cc);
     }
 
-    public Element createClone(src.main.java.crest.siamese.document.Document d) {
+    public Element createClone(crest.siamese.document.Document d) {
         Element clone = this.dom.createElement("CLONE");
         Element frag = this.dom.createElement("Fragment");
         Element fElem = this.dom.createElement("File");

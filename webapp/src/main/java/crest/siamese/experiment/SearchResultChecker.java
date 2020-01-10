@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.experiment;
+package crest.siamese.experiment;
 
 import java.io.*;
 import java.util.ArrayList;

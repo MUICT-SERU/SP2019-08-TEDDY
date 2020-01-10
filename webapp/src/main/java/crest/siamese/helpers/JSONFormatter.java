@@ -1,6 +1,6 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
-import src.main.java.crest.siamese.document.Document;
+import crest.siamese.document.Document;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -17,13 +17,13 @@ public class JSONFormatter {
 
     public void addCloneClass(int id, int sim, ArrayList<Document> results) {
         JSONArray jarray = new JSONArray();
-        for (src.main.java.crest.siamese.document.Document r: results) {
+        for (crest.siamese.document.Document r: results) {
             jarray.add(createClone(r));
         }
         jclones.add(jarray);
     }
 
-    private JSONObject createClone(src.main.java.crest.siamese.document.Document d) {
+    private JSONObject createClone(crest.siamese.document.Document d) {
         String file = d.getFile().split(".java_")[0] + ".java";
         JSONObject item = new JSONObject();
         item.put("file", file);

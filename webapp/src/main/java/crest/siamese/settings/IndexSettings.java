@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.settings;
+package crest.siamese.settings;
 
 /**
  * Created by Chaiyong on 5/24/16.

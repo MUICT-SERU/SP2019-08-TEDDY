@@ -1,7 +1,7 @@
-package src.main.java.crest.siamese.test;
+package crest.siamese.test;
 
-import src.main.java.crest.siamese.document.BCBDocument;
-import src.main.java.crest.siamese.helpers.BCBEvaluator;
+import crest.siamese.document.BCBDocument;
+import crest.siamese.helpers.BCBEvaluator;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
 import au.com.bytecode.opencsv.CSVReader;
-import src.main.java.crest.siamese.document.MethodClone;
+import crest.siamese.document.MethodClone;
 
 import java.io.FileReader;
 import java.io.IOException;

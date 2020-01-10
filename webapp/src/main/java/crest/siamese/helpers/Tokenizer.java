@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
 import java.io.File;
 import java.io.Reader;

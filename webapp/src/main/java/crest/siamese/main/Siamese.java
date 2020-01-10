@@ -1,17 +1,15 @@
-package src.main.java.crest.siamese.main;
+package crest.siamese.main;
 
-import src.main.java.crest.siamese.document.Document;
-import src.main.java.crest.siamese.document.JavaTerm;
-import src.main.java.crest.siamese.document.Method;
-import src.main.java.crest.siamese.helpers.*;
-import src.main.java.crest.siamese.helpers.MethodParser;
-import src.main.java.crest.siamese.helpers.NormalizerMode;
-import src.main.java.crest.siamese.settings.CustomSettings;
-import src.main.java.crest.siamese.settings.Settings;
-
-import src.main.java.crest.siamese.settings.IndexSettings;
+import crest.siamese.document.JavaTerm;
+import crest.siamese.helpers.*;
+import crest.siamese.settings.CustomSettings;
+import crest.siamese.settings.Settings;
+import crest.siamese.settings.NormalizerMode;
+import crest.siamese.document.Document;
+import crest.siamese.document.Method;
+import crest.siamese.settings.IndexSettings;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.index.*;
 import org.elasticsearch.client.Client;
 
@@ -39,9 +37,10 @@ public class Siamese {
     private String inputFolder;
     private String outputFolder;
     private String subInputFolder;
-    private String normalizerModeName;
-    private String t2NormMode;
-    private String t3NormMode;
+    private String normMode;
+    private NormalizerMode modes = new NormalizerMode();
+    private NormalizerMode t2modes = new NormalizerMode();
+    private NormalizerMode t1modes = new NormalizerMode();
     private int ngramSize;
     private int t2NgramSize;
     private int t1NgramSize;
@@ -92,9 +91,13 @@ public class Siamese {
     private String computeSimilarity = "none";
     private String[] simThreshold = {"80%", "80%", "80%", "80%"};
     private Tokenizer tokenizer;
+    private Normalizer normalizer;
     private Tokenizer origTokenizer;
     private Tokenizer t2Tokenizer;
     private Tokenizer t1Tokenizer;
+    private Normalizer origNormalizer;
+    private Normalizer t2Normalizer;
+    private Normalizer t1Normalizer;
     private String deleteField;
     private String deleteWildcard;
     private int deleteAmount;
@@ -122,6 +125,136 @@ public class Siamese {
         prepareTokenizers();
     }
 
+    // TODO: remove if the issue of reading config.properties is solved
+    private String getConfigStringHardCode()
+    {
+        return "##### GENERAL CONFIGURATIONS\n" +
+                "# location of elasticsearch\n" +
+                "elasticsearchLoc=./../elasticsearch-2.2.0-small\n" +
+                "# elasticsearch's server name (or IP)\n" +
+                "server=localhost\n" +
+                "# elasticsearch's cluster name. See cluster.name in your $elasticsearchLoc/config/elasticsearch.yml\n" +
+                "cluster=stackoverflow\n" +
+                "# index name\n" +
+                "index=cloplag\n" +
+                "# type name\n" +
+                "type=siamese\n" +
+                "# location of the input folder. This is the location of the files to be indexed (if command=index),\n" +
+                "# or the location of the queries (if command=search).\n" +
+                "inputFolder=/Users/Chaiyong/Documents/phd/2016/cloplag/tests_andrea\n" +
+                "# only for GitHub indexing, leave blank if not needed\n" +
+                "subInputFolder=\n" +
+                "# output folder to store the search results\n" +
+                "outputFolder=search_results\n" +
+                "# use DFS mode [default=no]\n" +
+                "dfs=true\n" +
+                "writeToFile=true\n" +
+                "# source code file extension\n" +
+                "extension=java\n" +
+                "# minimum clone size (lines)\n" +
+                "minCloneSize=6\n" +
+                "# command to execute [index,search]\n" +
+                "command=search\n" +
+                "# print out logging data\n" +
+                "isPrint=false\n" +
+                "# output format [csv = filename, csvfline = filename#start#end), gcf = general clone format]\n" +
+                "outputFormat=gcf\n" +
+                "# indexing mode [sequential, bulk]\n" +
+                "indexingMode=bulk\n" +
+                "# size of bulk insert\n" +
+                "bulkSize=4000\n" +
+                "##### SIMILARITY\n" +
+                "# compute similarity of the results [fuzzywuzzy, tokenratio, none]\n" +
+                "computeSimilarity=none\n" +
+                "# the similarity threshold for the four representations [T1,T2,T3,T4] respectively\n" +
+                "simThreshold=50%,60%,70%,80%\n" +
+                "# GitHub indexing? (automatically add URL)\n" +
+                "github=false\n" +
+                "# clone granularity [method, file]\n" +
+                "parseMode=method\n" +
+                "# print the progress of indexing/querying in every x files\n" +
+                "printEvery=10000\n" +
+                "# recreate the index if it exists [true, false]\n" +
+                "recreateIndexIfExists=true\n" +
+                "\n" +
+                "##### DELETE SETTINGS\n" +
+                "deleteField=\n" +
+                "deleteWildcard=\n" +
+                "deleteAmount=1000\n" +
+                "\n" +
+                "##### PARSER + TOKENIZER + NORMALIZER SETTINGS\n" +
+                "methodParser=crest.siamese.helpers.JavaMethodParser\n" +
+                "tokenizer=crest.siamese.helpers.JavaTokenizer\n" +
+                "normalizer=crest.siamese.helpers.JavaNormalizer\n" +
+                "\n" +
+                "##### MULTI-REPRESENTATION SETTINGS\n" +
+                "multirep=true\n" +
+                "enableRep=true,true,true,true\n" +
+                "# Code normalisation for T2 representation.\n" +
+                "# It can be a combination of x (none), w (words), d (datatypes),\n" +
+                "# j (Java classes), p (Java packages), k (keywords), v (values),\n" +
+                "# s (strings), o (operators), e (escape). For example: wkvs.\n" +
+                "# The default is djkopsvw.\n" +
+                "normMode=djkopsvw\n" +
+                "# turn on ngram\n" +
+                "isNgram=true\n" +
+                "# size of ngram.\n" +
+                "# representation T3\n" +
+                "ngramSize=11\n" +
+                "# representation T2\n" +
+                "t2NgramSize=16\n" +
+                "# representation T1\n" +
+                "t1NgramSize=4\n" +
+                "\n" +
+                "##### QUERY-RELATED SETTINGS\n" +
+                "# starting result offset (usually zero)\n" +
+                "resultOffset=0\n" +
+                "# the size of the results\n" +
+                "resultsSize=10\n" +
+                "# tfidf, bm25, dfr, ib, lmd (LM Dirichlet), lmj (LM Jelinek-Mercer)\n" +
+                "rankingFunction=tfidf\n" +
+                "# QUERY REDUCTION SETTINGS\n" +
+                "# turn on query reduction [true/false]\n" +
+                "queryReduction=true\n" +
+                "# reduction percentile for the T3 layer [0, 100]\n" +
+                "QRPercentileNorm=10\n" +
+                "# reduction percentile for the T2 layer [0, 100]\n" +
+                "QRPercentileT2=10\n" +
+                "# reduction percentile for the T1 layer [0, 100]\n" +
+                "QRPercentileT1=10\n" +
+                "# reduction percentile for the T1 layer [0, 100]\n" +
+                "QRPercentileOrig=10\n" +
+                "# boosting for T3 layer\n" +
+                "normBoost=11\n" +
+                "# boosting for T2 layer\n" +
+                "t2Boost=16\n" +
+                "# boosting for T1 layer\n" +
+                "t1Boost=4\n" +
+                "# boosting for T0 layer\n" +
+                "origBoost=1\n" +
+                "\n" +
+                "##### LICENSE EXTRACTION\n" +
+                "# extract license [true, false]\n" +
+                "license=false\n" +
+                "# license extractor [ninka, regexp]\n" +
+                "licenseExtractor=regexp\n" +
+                "\n" +
+                "##### EXPERIMENT CONFIGURATIONS\n" +
+                "# ONLY USED FOR THE EXPERIMENTS OF SIAMESE\n" +
+                "# elasticsearch similarity function + ngram + normalisation [or both]\n" +
+                "similarityMode=tfidf_text_both\n" +
+                "# prefix of the clone cluster file name [cloplag/soco]\n" +
+                "cloneClusterFile=soco\n" +
+                "# IR error measure [arp/map]\n" +
+                "errorMeasure=map\n" +
+                "# delete the index after every run?\n" +
+                "deleteIndexAfterUse=true\n" +
+                "\n" +
+                "##### DEPRECATED\n" +
+                "# (DEPRECATED) no. of total documents in the index\n" +
+                "totalDocuments=100\n";
+    }
+
     private void readFromConfigFile(String configFile, boolean isUseHardcodeConfig) {
 	    /* copied from
 	    https://www.mkyong.com/java/java-properties-file-examples/
@@ -133,9 +266,9 @@ public class Siamese {
             if(isUseHardcodeConfig)
             {
                 // create a new reader instead
-                // StringReader reader = new StringReader(getConfigStringHardCode());
+                StringReader reader = new StringReader(getConfigStringHardCode());
                 // load a properties file
-                // prop.load(reader);
+                prop.load(reader);
             }else{
                 input = new FileInputStream(configFile);
                 // load a properties file
@@ -151,12 +284,7 @@ public class Siamese {
             subInputFolder = prop.getProperty("subInputFolder");
             outputFolder = prop.getProperty("outputFolder");
 
-            // normMode = prop.getProperty("normMode");
-
-            //normalizerModeName = prop.getProperty("normalizerMode");
-            normalizerName = "src.main.java.crest.siamese.helpers.JavaNormalizer";
-            t2NormMode = prop.getProperty("t2NormMode");
-            t3NormMode = prop.getProperty("t3NormMode");
+            normMode = prop.getProperty("normMode");
 
             isNgram = Boolean.parseBoolean(prop.getProperty("isNgram"));
             ngramSize = Integer.parseInt(prop.getProperty("ngramSize"));
@@ -275,8 +403,8 @@ public class Siamese {
         System.out.println("outputFormat   : " + outputFormat);
         System.out.println("---------- MULTI-REPRESENTATION ----");
         System.out.println("multiRep       : " + multiRep + " " +  Arrays.toString(enableRep));
-        System.out.println("T2 norm        : " + t2NormMode);
-        System.out.println("T3 norm        : " + t3NormMode);
+        System.out.println("T2 norm        : dsvw");
+        System.out.println("T3 norm        : " + normMode);
         System.out.println("ngramSize      : t1=" + t1NgramSize + " t2=" + t2NgramSize + " t3=" + ngramSize);
         System.out.println("---------- QUERY REDUCTION ---------");
         System.out.println("queryReduction : " + queryReduction);
@@ -297,10 +425,9 @@ public class Siamese {
     }
 
     public void startup() {
-        this.connect();
+        connect();
         try {
             siameseClient = es.startup();
-            System.out.println("Starting up Siamese ... ");
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -311,21 +438,25 @@ public class Siamese {
     }
 
     private void prepareTokenizers() {
-
-        NormalizerMode origMode = initialiseNormalizerMode();
-        Normalizer origNormalizer = initialiseNormalizer(origMode);
+        NormalizerMode tmode = new NormalizerMode();
+        char[] noNormMode = {'x'};
+        tmode.setTokenizerMode(noNormMode);
+        origNormalizer = initialiseNormalizer(tmode);
         origTokenizer = initialiseTokenizer(origNormalizer);
 
-        NormalizerMode t1Mode = initialiseNormalizerMode();
-        Normalizer t1Normalizer = initialiseNormalizer(t1Mode);
-        t1Tokenizer = initialiseTokenizer(t1Normalizer);
-
-        NormalizerMode t2Mode = initialiseNormalizerMode(t2NormMode.toLowerCase().toCharArray());
-        Normalizer t2Normalizer = initialiseNormalizer(t2Mode);
+        char[] t2NormMode = {'d', 's', 'v', 'w'};
+        t2modes = NormalizerMode.setTokenizerMode(t2NormMode);
+        t2Normalizer = initialiseNormalizer(t2modes);
         t2Tokenizer = initialiseTokenizer(t2Normalizer);
 
-        NormalizerMode t3Mode = initialiseNormalizerMode(t3NormMode.toLowerCase().toCharArray());
-        Normalizer normalizer = initialiseNormalizer(t3Mode);
+        char[] t1NormMode = {'x'};
+        t1modes = NormalizerMode.setTokenizerMode(t1NormMode);
+        t1Normalizer = initialiseNormalizer(t1modes);
+        t1Tokenizer = initialiseTokenizer(t1Normalizer);
+
+        // set the normalisation + tokenization mode
+        modes = NormalizerMode.setTokenizerMode(normMode.toLowerCase().toCharArray());
+        normalizer = initialiseNormalizer(modes);
         tokenizer = initialiseTokenizer(normalizer);
     }
 
@@ -443,7 +574,7 @@ public class Siamese {
                     }
                 }
             } else {
-                System.out.println("ERROR: Cannot create Elasticsearch client ... ");
+                System.out.println("ERROR: cannot create Elasticsearch client ... ");
             }
         }  catch (Exception e) {
             throw e;
@@ -1135,7 +1266,8 @@ public class Siamese {
             return printArray(tokens, false);
     }
 
-    private ArrayList<String> tokenizeAsArray(String sourcecode, Tokenizer tokenizer, boolean isNgram, nGramGenerator ngen) throws Exception {
+    private ArrayList<String> tokenizeAsArray(String sourcecode, Tokenizer tokenizer,
+                                              boolean isNgram, nGramGenerator ngen) throws Exception {
         // generate tokens
         ArrayList<String> tokens = tokenizer.getTokensFromString(sourcecode);
         if (isNgram)
@@ -1220,15 +1352,15 @@ public class Siamese {
     }
 
     private String printArray(ArrayList<String> arr, boolean pretty) {
-        StringJoiner stringJoiner = new StringJoiner(" ");
+        String s = "";
         for (String anArr : arr) {
             if (pretty && anArr.equals("\n")) {
                 System.out.print(anArr);
                 continue;
             }
-            stringJoiner.add(anArr);
+            s += anArr + " ";
         }
-        return stringJoiner.toString();
+        return s;
     }
 
     private String escapeString(String input) {
@@ -1269,38 +1401,12 @@ public class Siamese {
         try {
             Class cl = Class.forName(this.normalizerName);
             normalizer = (Normalizer) cl.newInstance();
-            normalizer.configure((src.main.java.crest.siamese.settings.NormalizerMode) modes);
+            normalizer.configure(modes);
         } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
             System.out.println("ERROR: could not find the specified normalizer: " +
                     this.normalizerName + ". Please check if the class and package name is correct.");
         }
         return normalizer;
-    }
-
-    private NormalizerMode initialiseNormalizerMode() {
-        NormalizerMode normalizerMode = null;
-        try {
-           // Temporarily replaced by hard-coding on line 1284: Class cl = Class.forName(this.normalizerModeName);
-            Class cl = Class.forName("src.main.java.crest.siamese.helpers.JavaNormalizerMode");
-            normalizerMode = (NormalizerMode) cl.newInstance();
-        } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
-            System.out.println("ERROR: could not find the specified normalizer mode: " +
-                    this.normalizerModeName + ". Please check if the class and package name is correct.");
-        }
-        return normalizerMode;
-    }
-
-    private NormalizerMode initialiseNormalizerMode(char[] normOptions) {
-        NormalizerMode normalizerMode = null;
-        try {
-            Class cl = Class.forName(this.normalizerModeName);
-            normalizerMode = (NormalizerMode) cl.newInstance();
-            normalizerMode.configure(normOptions);
-        } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
-            System.out.println("ERROR: could not find the specified normalizer mode: " +
-                    this.normalizerModeName + ". Please check if the class and package name is correct.");
-        }
-        return normalizerMode;
     }
 
     public String extractProjectLicense() {
@@ -1349,18 +1455,13 @@ public class Siamese {
         this.isPrint = isPrint;
     }
 
-    public void setInputFolder(String inputFolder) {
-        this.inputFolder = inputFolder;
-    }
-
     public void setOutputFolder(String outputFolder) {
         this.outputFolder = outputFolder;
     }
 
-    /*
     public void setNormMode(String normMode) {
         this.normMode = normMode;
-    }*/
+    }
 
     public void setResultOffset(int resultOffset) {
         this.resultOffset = resultOffset;
@@ -1372,6 +1473,10 @@ public class Siamese {
 
     public String getComputeSimilarity() {
         return this.computeSimilarity;
+    }
+
+    public void setInputFolder(String inputFolder) {
+        this.inputFolder = inputFolder;
     }
 
     public void setCommand(String command) {

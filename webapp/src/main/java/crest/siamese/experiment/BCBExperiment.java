@@ -1,10 +1,10 @@
-package src.main.java.crest.siamese.experiment;
+package crest.siamese.experiment;
 
-import src.main.java.crest.siamese.document.BCBDocument;
-import src.main.java.crest.siamese.document.Document;
-import src.main.java.crest.siamese.helpers.BCBEvaluator;
-import src.main.java.crest.siamese.helpers.MyUtils;
-import src.main.java.crest.siamese.main.Siamese;
+import crest.siamese.document.BCBDocument;
+import crest.siamese.document.Document;
+import crest.siamese.helpers.BCBEvaluator;
+import crest.siamese.helpers.MyUtils;
+import crest.siamese.main.Siamese;
 import org.apache.commons.io.FileUtils;
 import org.elasticsearch.client.transport.NoNodeAvailableException;
 

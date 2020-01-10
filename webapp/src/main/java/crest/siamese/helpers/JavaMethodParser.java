@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
@@ -12,8 +12,8 @@ import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.printer.PrettyPrinter;
 import com.github.javaparser.printer.PrettyPrinterConfiguration;
-import src.main.java.crest.siamese.document.Method;
-import src.main.java.crest.siamese.settings.Settings;
+import crest.siamese.document.Method;
+import crest.siamese.settings.Settings;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
@@ -140,7 +140,7 @@ public class JavaMethodParser implements MethodParser {
                     content,
                     1,
                     lines,
-                    new LinkedList<src.main.java.crest.siamese.document.Parameter>(),
+                    new LinkedList<crest.siamese.document.Parameter>(),
                     "");
             return m;
         } catch (NoSuchElementException e) {
@@ -173,7 +173,7 @@ public class JavaMethodParser implements MethodParser {
         public void visit(MethodDeclaration n, Object arg) {
             // TODO: Do we need this?
 //            List<Parameter> parameterArrayList = n.getParameters();
-            ArrayList<src.main.java.crest.siamese.document.Parameter> paramsList = new ArrayList<>();
+            ArrayList<crest.siamese.document.Parameter> paramsList = new ArrayList<>();
 //            for (Parameter p: parameterArrayList) {
 //                paramsList.add(
 //                        new crest.siamese.document.Parameter(
@@ -205,7 +205,7 @@ public class JavaMethodParser implements MethodParser {
         public void visit(ConstructorDeclaration c, Object arg) {
 
 //            List<Parameter> parameterArrayList = c.getParameters();
-            ArrayList<src.main.java.crest.siamese.document.Parameter> paramsList = new ArrayList<>();
+            ArrayList<crest.siamese.document.Parameter> paramsList = new ArrayList<>();
 //            for (Parameter p: parameterArrayList) {
 //                paramsList.add(
 //                        new crest.siamese.document.Parameter(
@@ -249,7 +249,7 @@ public class JavaMethodParser implements MethodParser {
     }
 
     private Method createNewMethod(String name, String comment, String src, int begin, int end,
-                                   ArrayList<src.main.java.crest.siamese.document.Parameter> paramsList, String declaration) {
+                                   ArrayList<crest.siamese.document.Parameter> paramsList, String declaration) {
         Method m = new Method(
                 FILE_PATH
                 , JAVA_PACKAGE, JAVA_CLASS, name, comment, src, begin, end, paramsList, declaration);

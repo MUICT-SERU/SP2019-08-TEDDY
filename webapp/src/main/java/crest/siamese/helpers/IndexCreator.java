@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
@@ -27,7 +27,7 @@ import org.elasticsearch.common.settings.Settings;
 import java.util.concurrent.ExecutionException;
 
 /**
- * A {@link} used to create indices.
+ * A {@link Request} used to create indices.
  */
 public class IndexCreator {
 

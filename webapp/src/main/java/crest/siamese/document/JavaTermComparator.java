@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.document;
+package crest.siamese.document;
 
 import java.util.Comparator;
 

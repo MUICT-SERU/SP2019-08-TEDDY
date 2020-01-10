@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SP2019-TEDDY.iml" filepath="$PROJECT_DIR$/.idea/modules/SP2019-TEDDY.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SP2019-TEDDY.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SP2019-TEDDY.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SP2019-TEDDY.test.iml" filepath="$PROJECT_DIR$/.idea/modules/SP2019-TEDDY.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp/standalone.iml" filepath="$PROJECT_DIR$/webapp/standalone.iml" />
     </modules>
   </component>
 </project>

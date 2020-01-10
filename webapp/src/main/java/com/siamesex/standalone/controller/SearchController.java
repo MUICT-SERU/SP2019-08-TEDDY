@@ -1,10 +1,10 @@
-package src.main.java.com.siamesex.standalone.controller;
+package com.siamesex.standalone.controller;
 
-import src.main.java.com.siamesex.standalone.model.EchoText;
-import src.main.java.com.siamesex.standalone.model.Search;
-import src.main.java.crest.siamese.main.Siamese;
-import src.main.java.echotest.EchoTest;
-import org.apache.commons.lang3.exception.ExceptionUtils;
+import com.siamesex.standalone.model.EchoText;
+import com.siamesex.standalone.model.Search;
+import crest.siamese.main.Siamese;
+import echotest.EchoTest;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,7 +12,6 @@ import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +33,6 @@ public class SearchController {
     //  On Properties
     //  On Constructors
     //  @Autowired with arguments
-
     @Autowired
     public SearchController(Siamese siamese, EchoTest echoTest)
     {
@@ -45,7 +43,6 @@ public class SearchController {
     // Mapping ------------------------------------
 
     // Normal form
-
     @GetMapping("/search")
     public String searchShowForm(Model model){
         logger.info("Access search form");

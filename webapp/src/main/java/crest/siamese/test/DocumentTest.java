@@ -1,6 +1,6 @@
-package src.main.java.crest.siamese.test;
+package crest.siamese.test;
 
-import src.main.java.crest.siamese.document.Document;
+import crest.siamese.document.Document;
 import static org.junit.Assert.*;
 /**
  * Created by Chaiyong on 7/27/16.

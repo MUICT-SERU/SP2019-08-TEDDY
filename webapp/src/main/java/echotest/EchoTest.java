@@ -1,4 +1,4 @@
-package src.main.java.echotest;
+package echotest;
 
 public class EchoTest {
     private String lastEcho;

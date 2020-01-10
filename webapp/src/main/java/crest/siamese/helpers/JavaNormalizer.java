@@ -1,7 +1,7 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
-import src.main.java.crest.siamese.settings.NormalizerMode;
-import src.main.java.crest.siamese.settings.Settings;
+import crest.siamese.settings.NormalizerMode;
+import crest.siamese.settings.Settings;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,10 +19,10 @@ public class JavaNormalizer implements Normalizer {
     private HashMap<String, Integer> opertaorMap = new HashMap<>();
     private HashMap<String, Integer> javaClassMap = new HashMap<String, Integer>();
     private HashMap<String, Integer> javaPackagesMap = new HashMap<String, Integer>();
-    private JavaNormalizerMode modes;
+    private NormalizerMode modes = new NormalizerMode();
 
     public JavaNormalizer(NormalizerMode modes) {
-        this.modes = (JavaNormalizerMode) modes;
+        this.modes = modes;
         setUpKeywordMap();
         setUpSymbolMap();
         setUpDatatypeMap();
@@ -46,7 +46,7 @@ public class JavaNormalizer implements Normalizer {
     }
 
     public void configure(NormalizerMode modes) {
-        this.modes = (JavaNormalizerMode) modes;
+        this.modes = modes;
     }
 
     @Override

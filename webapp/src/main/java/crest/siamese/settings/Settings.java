@@ -1,4 +1,4 @@
-package src.main.java.crest.siamese.settings;
+package crest.siamese.settings;
 
 public class Settings {
 

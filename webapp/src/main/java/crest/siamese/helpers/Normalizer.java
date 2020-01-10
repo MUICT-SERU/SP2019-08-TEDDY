@@ -1,6 +1,6 @@
-package src.main.java.crest.siamese.helpers;
+package crest.siamese.helpers;
 
-import src.main.java.crest.siamese.settings.NormalizerMode;
+import crest.siamese.settings.NormalizerMode;
 
 import java.util.ArrayList;
 

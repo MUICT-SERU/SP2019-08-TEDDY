@@ -1,4 +1,4 @@
-package src.main.java.com.siamesex.standalone.model;
+package com.siamesex.standalone.model;
 
 public class EchoText {
     private String text;

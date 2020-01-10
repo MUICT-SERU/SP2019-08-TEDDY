@@ -1,8 +1,10 @@
-package src.main.java.crest.siamese.test;
+package crest.siamese.test;
 
-import src.main.java.crest.siamese.helpers.*;
-import src.main.java.crest.siamese.settings.Settings;
-import org.junit.Test;
+import crest.siamese.helpers.JavaNormalizer;
+import crest.siamese.helpers.JavaTokenizer;
+import crest.siamese.helpers.nGramGenerator;
+import crest.siamese.settings.Settings;
+import crest.siamese.settings.NormalizerMode;
 
 import java.util.ArrayList;
 
@@ -12,10 +14,10 @@ import static org.junit.Assert.*;
  */
 public class JavaNormalizerTest {
 
-    @Test
+    @org.junit.Test
     public void checkTokenizationFromString() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "public static void main ( String[] args ) { String inpstring = \"hello\";");
@@ -31,8 +33,8 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkSpecialCharacters() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "!= += ++ -- *= /= <= >= == () {}");
@@ -47,10 +49,9 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkOperators() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'o'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setOperator(Settings.Normalize.OPERATOR_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "!= += ++ -- *= /= <= >= == () {}");
 
@@ -64,10 +65,9 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkDatatypeNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'d'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "public static void main ( String[] args ) { int x = 10;");
@@ -81,12 +81,11 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkJavaClassNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'j'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "public static void main ( String[] args ) { ArrayList<String> x = new ArrayList<>();");
@@ -104,12 +103,11 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkJavaPackageNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'p'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString("Dynamic\n" +
                 "DynamicAny\n" +
@@ -127,12 +125,11 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkWordNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'w'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString("int x = y; MyVar");
         String[] expectedTokens = {"int", "W", "=", "W", ";", "W"};
@@ -143,12 +140,11 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkStringNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'s'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setString(Settings.Normalize.STRING_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString("String x = \"Hello world!\"");
         String[] expectedTokens = {"String", "x", "=", "S"};
@@ -159,12 +155,17 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkDJKPSVWNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'d', 'j', 'k', 'p', 's', 'w', 'v'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
+        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+        mode.setString(Settings.Normalize.STRING_NORM_ON);
+        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        mode.setValue(Settings.Normalize.VALUE_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens =
                 tokenizer.getTokensFromString("while (true) { int y = 0; String x = \"Hello world!\"; }");
@@ -177,12 +178,17 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkDJKPSVWNormalisation2() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'d', 'j', 'k', 'p', 's', 'w', 'v'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
+        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+        mode.setString(Settings.Normalize.STRING_NORM_ON);
+        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        mode.setValue(Settings.Normalize.VALUE_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "public static long checksum(File file) throws IOException {\n" +
@@ -204,12 +210,18 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void checkDJKOPSVWNormalisation() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'d', 'j', 'k', 'p', 's', 'w', 'v', 'o'};
-        mode.configure(normOptions);
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
+        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+        mode.setString(Settings.Normalize.STRING_NORM_ON);
+        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        mode.setValue(Settings.Normalize.VALUE_NORM_ON);
+        mode.setOperator(Settings.Normalize.OPERATOR_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
                 "public static long checksum(File file) throws IOException {\n" +
@@ -242,10 +254,16 @@ public class JavaNormalizerTest {
         }
     }
 
-    @Test
+    @org.junit.Test
     public void TestDefaultNormalizeMode() throws Exception {
-        NormalizerMode mode = (NormalizerMode) new JavaNormalizerMode();
-        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        NormalizerMode mode = new NormalizerMode();
+//        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+//        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+//        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
+//        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+//        mode.setString(Settings.Normalize.STRING_NORM_ON);
+//        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString("public static long checksum(File file) throws IOException {\n" +
                 "    CRC32 crc = new CRC32();\n" +
@@ -269,10 +287,15 @@ public class JavaNormalizerTest {
 
         System.out.println("\n\n");
 
-        mode = (NormalizerMode) new JavaNormalizerMode();
-        char[] normOptions = {'d', 's', 'v', 'w'};
-        mode.configure(normOptions);
-        tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+        mode = new NormalizerMode();
+        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+//        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+//        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
+//        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+        mode.setString(Settings.Normalize.STRING_NORM_ON);
+        mode.setValue(Settings.Normalize.VALUE_NORM_ON);
+        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         tokens = tokenizer.getTokensFromString("public static long checksum(File file) throws IOException {\n" +
                 "    CRC32 crc = new CRC32();\n" +
@@ -295,10 +318,14 @@ public class JavaNormalizerTest {
         }
 
         System.out.println("\n\n");
-        mode.reset();
-        char[] normOptions2 = {'d', 'j', 'k', 'p', 'v', 'w'};
-        mode.configure(normOptions2);
-        tokenizer = new JavaTokenizer(new JavaNormalizer((src.main.java.crest.siamese.settings.NormalizerMode) mode));
+
+        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
+        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
+        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
+        mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
+        mode.setString(Settings.Normalize.STRING_NORM_ON);
+        mode.setWord(Settings.Normalize.WORD_NORM_ON);
+        tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         tokens = tokenizer.getTokensFromString("public static long checksum(File file) throws IOException {\n" +
                 "    CRC32 crc = new CRC32();\n" +
