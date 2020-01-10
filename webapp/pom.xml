@@ -12,7 +12,7 @@
 	<artifactId>standalone</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>standalone</name>
-	<description>standalone project for SiameseX</description>
+	<description>standalone project for SiameseX with Python support</description>
 
 	<properties>
 		<java.version>1.8</java.version>
