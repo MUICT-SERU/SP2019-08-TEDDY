@@ -8,7 +8,7 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.siamesex</groupId>
+	<groupId>src.main.java</groupId>
 	<artifactId>standalone</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<name>siamesex</name>
@@ -150,6 +150,16 @@
 			<artifactId>hamcrest</artifactId>
 			<version>2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.5.2</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 	
 	<build>
@@ -158,6 +168,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>src.main.java.com.siamesex.standalone.StandaloneApplication</mainClass>
+                </configuration>
 			</plugin>
 			<!-- Spring Boot Maven Plugin END -->
 			<plugin>
@@ -174,7 +187,7 @@
                         <configuration>
                             <arguments>
                                 <argument>-package</argument>
-                                <argument>crest.siamese.helpers</argument>
+                                <argument>src.main.java.crest.siamese.helpers</argument>
                             </arguments>
                             <sourceDirectory>${basedir}/src/main/antlr4/java</sourceDirectory>
                             <outputDirectory>${project.build.directory}/generated-sources/crest/siamese/language/java</outputDirectory>
@@ -189,7 +202,7 @@
                         <configuration>
                             <arguments>
                                 <argument>-package</argument>
-                                <argument>crest.siamese.helpers</argument>
+                                <argument>src.main.java.crest.siamese.helpers</argument>
                             </arguments>
                             <sourceDirectory>${basedir}/src/main/antlr4/python3</sourceDirectory>
                             <outputDirectory>${project.build.directory}/generated-sources/crest/siamese/language/python3</outputDirectory>
@@ -197,7 +210,7 @@
                     </execution>
 				</executions>
 			</plugin>
-			<!--
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -212,7 +225,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>crest.siamese.main.Main</mainClass>
+									<mainClass>src.main.java.crest.siamese.main.Main</mainClass>
 								</transformer>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
@@ -220,7 +233,8 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

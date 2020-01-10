@@ -1,4 +1,4 @@
-package crest.siamese.document;
+package src.main.java.crest.siamese.document;
 
 import java.util.List;
 

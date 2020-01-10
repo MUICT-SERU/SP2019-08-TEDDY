@@ -1,7 +1,7 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
-import crest.siamese.settings.NormalizerMode;
-import crest.siamese.settings.Settings;
+import src.main.java.crest.siamese.settings.NormalizerMode;
+import src.main.java.crest.siamese.settings.Settings;
 
 import java.io.BufferedReader;
 import java.io.File;

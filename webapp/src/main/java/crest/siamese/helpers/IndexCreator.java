@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;

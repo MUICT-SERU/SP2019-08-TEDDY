@@ -1,8 +1,8 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
-import crest.siamese.document.Method;
-import crest.siamese.experiment.Experiment;
-import crest.siamese.settings.Settings;
+import src.main.java.crest.siamese.document.Method;
+import src.main.java.crest.siamese.experiment.Experiment;
+import src.main.java.crest.siamese.settings.Settings;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;

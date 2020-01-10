@@ -1,4 +1,4 @@
-package crest.siamese.document;
+package src.main.java.crest.siamese.document;
 
 public class BCBDocument extends Document {
     private int syntacticType;

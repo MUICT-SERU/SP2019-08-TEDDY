@@ -1,7 +1,7 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
-import crest.siamese.helpers.Normalizer;
-import crest.siamese.helpers.Tokenizer;
+import src.main.java.crest.siamese.helpers.Normalizer;
+import src.main.java.crest.siamese.helpers.Tokenizer;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.Token;
 

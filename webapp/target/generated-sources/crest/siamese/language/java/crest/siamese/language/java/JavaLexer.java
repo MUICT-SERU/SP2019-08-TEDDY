@@ -1,5 +1,7 @@
 // Generated from JavaLexer.g4 by ANTLR 4.7
-package crest.siamese.helpers;
+package crest.siamese.language.java;
+
+
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

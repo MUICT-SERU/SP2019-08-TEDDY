@@ -1,8 +1,8 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
-import crest.siamese.document.Method;
-import crest.siamese.document.Parameter;
-import crest.siamese.settings.Settings;
+import src.main.java.crest.siamese.document.Method;
+import src.main.java.crest.siamese.document.Parameter;
+import src.main.java.crest.siamese.settings.Settings;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RuleContext;
@@ -19,6 +19,9 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+
+import crest.siamese.helpers.Python3Parser;
+import crest.siamese.helpers.Python3Lexer;
 
 /**
  * Method Parser for Python 3. Parses the source code via an input file path to extract a list of methods or the entire
@@ -75,7 +78,7 @@ public class Python3MethodParser implements MethodParser {
      * @param filePath Location of input file
      * @return root RuleContext
      */
-    private static Python3Parser.File_inputContext parseFile(String filePath) {
+    private static crest.siamese.helpers.Python3Parser.File_inputContext parseFile(String filePath) {
         File file = new File(filePath);
         String sourceCode = readFile(file);
 

@@ -1,15 +1,15 @@
-package crest.siamese.main;
+package src.main.java.crest.siamese.main;
 
-import crest.siamese.document.Document;
-import crest.siamese.document.JavaTerm;
-import crest.siamese.document.Method;
-import crest.siamese.helpers.*;
-import crest.siamese.helpers.MethodParser;
-import crest.siamese.helpers.NormalizerMode;
-import crest.siamese.settings.CustomSettings;
-import crest.siamese.settings.Settings;
+import src.main.java.crest.siamese.document.Document;
+import src.main.java.crest.siamese.document.JavaTerm;
+import src.main.java.crest.siamese.document.Method;
+import src.main.java.crest.siamese.helpers.*;
+import src.main.java.crest.siamese.helpers.MethodParser;
+import src.main.java.crest.siamese.helpers.NormalizerMode;
+import src.main.java.crest.siamese.settings.CustomSettings;
+import src.main.java.crest.siamese.settings.Settings;
 
-import crest.siamese.settings.IndexSettings;
+import src.main.java.crest.siamese.settings.IndexSettings;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.lucene.index.*;
@@ -153,7 +153,8 @@ public class Siamese {
 
             // normMode = prop.getProperty("normMode");
 
-            normalizerModeName = prop.getProperty("normalizerMode");
+            //normalizerModeName = prop.getProperty("normalizerMode");
+            normalizerName = "src.main.java.crest.siamese.helpers.JavaNormalizer";
             t2NormMode = prop.getProperty("t2NormMode");
             t3NormMode = prop.getProperty("t3NormMode");
 
@@ -1268,7 +1269,7 @@ public class Siamese {
         try {
             Class cl = Class.forName(this.normalizerName);
             normalizer = (Normalizer) cl.newInstance();
-            normalizer.configure((crest.siamese.settings.NormalizerMode) modes);
+            normalizer.configure((src.main.java.crest.siamese.settings.NormalizerMode) modes);
         } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
             System.out.println("ERROR: could not find the specified normalizer: " +
                     this.normalizerName + ". Please check if the class and package name is correct.");
@@ -1279,7 +1280,8 @@ public class Siamese {
     private NormalizerMode initialiseNormalizerMode() {
         NormalizerMode normalizerMode = null;
         try {
-            Class cl = Class.forName(this.normalizerModeName);
+           // Temporarily replaced by hard-coding on line 1284: Class cl = Class.forName(this.normalizerModeName);
+            Class cl = Class.forName("src.main.java.crest.siamese.helpers.JavaNormalizerMode");
             normalizerMode = (NormalizerMode) cl.newInstance();
         } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
             System.out.println("ERROR: could not find the specified normalizer mode: " +

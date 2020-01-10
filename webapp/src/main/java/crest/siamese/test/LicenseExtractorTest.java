@@ -1,6 +1,6 @@
-package crest.siamese.test;
+package src.main.java.crest.siamese.test;
 
-import crest.siamese.helpers.LicenseExtractor;
+import src.main.java.crest.siamese.helpers.LicenseExtractor;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 

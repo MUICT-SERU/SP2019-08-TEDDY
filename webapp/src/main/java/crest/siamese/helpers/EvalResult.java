@@ -1,4 +1,4 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
 /**
  * Created by Chaiyong on 7/16/17.

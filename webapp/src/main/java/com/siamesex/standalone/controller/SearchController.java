@@ -1,9 +1,9 @@
-package com.siamesex.standalone.controller;
+package src.main.java.com.siamesex.standalone.controller;
 
-import com.siamesex.standalone.model.EchoText;
-import com.siamesex.standalone.model.Search;
-import crest.siamese.main.Siamese;
-import echotest.EchoTest;
+import src.main.java.com.siamesex.standalone.model.EchoText;
+import src.main.java.com.siamesex.standalone.model.Search;
+import src.main.java.crest.siamese.main.Siamese;
+import src.main.java.echotest.EchoTest;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -34,6 +34,7 @@ public class SearchController {
     //  On Properties
     //  On Constructors
     //  @Autowired with arguments
+
     @Autowired
     public SearchController(Siamese siamese, EchoTest echoTest)
     {
@@ -44,6 +45,7 @@ public class SearchController {
     // Mapping ------------------------------------
 
     // Normal form
+
     @GetMapping("/search")
     public String searchShowForm(Model model){
         logger.info("Access search form");

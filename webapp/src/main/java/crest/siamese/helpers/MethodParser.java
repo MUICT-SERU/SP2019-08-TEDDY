@@ -1,6 +1,6 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
-import crest.siamese.document.Method;
+import src.main.java.crest.siamese.document.Method;
 
 import java.util.ArrayList;
 

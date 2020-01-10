@@ -1,8 +1,8 @@
-package com.siamesex.standalone;
+package src.main.java.com.siamesex.standalone;
 
-import crest.siamese.helpers.MyUtils;
-import crest.siamese.main.Siamese;
-import echotest.EchoTest;
+import src.main.java.crest.siamese.helpers.MyUtils;
+import src.main.java.crest.siamese.main.Siamese;
+import src.main.java.echotest.EchoTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +12,7 @@ import java.util.Date;
 
 @SpringBootApplication
 @Configuration
+
 public class StandaloneApplication {
 
 
@@ -29,7 +30,9 @@ public class StandaloneApplication {
 	@Bean
 	public Siamese siamese() {
 		if (siamese == null)
+
 			startSiamese();
+
 		return siamese;
 	}
 
@@ -51,10 +54,14 @@ public class StandaloneApplication {
 		if (configFile == null) {
 			System.out.println("Couldn't find the config file. Using the default one at ./config.properties");
 			configFile = "config.properties";
+			siamese = new Siamese(configFile, overridingParams);
+			siamese.startup();
+			System.out.println("starting siamese ... ");
 		}
+
 		Date startDate = MyUtils.getCurrentTime();
-		siamese = new Siamese(configFile, overridingParams);
-		siamese.startup();
+		//siamese = new Siamese(configFile, overridingParams);
+		//siamese.startup();
 	}
 
 }

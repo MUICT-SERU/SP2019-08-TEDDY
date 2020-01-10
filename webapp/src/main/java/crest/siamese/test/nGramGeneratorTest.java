@@ -1,6 +1,6 @@
-package crest.siamese.test;
+package src.main.java.crest.siamese.test;
 
-import crest.siamese.helpers.nGramGenerator;
+import src.main.java.crest.siamese.helpers.nGramGenerator;
 
 import java.util.ArrayList;
 

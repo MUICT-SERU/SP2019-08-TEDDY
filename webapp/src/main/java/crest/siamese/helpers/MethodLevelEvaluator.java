@@ -1,6 +1,6 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
-import crest.siamese.document.MethodClone;
+import src.main.java.crest.siamese.document.MethodClone;
 
 import java.util.*;
 

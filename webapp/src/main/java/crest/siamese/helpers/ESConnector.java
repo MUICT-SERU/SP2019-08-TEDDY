@@ -1,4 +1,4 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.google.gson.JsonParser;
-import crest.siamese.document.Document;
+import src.main.java.crest.siamese.document.Document;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;

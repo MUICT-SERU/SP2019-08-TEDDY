@@ -1,6 +1,6 @@
-package crest.siamese.experiment;
+package src.main.java.crest.siamese.experiment;
 
-import crest.siamese.main.Siamese;
+import src.main.java.crest.siamese.main.Siamese;
 import org.apache.commons.cli.*;
 import org.elasticsearch.client.transport.NoNodeAvailableException;
 

@@ -1,9 +1,9 @@
-package crest.siamese.test;
+package src.main.java.crest.siamese.test;
 
 import static org.junit.Assert.*;
-import crest.siamese.helpers.MethodParser;
-import crest.siamese.document.Method;
-import crest.siamese.settings.Settings;
+import src.main.java.crest.siamese.helpers.MethodParser;
+import src.main.java.crest.siamese.document.Method;
+import src.main.java.crest.siamese.settings.Settings;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

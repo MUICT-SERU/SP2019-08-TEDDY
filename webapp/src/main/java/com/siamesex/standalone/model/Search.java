@@ -1,4 +1,4 @@
-package com.siamesex.standalone.model;
+package src.main.java.com.siamesex.standalone.model;
 
 import org.json.simple.JSONObject;
 

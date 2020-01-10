@@ -1,7 +1,7 @@
-package crest.siamese.helpers;
+package src.main.java.crest.siamese.helpers;
 
 import com.google.common.collect.ImmutableMap;
-import crest.siamese.settings.NormalizerMode;
+import src.main.java.crest.siamese.settings.NormalizerMode;
 
 import java.util.ArrayList;
 import java.util.Map;
