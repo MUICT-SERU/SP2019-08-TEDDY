@@ -1,6 +1,8 @@
-package crest.siamese.helpers;
+package crest.siamese.language.java;
 
-import crest.siamese.settings.NormalizerMode;
+import crest.siamese.helpers.JavaLexer;
+import crest.siamese.language.Normalizer;
+import crest.siamese.language.Tokenizer;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

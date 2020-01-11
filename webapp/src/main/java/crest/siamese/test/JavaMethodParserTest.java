@@ -1,7 +1,7 @@
 package crest.siamese.test;
 
 import static org.junit.Assert.*;
-import crest.siamese.helpers.MethodParser;
+import crest.siamese.language.MethodParser;
 import crest.siamese.document.Method;
 import crest.siamese.settings.Settings;
 
@@ -16,7 +16,7 @@ public class JavaMethodParserTest {
     @org.junit.Test
     public void checkMethodParser() throws Exception {
         String srcStr = "resources/tests/guessword/0_orig/GuessWord.java";
-        Class cl = Class.forName("crest.siamese.helpers.JavaMethodParser");
+        Class cl = Class.forName("crest.siamese.language.java.JavaMethodParser");
         Constructor con = cl.getConstructor(String.class, String.class, String.class, boolean.class);
         MethodParser mParser = (MethodParser) con.newInstance(srcStr, "", Settings.MethodParserType.METHOD, false);
         ArrayList<Method> methods = mParser.parseMethods();
@@ -30,7 +30,7 @@ public class JavaMethodParserTest {
     @org.junit.Test
     public void checkMethodParserFileLevel() throws Exception {
         String srcStr = "resources/tests/guessword/0_orig/GuessWord.java";
-        Class cl = Class.forName("crest.siamese.helpers.JavaMethodParser");
+        Class cl = Class.forName("crest.siamese.language.java.JavaMethodParser");
         Constructor con = cl.getConstructor(String.class, String.class, String.class, boolean.class);
         MethodParser mParser = (MethodParser) con.newInstance(srcStr, "", Settings.MethodParserType.FILE, false);
         ArrayList<Method> methods = mParser.parseMethods();
@@ -42,7 +42,7 @@ public class JavaMethodParserTest {
     @org.junit.Test
     public void checkMethodParser2() throws Exception {
         String srcStr = "resources/tests/bubblesort/0_orig/BubbleSort.java";
-        Class cl = Class.forName("crest.siamese.helpers.JavaMethodParser");
+        Class cl = Class.forName("crest.siamese.language.java.JavaMethodParser");
         Constructor con = cl.getConstructor(String.class, String.class, String.class, boolean.class);
         MethodParser mParser = (MethodParser) con.newInstance(srcStr, "", Settings.MethodParserType.METHOD, false);
         ArrayList<Method> methods = mParser.parseMethods();
@@ -54,7 +54,7 @@ public class JavaMethodParserTest {
     @org.junit.Test
     public void testExtractingComment() throws Exception {
         String srcStr = "resources/tests/WritableComparable.java";
-        Class cl = Class.forName("crest.siamese.helpers.JavaMethodParser");
+        Class cl = Class.forName("crest.siamese.language.java.JavaMethodParser");
         Constructor con = cl.getConstructor(String.class, String.class, String.class, boolean.class);
         MethodParser mParser = (MethodParser) con.newInstance(srcStr, "", Settings.MethodParserType.METHOD, false);
         ArrayList<Method> methods = mParser.parseMethods();
@@ -63,7 +63,7 @@ public class JavaMethodParserTest {
     @org.junit.Test
     public void testExtractingComment2() throws Exception {
         String srcStr = "resources/tests/bubblesort/0_orig/BubbleSort.java";
-        Class cl = Class.forName("crest.siamese.helpers.JavaMethodParser");
+        Class cl = Class.forName("crest.siamese.language.java.JavaMethodParser");
         Constructor con = cl.getConstructor(String.class, String.class, String.class, boolean.class);
         MethodParser mParser = (MethodParser) con.newInstance(srcStr, "", Settings.MethodParserType.METHOD, false);
         ArrayList<Method> methods = mParser.parseMethods();

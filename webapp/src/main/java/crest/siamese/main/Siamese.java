@@ -2,6 +2,9 @@ package crest.siamese.main;
 
 import crest.siamese.document.JavaTerm;
 import crest.siamese.helpers.*;
+import crest.siamese.language.MethodParser;
+import crest.siamese.language.Normalizer;
+import crest.siamese.language.Tokenizer;
 import crest.siamese.settings.CustomSettings;
 import crest.siamese.settings.Settings;
 import crest.siamese.settings.NormalizerMode;

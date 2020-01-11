@@ -1,5 +1,6 @@
-package crest.siamese.helpers;
+package crest.siamese.language.java;
 
+import crest.siamese.language.Normalizer;
 import crest.siamese.settings.NormalizerMode;
 import crest.siamese.settings.Settings;
 

@@ -1,7 +1,7 @@
 package crest.siamese.test;
 
-import crest.siamese.helpers.JavaNormalizer;
-import crest.siamese.helpers.JavaTokenizer;
+import crest.siamese.language.java.JavaNormalizer;
+import crest.siamese.language.java.JavaTokenizer;
 import crest.siamese.helpers.nGramGenerator;
 import crest.siamese.settings.Settings;
 import crest.siamese.settings.NormalizerMode;

@@ -1,4 +1,4 @@
-package crest.siamese.helpers;
+package crest.siamese.language.java;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
@@ -6,13 +6,11 @@ import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.*;
 import com.github.javaparser.ast.comments.Comment;
-import com.github.javaparser.ast.stmt.BlockStmt;
-import com.github.javaparser.ast.visitor.GenericVisitor;
-import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
-import com.github.javaparser.printer.PrettyPrinter;
 import com.github.javaparser.printer.PrettyPrinterConfiguration;
 import crest.siamese.document.Method;
+import crest.siamese.helpers.LicenseExtractor;
+import crest.siamese.language.MethodParser;
 import crest.siamese.settings.Settings;
 import org.apache.commons.io.FileUtils;
 

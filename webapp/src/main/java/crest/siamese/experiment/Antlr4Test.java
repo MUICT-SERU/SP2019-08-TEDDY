@@ -1,6 +1,6 @@
 package crest.siamese.experiment;
 
-import crest.siamese.helpers.JavaTokenizer;
+import crest.siamese.language.java.JavaTokenizer;
 
 public class Antlr4Test {
     public static void main(String[] args) {

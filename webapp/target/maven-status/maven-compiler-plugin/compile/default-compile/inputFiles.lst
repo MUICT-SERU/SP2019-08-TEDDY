@@ -1,8 +1,7 @@
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\controller\SearchController.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\GitHubIndexing.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaMethodParser.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\JavaMethodParser.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\IndexSettings.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaTokenizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaMethodParserTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\OutputFormatter.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JSONFormatter.java
@@ -12,16 +11,16 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\Custo
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\echotest\EchoTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\EchoText.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaNormalizerTest.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaNormalizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\JavaTokenizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\Normalizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\FileLevelEvaluator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Search.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\BCBDocument.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\Tokenizer.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\JavaNormalizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\main\Siamese.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\TestSuite.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\LicenseExtractorTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\SearchResultChecker.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MethodParser.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\LicenseExtractor.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MethodLevelEvaluator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\NinkaTest.java
@@ -29,7 +28,6 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Metho
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\Antlr4Test.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\StandaloneApplication.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\BCBEvaluatorTest.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\Normalizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\BCBEvaluator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\Settings.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\main\Main.java
@@ -44,6 +42,7 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MyUtil
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\SiameseIndexReader.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\JavaLexer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\NormalizerMode.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\Tokenizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\IndexCreator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTermComparator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTerm.java
@@ -53,4 +52,5 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\BCB
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaLexerTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\nGramGeneratorTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\Experiment.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\MethodParser.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\DocumentTest.java

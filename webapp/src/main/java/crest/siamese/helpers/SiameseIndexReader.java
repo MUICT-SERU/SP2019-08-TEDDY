@@ -2,6 +2,8 @@ package crest.siamese.helpers;
 
 import crest.siamese.document.Method;
 import crest.siamese.experiment.Experiment;
+import crest.siamese.language.java.JavaMethodParser;
+import crest.siamese.language.java.JavaTokenizer;
 import crest.siamese.settings.Settings;
 import crest.siamese.settings.NormalizerMode;
 import org.apache.commons.io.FileUtils;
