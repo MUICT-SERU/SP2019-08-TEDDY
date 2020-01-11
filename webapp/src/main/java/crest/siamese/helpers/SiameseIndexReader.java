@@ -3,9 +3,9 @@ package crest.siamese.helpers;
 import crest.siamese.document.Method;
 import crest.siamese.experiment.Experiment;
 import crest.siamese.language.java.JavaMethodParser;
+import crest.siamese.language.java.JavaNormalizerMode;
 import crest.siamese.language.java.JavaTokenizer;
 import crest.siamese.settings.Settings;
-import crest.siamese.settings.NormalizerMode;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
@@ -24,7 +24,7 @@ import java.util.List;
 /* TODO: outdated (remove?) */
 public class SiameseIndexReader {
     private static String[] extensions = { "java" };
-    private static NormalizerMode modes = new NormalizerMode();
+    private static JavaNormalizerMode modes = new JavaNormalizerMode();
     private static IndexReader reader = null;
     private static nGramGenerator ngen;
 

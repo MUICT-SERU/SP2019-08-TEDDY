@@ -37,6 +37,7 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\BCBEva
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\Settings.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\SiameseTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\XMLFormatter.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\NormalizerMode.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Parameter.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Method.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3Parser.java
@@ -46,7 +47,7 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\nGramG
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MyUtils.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\SiameseIndexReader.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3Normalizer.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\settings\NormalizerMode.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\JavaNormalizerMode.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\Tokenizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\IndexCreator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTermComparator.java

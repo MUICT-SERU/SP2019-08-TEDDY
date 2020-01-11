@@ -1,3 +1,4 @@
+crest\siamese\language\NormalizerMode.class
 crest\siamese\language\python3\Python3Parser$TestContext.class
 crest\siamese\language\python3\Python3Parser$Del_stmtContext.class
 crest\siamese\language\python3\Python3Parser$File_inputContext.class
@@ -67,6 +68,7 @@ crest\siamese\language\python3\Python3Parser$Import_fromContext.class
 crest\siamese\helpers\nGramGenerator.class
 crest\siamese\settings\IndexSettings$IB.class
 crest\siamese\settings\IndexSettings$DFR.class
+crest\siamese\language\java\JavaNormalizerMode.class
 crest\siamese\experiment\BCBExperiment.class
 crest\siamese\experiment\NinkaTest.class
 crest\siamese\document\Document.class
@@ -96,7 +98,6 @@ crest\siamese\language\python3\Python3Parser$Comp_ifContext.class
 crest\siamese\helpers\BCBEvaluator.class
 crest\siamese\language\python3\Python3Tokenizer.class
 crest\siamese\helpers\OutputFormatter.class
-crest\siamese\settings\NormalizerMode.class
 crest\siamese\helpers\XMLFormatter.class
 crest\siamese\language\python3\Python3Parser$AugassignContext.class
 crest\siamese\settings\IndexSettings$BM25.class

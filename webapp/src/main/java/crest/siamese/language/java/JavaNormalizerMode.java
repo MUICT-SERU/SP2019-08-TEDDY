@@ -1,6 +1,9 @@
-package crest.siamese.settings;
+package crest.siamese.language.java;
 
-public class NormalizerMode {
+import crest.siamese.settings.Settings;
+import crest.siamese.language.NormalizerMode;
+
+public class JavaNormalizerMode implements NormalizerMode{
 	private int word;
 	private int keyword;
 	private int datatype;
@@ -11,7 +14,7 @@ public class NormalizerMode {
 	private int value;
 	private int escape;
 
-	public NormalizerMode() {
+	public JavaNormalizerMode() {
 		word = Settings.Normalize.WORD_NORM_OFF;
 		keyword = Settings.Normalize.KEYWORD_NORM_OFF;
 		javaClass = Settings.Normalize.JAVACLASS_NORM_OFF;
@@ -23,7 +26,7 @@ public class NormalizerMode {
 		datatype = Settings.Normalize.DATATYPE_NORM_OFF;
 	}
 
-	public NormalizerMode(
+	public JavaNormalizerMode(
 	        int word,
             int keyword,
             int datatype,
@@ -43,7 +46,67 @@ public class NormalizerMode {
 		this.datatype = datatype;
 		this.operator = operator;
 	}
-	
+
+	@Override
+	public void configure(char[] normOptions) {
+		for (char c : normOptions) {
+			// setting all normalisation options: w, d, j, p, k, v, s
+			switch (Character.toLowerCase(c)) {
+				case 'w':
+					word = Settings.Normalize.WORD_NORM_ON;
+					break;
+				case 'd':
+					datatype = Settings.Normalize.DATATYPE_NORM_ON;
+					break;
+				case 'j':
+					javaClass = Settings.Normalize.JAVACLASS_NORM_ON;
+					break;
+				case 'p':
+					javaPackage = Settings.Normalize.JAVAPACKAGE_NORM_ON;
+					break;
+				case 'k':
+					keyword = Settings.Normalize.KEYWORD_NORM_ON;
+					break;
+				case 'r':
+					keyword = Settings.Normalize.KEYWORD_REMOVE;
+					break;
+				case 'v':
+					value = Settings.Normalize.VALUE_NORM_ON;
+					break;
+				case 's':
+					string = Settings.Normalize.STRING_NORM_ON;
+					break;
+				case 'o':
+					operator = Settings.Normalize.OPERATOR_NORM_ON;
+					break;
+				case 'x':
+					word = Settings.Normalize.WORD_NORM_OFF;
+					datatype = Settings.Normalize.DATATYPE_NORM_OFF;
+					javaClass = Settings.Normalize.JAVACLASS_NORM_OFF;
+					javaPackage = Settings.Normalize.JAVAPACKAGE_NORM_OFF;
+					keyword = Settings.Normalize.KEYWORD_NORM_OFF;
+					value = Settings.Normalize.VALUE_NORM_OFF;
+					string = Settings.Normalize.STRING_NORM_OFF;
+					operator = Settings.Normalize.OPERATOR_NORM_OFF;
+					break;
+				case 'e':
+					escape = Settings.Normalize.ESCAPE_ON;
+					break;
+				default:
+					word = Settings.Normalize.WORD_NORM_OFF;
+					datatype = Settings.Normalize.DATATYPE_NORM_OFF;
+					javaClass = Settings.Normalize.JAVACLASS_NORM_OFF;
+					javaPackage = Settings.Normalize.JAVAPACKAGE_NORM_OFF;
+					keyword = Settings.Normalize.KEYWORD_NORM_OFF;
+					value = Settings.Normalize.VALUE_NORM_OFF;
+					string = Settings.Normalize.STRING_NORM_OFF;
+					operator = Settings.Normalize.OPERATOR_NORM_OFF;
+					break;
+			}
+		}
+	}
+
+	@Override
 	public void reset() {
 		word = Settings.Normalize.WORD_NORM_OFF;
 		keyword = Settings.Normalize.KEYWORD_NORM_OFF;
@@ -56,9 +119,9 @@ public class NormalizerMode {
 		operator = Settings.Normalize.OPERATOR_NORM_OFF;
 	}
 
-	public static NormalizerMode setTokenizerMode(char[] normOptions) {
+	public static JavaNormalizerMode setTokenizerMode(char[] normOptions) {
 
-		NormalizerMode modes = new NormalizerMode();
+		JavaNormalizerMode modes = new JavaNormalizerMode();
 
 		for (char c : normOptions) {
 			// setting all normalisation options: w, d, j, p, k, v, s

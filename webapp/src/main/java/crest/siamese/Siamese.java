@@ -1,23 +1,24 @@
 package crest.siamese;
 
 import crest.siamese.document.JavaTerm;
+import crest.siamese.document.Document;
+import crest.siamese.document.Method;
 import crest.siamese.helpers.*;
 import crest.siamese.language.MethodParser;
 import crest.siamese.language.Normalizer;
+import crest.siamese.language.NormalizerMode;
 import crest.siamese.language.Tokenizer;
 import crest.siamese.settings.CustomSettings;
 import crest.siamese.settings.Settings;
-import crest.siamese.settings.NormalizerMode;
-import crest.siamese.document.Document;
-import crest.siamese.document.Method;
 import crest.siamese.settings.IndexSettings;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
-import org.apache.commons.lang.StringUtils;
-import org.apache.lucene.index.*;
-import org.elasticsearch.client.Client;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.lucene.index.*;
 import org.apache.lucene.store.FSDirectory;
+
+import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.NoNodeAvailableException;
 
 import java.io.*;
@@ -40,10 +41,9 @@ public class Siamese {
     private String inputFolder;
     private String outputFolder;
     private String subInputFolder;
-    private String normMode;
-    private NormalizerMode modes = new NormalizerMode();
-    private NormalizerMode t2modes = new NormalizerMode();
-    private NormalizerMode t1modes = new NormalizerMode();
+    private String normalizerModeName;
+    private String t2NormMode;
+    private String t3NormMode;
     private int ngramSize;
     private int t2NgramSize;
     private int t1NgramSize;
@@ -94,13 +94,9 @@ public class Siamese {
     private String computeSimilarity = "none";
     private String[] simThreshold = {"80%", "80%", "80%", "80%"};
     private Tokenizer tokenizer;
-    private Normalizer normalizer;
     private Tokenizer origTokenizer;
     private Tokenizer t2Tokenizer;
     private Tokenizer t1Tokenizer;
-    private Normalizer origNormalizer;
-    private Normalizer t2Normalizer;
-    private Normalizer t1Normalizer;
     private String deleteField;
     private String deleteWildcard;
     private int deleteAmount;
@@ -152,7 +148,9 @@ public class Siamese {
             subInputFolder = prop.getProperty("subInputFolder");
             outputFolder = prop.getProperty("outputFolder");
 
-            normMode = prop.getProperty("normMode");
+            normalizerModeName = prop.getProperty("normalizerMode");
+            t2NormMode = prop.getProperty("t2NormMode");
+            t3NormMode = prop.getProperty("t3NormMode");
 
             isNgram = Boolean.parseBoolean(prop.getProperty("isNgram"));
             ngramSize = Integer.parseInt(prop.getProperty("ngramSize"));
@@ -271,8 +269,8 @@ public class Siamese {
         System.out.println("outputFormat   : " + outputFormat);
         System.out.println("---------- MULTI-REPRESENTATION ----");
         System.out.println("multiRep       : " + multiRep + " " +  Arrays.toString(enableRep));
-        System.out.println("T2 norm        : dsvw");
-        System.out.println("T3 norm        : " + normMode);
+        System.out.println("T2 norm        : " + t2NormMode);
+        System.out.println("T3 norm        : " + t3NormMode);
         System.out.println("ngramSize      : t1=" + t1NgramSize + " t2=" + t2NgramSize + " t3=" + ngramSize);
         System.out.println("---------- QUERY REDUCTION ---------");
         System.out.println("queryReduction : " + queryReduction);
@@ -306,26 +304,22 @@ public class Siamese {
     }
 
     private void prepareTokenizers() {
-        NormalizerMode tmode = new NormalizerMode();
-        char[] noNormMode = {'x'};
-        tmode.setTokenizerMode(noNormMode);
-        //origNormalizer = initialiseNormalizer(tmode);
-        //origTokenizer = initialiseTokenizer(origNormalizer);
+        NormalizerMode origMode = initialiseNormalizerMode();
+        Normalizer origNormalizer = initialiseNormalizer(origMode);
+        origTokenizer = initialiseTokenizer(origNormalizer);
 
-        char[] t2NormMode = {'d', 's', 'v', 'w'};
-        t2modes = NormalizerMode.setTokenizerMode(t2NormMode);
-        //t2Normalizer = initialiseNormalizer(t2modes);
-        //t2Tokenizer = initialiseTokenizer(t2Normalizer);
+        NormalizerMode t1Mode = initialiseNormalizerMode();
+        Normalizer t1Normalizer = initialiseNormalizer(t1Mode);
+        t1Tokenizer = initialiseTokenizer(t1Normalizer);
 
-        char[] t1NormMode = {'x'};
-        t1modes = NormalizerMode.setTokenizerMode(t1NormMode);
-        //t1Normalizer = initialiseNormalizer(t1modes);
-        //t1Tokenizer = initialiseTokenizer(t1Normalizer);
+        NormalizerMode t2Mode = initialiseNormalizerMode(t2NormMode.toLowerCase().toCharArray());
+        Normalizer t2Normalizer = initialiseNormalizer(t2Mode);
+        t2Tokenizer = initialiseTokenizer(t2Normalizer);
 
         // set the normalisation + tokenization mode
-        modes = NormalizerMode.setTokenizerMode(normMode.toLowerCase().toCharArray());
-        //normalizer = initialiseNormalizer(modes);
-        //tokenizer = initialiseTokenizer(normalizer);
+        NormalizerMode t3Mode = initialiseNormalizerMode(t3NormMode.toLowerCase().toCharArray());
+        Normalizer normalizer = initialiseNormalizer(t3Mode);
+        tokenizer = initialiseTokenizer(normalizer);
     }
 
     private OutputFormatter getOutputFormatter() {
@@ -704,7 +698,6 @@ public class Siamese {
             OutputFormatter formatter) throws Exception {
         String qr = "no_qr";
         if (queryReduction) qr = "qr";
-        String outToFile = "";
         DateFormat df = new SimpleDateFormat("dd-MM-yy_HH-mm-S");
         Date dateobj = new Date();
         String outfilePath = outputFolder + "/" + index + "_" + qr + "_" + df.format(dateobj);
@@ -735,7 +728,7 @@ public class Siamese {
             long methodCount = 0;
             long search = 0;
             // reset the output buffer
-            outToFile = "";
+            StringBuilder outToFile = new StringBuilder();
             for (File file : listOfFiles) {
                 if (isPrint)
                     System.out.println(count + ": " + file.getAbsolutePath());
@@ -811,13 +804,8 @@ public class Siamese {
                                     results = es.search(index, type, origQuery, t3Query, t2Query, t1Query,
                                             origBoost, normBoost, t2Boost, t1Boost, isPrint, isDFS, offset,
                                             size, this.computeSimilarity, simThreshold);
-//                                    System.out.println("T3: " + t3Query);
-//                                    System.out.println("T2: " + t2Query);
-//                                    System.out.println("T1: " + t1Query);
-//                                    System.out.println("T0: " + origQuery);
                                 } else {
                                     System.out.println("QUERY: " + methodCount + "\n" + origQuery);
-//                                    results = es.search(index, type, origQuery, isPrint, isDFS, offset, size);
                                     results = es.search(index, type, origQuery, isPrint, isDFS, offset, size);
                                 }
                                 // fuzzywuzzy similarity is applied after the search
@@ -826,13 +814,11 @@ public class Siamese {
 //                                    outToFile += formatter.format(results, sim, this.simThreshold, prefixToRemove);
                                     // TODO: only for the thesis, put this back after the experiment.
                                     int[][] sim = computeSimilarity(origQuery, t1Query, t2Query, t3Query, results);
-                                    outToFile += formatter.format(results, sim,
-                                            this.simThreshold,
-                                            prefixToRemove,
-                                            ignoreQueryClones, q, queryText);
+                                    outToFile.append(formatter.format(results, sim, this.simThreshold,
+                                            prefixToRemove, ignoreQueryClones, q, queryText));
                                 } else {
-                                    outToFile += formatter.format(results, prefixToRemove,
-                                            ignoreQueryClones, q, queryText);
+                                    outToFile.append(formatter.format(results, prefixToRemove,
+                                            ignoreQueryClones, q, queryText));
                                 }
                                 search++;
                             } else {
@@ -856,20 +842,21 @@ public class Siamese {
                             + percentFormat.format(percent) + "%] (from " + count
                             + " files/" + methodCount + " methods).");
                     if (formatter.getFormat().equals("gcf"))
-                        outToFile = formatter.getXML();
+                        outToFile.replace(0, outToFile.length(), formatter.getXML());
                     else if (formatter.getFormat().equals("json"))
-                        outToFile = formatter.getJSON();
-                    bw.write(outToFile);
+                        outToFile.replace(0, outToFile.length(), formatter.getJSON());
+                    bw.write(outToFile.toString());
                     // reset the output to print
-                    outToFile = "";
+                    outToFile.setLength(0);
                 }
             }
             // flush the last part of output
-            if (formatter.getFormat().equals("gcf"))
-                outToFile = formatter.getXML();
-            else if (formatter.getFormat().equals("json"))
-                outToFile = formatter.getJSON();
-            bw.write(outToFile);
+            if (formatter.getFormat().equals("gcf")) {
+                outToFile.replace(0, outToFile.length(), formatter.getXML());
+            } else if (formatter.getFormat().equals("json")) {
+                outToFile.replace(0, outToFile.length(), formatter.getJSON());
+            }
+            bw.write(outToFile.toString());
             bw.close();
             System.out.println("Searching done for " + count + " files (" +
                     search + " out of " + methodCount + " methods after clone size filtering).");
@@ -1220,22 +1207,26 @@ public class Siamese {
     }
 
     private String printArray(ArrayList<String> arr, boolean pretty) {
-        String s = "";
+        StringJoiner stringJoiner = new StringJoiner(" ");
         for (String anArr : arr) {
             if (pretty && anArr.equals("\n")) {
                 System.out.print(anArr);
                 continue;
             }
-            s += anArr + " ";
+            stringJoiner.add(anArr);
         }
-        return s;
+        return stringJoiner.toString();
     }
 
     private String escapeString(String input) {
-        String output = "";
-        output += input.replace("\\", "\\\\").replace("\"", "\\\"").replace("/", "\\/").replace("\b", "\\b")
-                .replace("\f", "\\f").replace("\n", "\\n").replace("\r", "\\r").replace("\t", "\\t");
-        return output;
+        return input.replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("/", "\\/")
+                .replace("\b", "\\b")
+                .replace("\f", "\\f")
+                .replace("\n", "\\n")
+                .replace("\r", "\\r")
+                .replace("\t", "\\t");
     }
 
     private MethodParser initialiseMethodParser(String filePath, String prefixToRemove, String mode, boolean isPrint) {
@@ -1275,6 +1266,31 @@ public class Siamese {
                     this.normalizerName + ". Please check if the class and package name is correct.");
         }
         return normalizer;
+    }
+
+    private NormalizerMode initialiseNormalizerMode() {
+        NormalizerMode normalizerMode = null;
+        try {
+            Class cl = Class.forName(this.normalizerModeName);
+            normalizerMode = (NormalizerMode) cl.newInstance();
+        } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
+            System.out.println("ERROR: could not find the specified normalizer mode: " +
+                    this.normalizerModeName + ". Please check if the class and package name is correct.");
+        }
+        return normalizerMode;
+    }
+
+    private NormalizerMode initialiseNormalizerMode(char[] normOptions) {
+        NormalizerMode normalizerMode = null;
+        try {
+            Class cl = Class.forName(this.normalizerModeName);
+            normalizerMode = (NormalizerMode) cl.newInstance();
+            normalizerMode.configure(normOptions);
+        } catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) {
+            System.out.println("ERROR: could not find the specified normalizer mode: " +
+                    this.normalizerModeName + ". Please check if the class and package name is correct.");
+        }
+        return normalizerMode;
     }
 
     public String extractProjectLicense() {
@@ -1327,9 +1343,9 @@ public class Siamese {
         this.outputFolder = outputFolder;
     }
 
-    public void setNormMode(String normMode) {
-        this.normMode = normMode;
-    }
+//    public void setNormMode(String normMode) {
+//        this.normMode = normMode;
+//    }
 
     public void setResultOffset(int resultOffset) {
         this.resultOffset = resultOffset;

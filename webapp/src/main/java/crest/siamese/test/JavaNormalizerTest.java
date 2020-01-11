@@ -1,10 +1,10 @@
 package crest.siamese.test;
 
 import crest.siamese.language.java.JavaNormalizer;
+import crest.siamese.language.java.JavaNormalizerMode;
 import crest.siamese.language.java.JavaTokenizer;
 import crest.siamese.helpers.nGramGenerator;
 import crest.siamese.settings.Settings;
-import crest.siamese.settings.NormalizerMode;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkTokenizationFromString() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
@@ -33,7 +33,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkSpecialCharacters() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
         ArrayList<String> tokens = tokenizer.getTokensFromString(
@@ -49,7 +49,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkOperators() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setOperator(Settings.Normalize.OPERATOR_NORM_ON);
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
         ArrayList<String> tokens = tokenizer.getTokensFromString(
@@ -65,7 +65,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkDatatypeNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
@@ -83,7 +83,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkJavaClassNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
@@ -105,7 +105,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkJavaPackageNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setJavaPackage(Settings.Normalize.JAVAPACKAGE_NORM_ON);
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
@@ -127,7 +127,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkWordNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setWord(Settings.Normalize.WORD_NORM_ON);
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
@@ -142,7 +142,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkStringNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setString(Settings.Normalize.STRING_NORM_ON);
         JavaTokenizer tokenizer = new JavaTokenizer(new JavaNormalizer(mode));
 
@@ -157,7 +157,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkDJKPSVWNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
         mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
         mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
@@ -180,7 +180,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkDJKPSVWNormalisation2() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
         mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
         mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
@@ -212,7 +212,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void checkDJKOPSVWNormalisation() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
         mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
         mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
         mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
@@ -256,7 +256,7 @@ public class JavaNormalizerTest {
 
     @org.junit.Test
     public void TestDefaultNormalizeMode() throws Exception {
-        NormalizerMode mode = new NormalizerMode();
+        JavaNormalizerMode mode = new JavaNormalizerMode();
 //        mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
 //        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
 //        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
@@ -287,7 +287,7 @@ public class JavaNormalizerTest {
 
         System.out.println("\n\n");
 
-        mode = new NormalizerMode();
+        mode = new JavaNormalizerMode();
         mode.setDatatype(Settings.Normalize.DATATYPE_NORM_ON);
 //        mode.setJavaClass(Settings.Normalize.JAVACLASS_NORM_ON);
 //        mode.setKeyword(Settings.Normalize.KEYWORD_NORM_ON);
