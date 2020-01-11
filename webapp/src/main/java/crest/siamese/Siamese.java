@@ -309,23 +309,23 @@ public class Siamese {
         NormalizerMode tmode = new NormalizerMode();
         char[] noNormMode = {'x'};
         tmode.setTokenizerMode(noNormMode);
-        origNormalizer = initialiseNormalizer(tmode);
-        origTokenizer = initialiseTokenizer(origNormalizer);
+        //origNormalizer = initialiseNormalizer(tmode);
+        //origTokenizer = initialiseTokenizer(origNormalizer);
 
         char[] t2NormMode = {'d', 's', 'v', 'w'};
         t2modes = NormalizerMode.setTokenizerMode(t2NormMode);
-        t2Normalizer = initialiseNormalizer(t2modes);
-        t2Tokenizer = initialiseTokenizer(t2Normalizer);
+        //t2Normalizer = initialiseNormalizer(t2modes);
+        //t2Tokenizer = initialiseTokenizer(t2Normalizer);
 
         char[] t1NormMode = {'x'};
         t1modes = NormalizerMode.setTokenizerMode(t1NormMode);
-        t1Normalizer = initialiseNormalizer(t1modes);
-        t1Tokenizer = initialiseTokenizer(t1Normalizer);
+        //t1Normalizer = initialiseNormalizer(t1modes);
+        //t1Tokenizer = initialiseTokenizer(t1Normalizer);
 
         // set the normalisation + tokenization mode
         modes = NormalizerMode.setTokenizerMode(normMode.toLowerCase().toCharArray());
-        normalizer = initialiseNormalizer(modes);
-        tokenizer = initialiseTokenizer(normalizer);
+        //normalizer = initialiseNormalizer(modes);
+        //tokenizer = initialiseTokenizer(normalizer);
     }
 
     private OutputFormatter getOutputFormatter() {
