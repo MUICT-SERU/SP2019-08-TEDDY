@@ -1,6 +1,6 @@
 package crest.siamese.test;
 
-import crest.siamese.helpers.JavaLexer;
+import crest.siamese.language.java.JavaLexer;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.Token;
 import org.apache.commons.io.FileUtils;

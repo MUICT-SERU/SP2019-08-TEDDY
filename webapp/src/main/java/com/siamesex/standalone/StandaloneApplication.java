@@ -1,7 +1,7 @@
 package com.siamesex.standalone;
 
 import crest.siamese.helpers.MyUtils;
-import crest.siamese.main.Siamese;
+import crest.siamese.Siamese;
 import echotest.EchoTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

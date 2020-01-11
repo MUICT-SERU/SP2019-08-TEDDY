@@ -16,15 +16,14 @@ crest\siamese\document\MethodClone.class
 crest\siamese\test\JavaMethodParserTest.class
 crest\siamese\test\nGramGeneratorTest.class
 crest\siamese\helpers\MyUtils.class
-crest\siamese\main\Main.class
 crest\siamese\language\java\JavaMethodParser$MethodVisitor.class
 crest\siamese\experiment\Antlr4Test.class
+crest\siamese\language\java\JavaLexer.class
 crest\siamese\language\MethodParser.class
 crest\siamese\language\Tokenizer.class
 crest\siamese\settings\Settings$IndexingMode.class
 crest\siamese\test\JavaLexerTest.class
 crest\siamese\helpers\nGramGenerator.class
-crest\siamese\helpers\JavaLexer.class
 crest\siamese\settings\IndexSettings$IB.class
 crest\siamese\settings\IndexSettings$DFR.class
 crest\siamese\experiment\BCBExperiment.class
@@ -37,7 +36,6 @@ crest\siamese\helpers\IndexCreator.class
 crest\siamese\settings\IndexSettings$TFIDF.class
 crest\siamese\language\java\JavaMethodParser$1.class
 crest\siamese\helpers\Evaluator.class
-crest\siamese\main\Siamese.class
 crest\siamese\helpers\BCBEvaluator.class
 crest\siamese\helpers\OutputFormatter.class
 crest\siamese\settings\NormalizerMode.class
@@ -50,6 +48,7 @@ crest\siamese\language\java\JavaTokenizer.class
 crest\siamese\helpers\SiameseIndexReader$SelectedTerm.class
 crest\siamese\document\Parameter.class
 crest\siamese\helpers\LicenseExtractor.class
+crest\siamese\Main.class
 crest\siamese\settings\IndexSettings$TFIDF$DisCountOverlap.class
 crest\siamese\experiment\Experiment.class
 crest\siamese\language\java\JavaMethodParser.class
@@ -70,4 +69,5 @@ crest\siamese\helpers\SiameseIndexReader.class
 crest\siamese\language\java\JavaMethodParser$ConstructorVisitor.class
 crest\siamese\helpers\FileLevelEvaluator.class
 crest\siamese\settings\Settings$MethodParserType.class
+crest\siamese\Siamese.class
 crest\siamese\settings\Settings$Normalize.class

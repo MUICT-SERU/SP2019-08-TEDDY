@@ -1,6 +1,5 @@
 package crest.siamese.language.java;
 
-import crest.siamese.helpers.JavaLexer;
 import crest.siamese.language.Normalizer;
 import crest.siamese.language.Tokenizer;
 

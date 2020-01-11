@@ -1,19 +1,13 @@
 package crest.siamese.experiment;
 
 import crest.siamese.document.BCBDocument;
-import crest.siamese.document.Document;
 import crest.siamese.helpers.BCBEvaluator;
 import crest.siamese.helpers.MyUtils;
-import crest.siamese.main.Siamese;
-import org.apache.commons.io.FileUtils;
-import org.elasticsearch.client.transport.NoNodeAvailableException;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Properties;
 
 public class BCBExperiment {

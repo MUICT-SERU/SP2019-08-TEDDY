@@ -1,4 +1,4 @@
-package crest.siamese.main;
+package crest.siamese;
 
 import crest.siamese.helpers.MyUtils;
 import org.apache.commons.cli.*;
