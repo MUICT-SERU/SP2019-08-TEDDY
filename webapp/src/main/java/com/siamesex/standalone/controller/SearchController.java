@@ -101,6 +101,7 @@ public class SearchController {
             // Comment from Chaiyong mentioned that it should be [ { }, { }, { }, ... ]
             JSONArray clones = (JSONArray) resultJSON.get("clones");
             logger.info("query result: found {} duplications", clones.size());
+            logger.info("query result content {}", clones.toString());
         } catch (Exception e) {
             logger.error("exception: {}", ExceptionUtils.getStackTrace(e));
             e.printStackTrace();

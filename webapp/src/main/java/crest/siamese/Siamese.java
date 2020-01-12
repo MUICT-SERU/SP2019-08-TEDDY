@@ -920,7 +920,7 @@ public class Siamese {
                 origQuery = tokenize(query, origTokenizer, false, ngen);
         }
 
-        // search for results depending on the MR setting
+        // search for results depending on the multi-representation setting
         if (this.multiRep) {
             results = es.search(index, type, origQuery, t3Query, t2Query, t1Query,
                     origBoost, normBoost, t2Boost, t1Boost, isPrint, isDFS, offset,
@@ -929,6 +929,7 @@ public class Siamese {
             results = es.search(index, type, origQuery, isPrint, isDFS, offset, size);
         }
 
+        // This part converts the output results into JSON format
         String output = "";
         /* put query at the front */
         JSONFormatter jsonFormatter = new JSONFormatter();
@@ -962,7 +963,7 @@ public class Siamese {
         try {
             if (siameseClient != null) {
                 if (es.doesIndexExist(this.index)) {
-                    OutputFormatter formatter = getOutputFormatter();
+                    // OutputFormatter formatter = getOutputFormatter();
                     // create the output folder if it doesn't exist.
                     MyUtils.createDir(outputFolder);
                     // reading the index for query reduction
