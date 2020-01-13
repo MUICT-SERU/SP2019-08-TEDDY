@@ -227,6 +227,8 @@ public class ESConnector {
 			, boolean isDFS, int resultOffset, int resultSize) throws Exception {
         SearchType searchType;
 
+		System.out.println("query = " + query);
+
         if (isDFS)
             searchType = SearchType.DFS_QUERY_THEN_FETCH;
         else
