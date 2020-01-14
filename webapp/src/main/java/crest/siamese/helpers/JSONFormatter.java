@@ -30,7 +30,9 @@ public class JSONFormatter {
         item.put("start", String.valueOf(d.getStartLine()));
         item.put("end", String.valueOf(d.getEndLine()));
         item.put("license", d.getLicense());
+
         // TODO: Add the source code of the clones here
+        item.put("code", d.getTokenizedSource());
         return item;
     }
 
