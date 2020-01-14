@@ -4,6 +4,7 @@ crest\siamese\language\python3\Python3Parser$Del_stmtContext.class
 crest\siamese\language\python3\Python3Parser$File_inputContext.class
 crest\siamese\test\LicenseExtractorTest.class
 crest\siamese\settings\Settings$ErrorMeasure.class
+crest\siamese\language\python3\Python3NormalizerMode.class
 crest\siamese\language\python3\Python3Parser$Async_stmtContext.class
 crest\siamese\language\python3\Python3Parser$Small_stmtContext.class
 crest\siamese\document\JavaTerm.class

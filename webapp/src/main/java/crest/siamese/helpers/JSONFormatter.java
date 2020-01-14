@@ -24,7 +24,7 @@ public class JSONFormatter {
     }
 
     private JSONObject createClone(crest.siamese.document.Document d) {
-        String file = d.getFile().split(".java_")[0] + ".java";
+        String file = d.getFile().split(".java_")[0]; //+ ".java";
         JSONObject item = new JSONObject();
         item.put("file", file);
         item.put("start", String.valueOf(d.getStartLine()));
