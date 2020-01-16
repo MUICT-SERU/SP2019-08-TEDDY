@@ -1,0 +1,51 @@
+{
+  "name": "my-first-app",
+  "version": "1.0.0",
+  "description": "A Probot app",
+  "author": "naruedon wattanakul <naruedonw@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com//my-first-app.git",
+  "homepage": "https://github.com//my-first-app",
+  "bugs": "https://github.com//my-first-app/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "parse-diff": "^0.6.0",
+    "probot": "^7.2.0"
+  },
+  "devDependencies": {
+    "jest": "^24.0.0",
+    "nock": "^10.0.0",
+    "nodemon": "^1.19.1",
+    "smee-client": "^1.0.2",
+    "standard": "^12.0.1"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

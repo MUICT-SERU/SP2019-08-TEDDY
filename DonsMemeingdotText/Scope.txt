@@ -1,0 +1,4 @@
+Scope
+- A software that allows users to detect pythonic idioms within a source code and with an automatic response.
+- Interact with GitHub through the software interface
+- Source code analysis System that is able to be integrated with GitHub and provide a full analysis report 

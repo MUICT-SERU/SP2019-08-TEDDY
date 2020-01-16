@@ -1,0 +1,5 @@
+A software for Code Idiom Detection in Python
+
+Abstract
+In the present days, software has been one of the main focus for Thailand 4.0 with the aim to integrate Technology and Industrailization together. In this field their are many programming languages that are being used and each language has it's own unique format called coding idioms. For example in Object oriented programming wihch uses Java some of the coding idioms would not be applicable with Python. With programmers switching programming languages there might be some unfamiliarities wihch would cause the program to drop in quality, or not be usable at all.
+With the problems stated above, the development team has the idea of a software that would help in checking the quality and development of python programming, with the software name being "Teddy". Teddy would be able to help programmers detect coding idioms within the program. This would eventually let the programmers understand more about Pythonic Idiom and it would also help in the learning of the language.[1]

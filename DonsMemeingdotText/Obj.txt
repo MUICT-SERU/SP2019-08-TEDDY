@@ -1,0 +1,3 @@
+Objectives
+
+This project aims to create a software that detects Pythonic idioms with high accuracy in both detecting and analyzing coding idioms. The software is aimed to be used with an online source called "GitHub". The software would be able to show and simulate the pythonic idioms with a graphical interface for the users.

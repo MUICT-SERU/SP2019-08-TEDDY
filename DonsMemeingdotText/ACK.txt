@@ -1,0 +1,5 @@
+Acknowledgements
+
+We would like to give gratitude to everyone who has been involved with the development and the success of this project and thank them for their assistance throughout the entire period of this project. {Name of Advisor}, our senior project adviisor, {Name of Co-Ad}, our Co-advisor. We would also like to thank the Faculty of Information and Communication Technology, instructors, staff, members for the support given to us. Lastly, we would also like to thank our families for giving us support while making this project.
+
+The project would not have been this sucessful without those mentioned and their support that was offered.

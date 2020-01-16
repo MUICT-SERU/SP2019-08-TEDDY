@@ -1,0 +1,6 @@
+Problem Statement
+Currently coding with python if not used with Pythonic idiom would casue the following.
+- a lower quality of program, by not using pythonic idiom more resource may be allocated than usual
+- Codes will have flaws, without using pythonic idiom some important parts of the codes maybe forgotten and makes the software incomplete
+- Code reviews take longer and more tedious, code reviwers that are used to pythonic idiom would take more time to review the codes.
+By having a software that handles pytonic idioms, codes used within a program would be using the same format and give other developers the same understanding of the code written.

@@ -1,0 +1,2 @@
+Lit review intro
+With the project aiming to create a software for detecting and analysing the usage of pythonic idioms, the understanding of each topics related to the software development is needed. This chapter will discuss the topics related to the project, which would also include minor topics, researches and tools that is used within the software.

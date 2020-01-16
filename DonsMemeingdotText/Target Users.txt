@@ -1,0 +1,3 @@
+Target Users
+
+The project would provide numerious benefits to the programming field. Thus our first target users would be studnets learning the programming language. Second would be teachers checking students in their use of python language. And lastly, code reviewers in the online community.
