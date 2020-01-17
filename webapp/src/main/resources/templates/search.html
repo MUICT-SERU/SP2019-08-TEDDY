@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>Siamese: Search, Plagiarism Detection on Cloud Search Engine</title>
+    <title>Teddy: Idiomatic Python Code Detection and Prevention</title>
     <!-- Metas -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,7 +33,7 @@
         <!-- Text and Icons -->
         <a class="navbar-brand" href="#">
             <img th:src="@{/images/logo.png}" width="30" height="30" class="d-inline-block align-top rounded-circle" alt="">
-            SiameseX
+            Teddy
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarToggler" aria-controls="navbarToggler"
@@ -59,15 +59,15 @@
         <div class="pt-2 border-bottom">
             <!-- Main logo
             <img src="/images/logo.png" class="mb-4" alt="Siamese logo" width="72" height="72"> -->
-            <h1 class="h4 ">Plagiarism detection on the web cloud server</h1>
-            <p class="lead">One click for checking code duplications </p>
+            <h1 class="h4 ">Idiomatic Python3 code detection</h1>
+            <p class="lead">One click for idiom usage analysis</p>
         </div>
         <div class="clearfix mt-2">
             <!-- float-md-right is Float right on medium screens or wider -->
             <!-- d-md-block is display:block when on medium screen or smaller -->
             <input class="btn btn-sm btn-outline-secondary float-md-right d-md-block mr-md-2" type="reset" value="Reset" id="queryResetBtn1" />
             <button class="btn btn-sm btn-outline-success float-md-right d-md-block mr-md-2" id="tryBtn1">Try</button>
-            <p class="text text-secondary pt-1 mb-1"> <i class="fas fa-angle-right"> </i> Please enter java code here </p>
+            <p class="text text-secondary pt-1 mb-1"> <i class="fas fa-angle-right"> </i> Please enter Python3 code here </p>
 
         </div>
 
@@ -169,15 +169,12 @@
             const tryHelloWorld = function setHelloWorldCode()
             {
                 // src: https://introcs.cs.princeton.edu/java/11hello/HelloWorld.java.html
-                const helloWorldCode = "public class HelloWorld {\n" +
-                    "\n" +
-                    "    public static void main(String[] args) {\n" +
-                    "        // Prints \"Hello, World\" to the terminal window.\n" +
-                    "        System.out.println(\"Hello, World\");\n" +
-                    "    }\n" +
-                    "\n" +
-                    "}";
-                editor.getDoc().setValue(helloWorldCode);
+                const samplePython3 = "def helloWorld():\n" +
+                "\tprint('Hello world from Python3')\n" +
+                "\n" +
+                "def main(_):\n" +
+                "\thelloWorld()";
+                editor.getDoc().setValue(samplePython3);
             };
             // Register try button's onclick
             $('#tryBtn1').on('click', tryHelloWorld);
