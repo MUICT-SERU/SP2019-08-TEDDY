@@ -14,12 +14,20 @@ public class Python3NormalizerMode implements NormalizerMode {
     private static final char OPERATOR_OPTION = 'o';
     private static final char NAME_OPTION = 'w'; // same option character as Java clone search
 
+	/*This part for Idiom tokenization*/
+    private static final char NEWLINE_OPTION = 'n';
+    private static final char INDENT_OPTION = 'i';
+    private static final char DEDENT_OPTION = 'd';
+
     private Map<Character, Boolean> map = Stream.of(new Object[][] {
             { KEYWORD_OPTION , false },
             { VALUE_OPTION, false },
             { STRING_OPTION, false },
             { OPERATOR_OPTION, false },
             { NAME_OPTION, false },
+			{ NEWLINE_OPTION, false},
+            { INDENT_OPTION, false},
+            { DEDENT_OPTION, false},
     }).collect(Collectors.toMap(data -> (char) data[0], data -> (boolean) data[1]));
 
     /**
@@ -71,4 +79,12 @@ public class Python3NormalizerMode implements NormalizerMode {
     public boolean isNameToBeNormalised() {
         return map.get(NAME_OPTION);
     }
+	
+	//For python idiom normalization
+
+    public boolean isNewlineTobeNormalised() { return map.get(NEWLINE_OPTION); }
+
+    public boolean isIndentTobeNormalised() { return map.get(INDENT_OPTION); }
+
+    public boolean isDedentTobeNormalised() { return map.get(DEDENT_OPTION); }
 }

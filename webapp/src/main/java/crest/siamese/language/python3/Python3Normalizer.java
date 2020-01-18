@@ -20,6 +20,12 @@ public class Python3Normalizer implements Normalizer {
     private static final String NORMALIZED_TOKEN_OPERATOR = "O";
     private static final String NORMALIZED_TOKEN_NAME = "W"; // same symbol as Java clone search
     private Python3NormalizerMode python3modes;
+	
+	//For TEDDY Idiom normalization of whitespace
+    private static final String NORMALIZED_TOKEN_NEWLINE = "N";
+    private static final String NORMALIZED_TOKEN_INDENT = "I";
+    private static final String NORMALIZED_TOKEN_DEDENT = "D";    
+
 
     /**
      * Maps {@link Python3Parser} to a normalised form.
@@ -65,7 +71,7 @@ public class Python3Normalizer implements Normalizer {
             .put("BREAK", NORMALIZED_TOKEN_KEYWORD)
             .put("ASYNC", NORMALIZED_TOKEN_KEYWORD)
             .put("AWAIT", NORMALIZED_TOKEN_KEYWORD)
-            .put("NEWLINE", "")
+            .put("NEWLINE", NORMALIZED_TOKEN_NEWLINE) //For python3 idiom normalization
             .put("NAME", NORMALIZED_TOKEN_NAME)
             .put("STRING_LITERAL", NORMALIZED_TOKEN_STRING)
             .put("BYTES_LITERAL", NORMALIZED_TOKEN_STRING)
@@ -124,8 +130,8 @@ public class Python3Normalizer implements Normalizer {
             .put("IDIV_ASSIGN", NORMALIZED_TOKEN_OPERATOR)
             .put("SKIP_", "")
             .put("UNKNOWN_CHAR", "")
-            .put("INDENT", "")
-            .put("DEDENT", "")
+            .put("INDENT", NORMALIZED_TOKEN_INDENT)     //For python3 idiom normalization
+            .put("DEDENT", NORMALIZED_TOKEN_DEDENT)     //For python3 idiom normalization
             .build();
 
     /**
@@ -149,6 +155,9 @@ public class Python3Normalizer implements Normalizer {
                 .put(NORMALIZED_TOKEN_STRING, python3modes.isStringToBeNormalised())
                 .put(NORMALIZED_TOKEN_OPERATOR, python3modes.isOperatorToBeNormalised())
                 .put(NORMALIZED_TOKEN_NAME, python3modes.isNameToBeNormalised())
+				.put(NORMALIZED_TOKEN_NEWLINE, python3modes.isNewlineTobeNormalised())
+                .put(NORMALIZED_TOKEN_INDENT, python3modes.isIndentTobeNormalised())
+                .put(NORMALIZED_TOKEN_DEDENT, python3modes.isDedentTobeNormalised())
                 .put("", false)
                 .build();
     }
