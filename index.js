@@ -41,6 +41,23 @@ module.exports = robot => {
       
   });
   })(finalurl);
+
+  const { exec } = require("child_process");
+
+  var val = "ping www.google.com";
+  
+  exec(val, (error, stdout, stderr) => {
+      if (error) {
+          console.log(`error: ${error.message}`);
+          return;
+      }
+      if (stderr) {
+          console.log(`stderr: ${stderr}`);
+          return;
+      }
+      console.log(`stdout: ${stdout}`);
+  });
+
     // Parameters for the status API
     /*const params = {
       sha: pr.head.sha,
@@ -82,6 +99,11 @@ module.exports = robot => {
     
   });
 };
+//This is for CMDLine
+
+
+
+//This is the script for URL
 const getScript = (url) => {
   return new Promise((resolve, reject) => {
       const http      = require('http'),
