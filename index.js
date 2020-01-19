@@ -4,7 +4,7 @@ module.exports = robot => {
 
 
   // Listen for a pull request being opened or synchronized
-  robot.on('pull_request', async context => {
+  robot.on('pull_request.opened', async context => {
     // Just assign a variable to make our life easier
     const pr = context.payload.pull_request;
     const repo = context.payload.repository;
@@ -24,17 +24,19 @@ module.exports = robot => {
     var finalurl = 'https://patch-diff.githubusercontent.com/raw/'+fullreponame+'/pull/'+pullnum+'.diff'
     console.log(finalurl);
     var text;
+    //async'ed for getting scripts
     (async (url) => {
       text = await getScript(url);
-      console.log(text+'+5555555');
-      text = text + '+55555';
+      //Testing with only console log
+      //console.log(text+'+5555555');
+      //text = text + '+55555';
       var parse = require('parse-diff');
       var diff = text; // edit this to access the text on the internet site using POST or Get
       var files = parse(diff);
       console.log(files.length); // number of patched files
       files.forEach(function(file) {
-      console.log(file.chunks.length); // number of hunks
-      console.log(file.chunks[0].changes.length) // hunk added/deleted/context lines
+      console.log(file.chunks.length); // number of chunks
+      console.log(file.chunks[0].changes.length) // chunk added/deleted/context lines
       //console.log(file.deletions); // number of deletions in the patch
       //console.log(file.additions); // number of additions in the patch
       console.log(file.chunks[0]);
@@ -43,7 +45,7 @@ module.exports = robot => {
   })(finalurl);
 
   const { exec } = require("child_process");
-
+  //move this up top later with predefined var's 
   var val = "ping www.google.com";
   
   exec(val, (error, stdout, stderr) => {
@@ -99,10 +101,6 @@ module.exports = robot => {
     
   });
 };
-//This is for CMDLine
-
-
-
 //This is the script for URL
 const getScript = (url) => {
   return new Promise((resolve, reject) => {
