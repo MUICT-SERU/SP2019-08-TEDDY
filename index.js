@@ -2,9 +2,9 @@
 // A plugin is a Node module that exports a function which takes a `robot` argument
 module.exports = robot => {
 
-
+  
   // Listen for a pull request being opened or synchronized
-  robot.on('pull_request.opened', async context => {
+  robot.on('pull_request', async context => {
     // Just assign a variable to make our life easier
     const pr = context.payload.pull_request;
     const repo = context.payload.repository;
@@ -15,13 +15,17 @@ module.exports = robot => {
       head: pr.head.sha
     }));
 
-
     // const passCheck = compare.data.commits.every(data => {
     //   return data.commit.message.match(/DevelopmentBranchTesting/);
     // });
     var fullreponame = repo.full_name;
     var pullnum = pr.number;
     var finalurl = 'https://patch-diff.githubusercontent.com/raw/'+fullreponame+'/pull/'+pullnum+'.diff'
+    
+    //This needs to be reworked from issues to pull requst
+    //const autocomment = context.pulls({body: 'Probot will autocomment when running :D'})
+    //context.github.issues.createComment(autocomment)
+    
     console.log(finalurl);
     var text;
     //async'ed for getting scripts
