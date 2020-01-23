@@ -2,10 +2,10 @@
 This is a developing branch for SiameseX (Java Spring Boot) with support of both Java and Python search
 
 ## Required Components
-- Elasticsearch 2.2.0
+- Elasticsearch **2.2.0**
 - Apache Maven 3.6.3 or higher
 
-## Setting up Elasticsearch
+## Setting up Elasticsearch 2.2.0
 1. In `.\config\elasticsearch.yml` file of Elasticsearch folder, add `index.query.bool.max_clause_count: 20480` and `action.auto_create_index: .marvel-*` to the file. Save and close the file.
 
 1. Using `cmd` or PowerShell Go to `.\bin` directory of your local Elasticsearch folder
