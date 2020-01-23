@@ -13,6 +13,10 @@ public class Document {
 	private String license;
 	private String url;
 
+	// For Python3 Idiom
+	private boolean idiomatic;
+	private String recommendIdiom;
+
 	public Document() {
 	    super();
     }
@@ -107,6 +111,24 @@ public class Document {
 	public void setEndline(int endline) {
 		this.endline = endline;
 	}
+
+	///////////// For Python3 Idiom /////////////
+	public boolean isIdiomatic() {
+		return idiomatic;
+	}
+
+	public void setIdiomatic(boolean idiomatic) {
+		this.idiomatic = idiomatic;
+	}
+
+	public String getRecommendIdiom() {
+		return recommendIdiom;
+	}
+
+	public void setRecommendIdiom(String recommendIdiom) {
+		this.recommendIdiom = recommendIdiom;
+	}
+	///////////// For Python3 Idiom /////////////
 
 	public String toString() {
 		return id + ":" + file + ": " + source;
