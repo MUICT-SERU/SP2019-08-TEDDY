@@ -44,6 +44,37 @@ public class Document {
 		this.originalSource = originalSource;
 		this.license = license;
 		this.url = url;
+
+	}
+
+	// This constructor is for Python3 idiomatic/non-idiomatic documents
+	public Document(
+			long id,
+			String file,
+			int startline,
+			int endline,
+			String source,
+			String t2Source,
+			String t1Source,
+			String tokenizedSource,
+			String originalSource,
+			String license,
+			String url,
+			boolean idiomatic,
+			String recommendIdiom) {
+		this.id = id;
+		this.file = file;
+		this.startline = startline;
+		this.endline = endline;
+		this.source = source;
+		this.t2Source = t2Source;
+		this.t1Source = t1Source;
+		this.tokenizedSource = tokenizedSource;
+		this.originalSource = originalSource;
+		this.license = license;
+		this.url = url;
+		this.idiomatic = idiomatic;
+		this.recommendIdiom = recommendIdiom;
 	}
 	
 	public long getId() {
