@@ -14,8 +14,8 @@ public class Document {
 	private String url;
 
 	// For Python3 Idiom
-	private boolean idiomatic;
-	private String recommendIdiom;
+	private boolean idiomatic = false;
+	private String recommendIdiom = "Null";
 
 	public Document() {
 	    super();
