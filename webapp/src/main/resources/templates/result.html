@@ -254,7 +254,7 @@
                 "\n" +
                 "}";
 
-            const codeData = typeof item.code != "undefined"? item.code : defaultCodeData
+            const codeData = typeof item.originalSrc != "undefined"? item.originalSrc : defaultCodeData
 
             const code = $("<code></code>", {
                 id:"code-section" + index,
@@ -308,19 +308,19 @@
         // Generated card from JSON input
         if(typeof resultJSON != "undefined")
         {
-            //console.log("has response json object");
+            console.log("has response json object");
             //let resultObj = JSON.parse(resultJSON);
-            //console.log(resultJSON);
+            console.log(resultJSON);
 
 
             if(typeof resultJSON.clones == "undefined")
             {
-                //console.log("Has no result in response data");
+                console.log("Has no result in response data");
                 $('#result-size').html("0 founds")
             }
             else
             {
-                //console.log("Has " + resultJSON.clones[0].length + " founds");
+                console.log("Has " + resultJSON.clones[0].length + " founds");
 
                 $('#result-size').html(resultJSON.clones[0].length + " founds");
                 // TODO: fix siamese java app to not double square bracket then fix the code access here clone
@@ -329,10 +329,16 @@
                     /* item = {
                             *    license: string
                             *    file: string
-                            *    href: string
-                            *    start: string
-                            *    end: string
-                            *    code: string
+                            *    href: string???
+                            *    start: int
+                            *    end: int
+                            *    originalSrc: string
+                            *    tokenizedSrc: string
+                            *    t2Src: string
+                            *    t1Src: string
+                            *    src: string
+                            *    recommendIdiom: string
+                            *    idiomatic: boolean
                             * }
                     * */
                     createCodeCard('#wrapper-result', {
@@ -341,7 +347,13 @@
                         "href":item.href,
                         "start": item.start,
                         "end" : item.end,
-                        "code": item.code
+                        "originalSrc": item.originalSrc,
+                        "tokenizedSrc" : item.tokenizedSrc,
+                        "t2Src" : item.t2Src,
+                        "t1Src" : item.t1Src,
+                        "src" : item.src
+                        /* "recommendIdiom" : item.recommendIdiom */
+                        /* "idiomatic" : item.idiomatic */
                     } , index + 1 ); // Index from list start from 0, so +1
                 });
             }
