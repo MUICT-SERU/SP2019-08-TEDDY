@@ -3,6 +3,7 @@ package crest.siamese;
 import crest.siamese.document.JavaTerm;
 import crest.siamese.document.Document;
 import crest.siamese.document.Method;
+import crest.siamese.githubUtils.GitHubJSONFormatter;
 import crest.siamese.helpers.*;
 import crest.siamese.language.MethodParser;
 import crest.siamese.language.Normalizer;
@@ -620,7 +621,9 @@ public class Siamese {
                                         tokenizedSource,
                                         method.getSrc(),
                                         license,
-                                        finalUrl);
+                                        finalUrl,
+                                        true,
+                                        "N/A");
                                 // add document to array
                                 docArray.add(d);
                                 count++;
@@ -865,6 +868,7 @@ public class Siamese {
         return outfile.getAbsolutePath();
     }
 
+    // For SiameseX
     public String searchWithString(
             String query,
             int offset,
@@ -979,6 +983,122 @@ public class Siamese {
         }
         return "ERROR";
     }
+
+    // For Teddy bot
+    // To be called by Probot or some front-end component
+    // TODO: Figure how the JSON query looks like, some pre-processing needed before passing on for searching
+    public String queryWithGitHub(String query) throws Exception {
+        if (siameseClient == null) { startup(); }
+
+        // initialise the n-gram generator
+        ngen = new nGramGenerator(ngramSize);
+        t2Ngen = new nGramGenerator(t2NgramSize);
+        t1Ngen = new nGramGenerator(t1NgramSize);
+
+        try {
+            if (siameseClient != null) {
+                if (es.doesIndexExist(this.index)) {
+                    // OutputFormatter formatter = getOutputFormatter();
+                    // create the output folder if it doesn't exist.
+                    MyUtils.createDir(outputFolder);
+                    // reading the index for query reduction
+                    readESIndex(index);
+                    return searchWithGitHub(query, resultOffset, resultsSize, queryReduction);
+                } else {
+                    // index does not exist
+                    throw new Exception("index " + this.index + " does not exist.");
+                }
+            } else {
+                System.out.println("ERROR: cannot create Elasticsearch client ... ");
+            }
+        }  catch (Exception e) {
+            throw e;
+        }
+        return "ERROR JOJO";
+    }
+
+    //For Teddy bot
+    private String searchWithGitHub( String query, int offset, int size, boolean queryReduction) throws Exception {
+        String qr = "no_qr";
+        if (queryReduction) qr = "qr";
+        long methodCount = 0;
+        String t3Query = "";
+        String t2Query = "";
+        String t1Query = "";
+        String origQuery = "";
+        ArrayList<Document> results;
+
+        if (queryReduction) {
+            long docCount = getIndicesStats();
+            if (enableRep[3])
+                t3Query = reduceQuery(
+                            tokenizeAsArray(query,
+                                    tokenizer,
+                                    isNgram,
+                                    ngen),
+                        "src",
+                        this.qrPercentileNorm * docCount / 100);
+            if (enableRep[2])
+                t2Query = reduceQuery(
+                            tokenizeAsArray(query,
+                                    t2Tokenizer,
+                                    isNgram,
+                                    t2Ngen),
+                        "t2src",
+                        this.qrPercentileT2 * docCount / 100);
+            if (enableRep[1])
+                t1Query = reduceQuery(
+                            tokenizeAsArray(query,
+                                    t1Tokenizer,
+                                    isNgram,
+                                    t1Ngen),
+                        "t1src",
+                        this.qrPercentileT1 * docCount / 100);
+            if (enableRep[0])
+                origQuery = reduceQuery(
+                            tokenizeAsArray(query,
+                                    origTokenizer,
+                                    false,
+                                    ngen),
+                        "tokenizedsrc",
+                        this.qrPercentileOrig * docCount / 100);
+            if (isPrint) {
+                System.out.println(methodCount + " T3Q " + this.qrPercentileNorm * docCount / 100 + "," + t3Query + "\n");
+                System.out.println(methodCount + " T2Q " + this.qrPercentileT2 * docCount / 100 + "," + t2Query + "\n");
+                System.out.println(methodCount + " T1Q " + this.qrPercentileT1 * docCount / 100 + "," + t1Query + "\n");
+                System.out.println(methodCount + " T0Q " + this.qrPercentileOrig * docCount / 100 + "," + origQuery);
+                System.out.println("-------------------------------------------");
+            }
+        } else {
+            if (enableRep[3])
+                t3Query = tokenize(query, tokenizer, isNgram, ngen);
+            if (enableRep[2])
+                t2Query = tokenize(query, t2Tokenizer, isNgram, t2Ngen);
+            if (enableRep[1])
+                t1Query = tokenize(query, t1Tokenizer, isNgram, t1Ngen);
+            if (enableRep[0])
+                origQuery = tokenize(query, origTokenizer, false, ngen);
+        }
+
+        if (this.multiRep) {
+            results = es.search(index, type, origQuery, t3Query, t2Query, t1Query,
+                    origBoost, normBoost, t2Boost, t1Boost, isPrint, isDFS, offset,
+                    size, this.computeSimilarity, simThreshold);
+        } else {
+            results = es.search(index, type, origQuery, isPrint, isDFS, offset, size);
+        }
+
+        // This part converts the output results into JSON format for GitHub
+        // See GitHubJSONFormatter.java for the returned JSON format
+        String output = "";
+        GitHubJSONFormatter jsonFormatter = new GitHubJSONFormatter();
+        jsonFormatter.addIdiomatic(1, -1, results);
+        jsonFormatter.addNonidiomatic(1, -1, results);
+        output = jsonFormatter.getJSONString();
+
+        return output;
+    }
+
 
     /**
      * Compute similarity between query and results using fuzzywuzzy string matching
