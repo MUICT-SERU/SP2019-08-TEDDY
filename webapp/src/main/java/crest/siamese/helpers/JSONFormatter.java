@@ -30,9 +30,18 @@ public class JSONFormatter {
         item.put("start", String.valueOf(d.getStartLine()));
         item.put("end", String.valueOf(d.getEndLine()));
         item.put("license", d.getLicense());
+        item.put("originalSrc", d.getOriginalSource());
 
-        // TODO: Add the source code of the clones here
-        item.put("code", d.getTokenizedSource());
+        //More representations of the clone (not used for now)
+        item.put("tokenizedSrc", d.getTokenizedSource());
+        item.put("t2Src", d.getT2Source());
+        item.put("t1Src", d.getT1Source());
+        item.put("src", d.getSource());
+
+        //For Python3 idiom (not used for now)
+        item.put("recommendIdiom", d.getRecommendIdiom());
+        item.put("idiomatic", d.isIdiomatic());
+
         return item;
     }
 
