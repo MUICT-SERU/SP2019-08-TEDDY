@@ -15,3 +15,7 @@ There are many useless files everywhere
   - I am create too many projects on vscode
 
 **If you want to know about which is what just send me a message**
+
+# SP2019-TEDDY-SiameseX
+This is a developing branch for SiameseX (Java Spring Boot) with support of both Java and Python search
+
