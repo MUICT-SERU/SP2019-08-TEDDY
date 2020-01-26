@@ -37,20 +37,71 @@ module.exports = robot => {
       var parse = require('parse-diff');
       var diff = text; // edit this to access the text on the internet site using POST or Get
       var files = parse(diff);
-      console.log(files.length); // number of patched files
+
+      //This is just a random JSON to jog my memory on how it works
+      var data = { 
+        hello: [1,2,3,4], 
+        there: { 
+            a:1, 
+            b:2, 
+            c:["hello", null]
+        } 
+    };
+
+      var PRWhole = [];
+      var pullRequestJSON = {};
+      var Commit = [];
+      var hunk=  {};
+      var changeline = [];
+      var chunkcount = 0;
+      var changecount = 0;
+    console.log("TEsting The JSON here");
+    console.log(data.hello);
+    console.log("TEsting The JSON here");
+
+      //console.log(files.length); // number of patched files
+      console.log(files[1].index[0].slice(9,16)); //This cuts the ID of the commmit 
+      
       files.forEach(function(file) {
-      console.log(file.chunks.length); // number of chunks
-      console.log(file.chunks[0].changes.length) // chunk added/deleted/context lines
+        chunkcount = 0;
+      //console.log(file.chunks[0].changes);
+      file.chunks.forEach(function(chunk){
+        
+        chunk.changes.forEach(function(change){
+          //console.log(change);
+          if(change.type == 'add')
+          {
+            changeline.push(change.content);
+            //Create a JSON OBJ here that takes in all the addition 
+          }
+        });
+      
+        hunk = {
+          "chunknum":chunkcount,
+          "edit": changeline
+        };
+        Commit.push(hunk);
+        chunkcount = chunkcount+1;
+        changeline =[];
+      });
+      pullRequestJSON = { 
+        "commitID":file.index[0].slice(9,16),
+        "commitData":Commit
+      }
+      PRWhole.push(pullRequestJSON);
+      //console.log(file.chunks.length); // number of chunks
+      //console.log(file.chunks[0].changes.length) // chunk added/deleted/context lines
       //console.log(file.deletions); // number of deletions in the patch
       //console.log(file.additions); // number of additions in the patch
-      console.log(file.chunks[0]);
+      
       
   });
+  console.log(JSON.stringify(PRWhole[0].commitData));
   })(finalurl);
 
   const { exec } = require("child_process");
   //move this up top later with predefined var's 
-  var val = "ping www.google.com";
+  /*var val = "ping www.google.com";
   
   exec(val, (error, stdout, stderr) => {
       if (error) {
@@ -62,7 +113,7 @@ module.exports = robot => {
           return;
       }
       console.log(`stdout: ${stdout}`);
-  });
+  });*/
 
     // Parameters for the status API
     /*const params = {
