@@ -23,7 +23,7 @@ public class GitHubJSONFormatter {
 
     public void addIdiomatic(int id, int sim, ArrayList<Document> results) {
         JSONArray jarray = new JSONArray();
-        for (crest.siamese.document.Document r: results) {
+        for (crest.siamese.document.Document r : results) {
 
             if(r.isIdiomatic()) { jarray.add(createClone(r)); }
 
@@ -33,7 +33,7 @@ public class GitHubJSONFormatter {
 
     public void addNonidiomatic(int id, int sim, ArrayList<Document> results) {
         JSONArray jarray = new JSONArray();
-        for (crest.siamese.document.Document r: results) {
+        for (crest.siamese.document.Document r : results) {
 
             if(!r.isIdiomatic()) {jarray.add(createClone(r)); }
 

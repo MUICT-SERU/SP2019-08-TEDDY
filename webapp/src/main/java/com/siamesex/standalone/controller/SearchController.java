@@ -129,8 +129,8 @@ public class SearchController {
         return "result";
     }
 
-    // API ---------------------------------------
-    @PostMapping(path = "/api/githubSearchJSON", produces = "application/json; charset=UTF-8")
+    //--------------------------------------- API ---------------------------------------
+    @PostMapping(path = "/api/searchJSONGithub", produces = "application/json; charset=UTF-8")
     @ResponseBody
     public JSONObject githubSearchJSON(@RequestBody Search search) {
         logger.info("search length: {}", search.getContent().length());
