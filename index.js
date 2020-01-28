@@ -1,3 +1,5 @@
+
+// A plugin is a Node module that exports a function which takes a `robot` argument
 module.exports = robot => {
 
   
@@ -6,22 +8,33 @@ module.exports = robot => {
     // Just assign a variable to make our life easier
     const pr = context.payload.pull_request;
     const repo = context.payload.repository;
-
+    
     // Get all the commits in the pull request
    const compare = await context.github.repos.compareCommits(context.repo({
       base: pr.base.sha,
       head: pr.head.sha
     }));
 
+    // const passCheck = compare.data.commits.every(data => {
+    //   return data.commit.message.match(/DevelopmentBranchTesting/);
+    // });
+    //This part needs to be fixed to allow access to private git repos
     var fullreponame = repo.full_name;
     var pullnum = pr.number;
     var finalurl = 'https://patch-diff.githubusercontent.com/raw/'+fullreponame+'/pull/'+pullnum+'.diff'
-        
+    
+    //This needs to be reworked from issues to pull requst
+    //const autocomment = context.pulls({body: 'Probot will autocomment when running :D'})
+    //context.github.issues.createComment(autocomment)
+    
     console.log(finalurl);
     var text;
     //async'ed for getting scripts
     (async (url) => {
       text = await getScript(url);
+      //Testing with only console log
+      //console.log(text+'+5555555');
+      //text = text + '+55555';
       var parse = require('parse-diff');
       var diff = text; // edit this to access the text on the internet site using POST or Get
       var files = parse(diff);
@@ -46,7 +59,7 @@ module.exports = robot => {
     console.log("TEsting The JSON here");
     console.log(data.hello);
     console.log("TEsting The JSON here");
-
+    console.log(files);
       //console.log(files.length); // number of patched files
       console.log(files[1].index[0].slice(9,16)); //This cuts the ID of the commmit 
       
@@ -76,15 +89,20 @@ module.exports = robot => {
         "commitID":file.index[0].slice(9,16),
         "commitData":Commit
       }
-      PRWhole.push(pullRequestJSON);      
+      PRWhole.push(pullRequestJSON);
+      //console.log(file.chunks.length); // number of chunks
+      //console.log(file.chunks[0].changes.length) // chunk added/deleted/context lines
+      //console.log(file.deletions); // number of deletions in the patch
+      //console.log(file.additions); // number of additions in the patch
+      
       
   });
-  console.log(JSON.stringify(PRWhole[0].commitData));
+  console.log((PRWhole));
   })(finalurl);
 
   const { exec } = require("child_process");
   //move this up top later with predefined var's 
-  var val = "ping www.google.com";
+  /*var val = "ping www.google.com";
   
   exec(val, (error, stdout, stderr) => {
       if (error) {
@@ -96,7 +114,61 @@ module.exports = robot => {
           return;
       }
       console.log(`stdout: ${stdout}`);
-  });
+  });*/
+
+    // Parameters for the status API
+    const paramsStatus = {
+      sha: pr.head.sha,
+      context: 'Automated FAIL',
+      //state: passCheck ? 'success' : 'failure',
+      state: 'failure',
+      //description: `Your commits ${passCheck ? 'have' : 'have not'} passed all the checks`
+      description: 'Passcheck is forced to fail'
+    }
+
+    
+    //New Params for issues
+    /*const params = {
+      
+      title: 'Issue Created on PullRQ',
+      body: 'Automatically Generated',
+      
+    }*/
+    /*const params = {
+      owner: 'AGS48353',
+      repo: 'TestingRepoNothing',
+      path: 'README.md'
+    }*/
+
+    //Needed for creating Comments The number is the issuenumber which is shared between issues and PR 
+    const commentparams = {
+      owner: 'MUICT-SERU',
+      repo: 'SP2019-TEDDY',
+      
+      number: 39,
+      body: 'WOW'
+    }
+
+    // Create the status Depends on what we need
+    //Creates the Failed status
+    context.github.repos.createStatus(context.repo(paramsStatus));
+    //return context.github.issues.create(context.repo(params));
+    //creates the comments on the PR
+    context.github.issues.createComment(context.repo(commentparams));
+
+    /*context.github.repos.getContents({
+      owner: 'AGS48353',
+      repo: 'TestingRepoNothing',
+      path: 'BST/insert.java'
+    })
+    
+      .then(result => {
+        // content will be base64 encoded
+        const content = Buffer.from(result.data.content, 'base64').toString()
+        console.log(content)
+      })*/
+
+  
     
   });
 };
@@ -111,7 +183,6 @@ const getScript = (url) => {
       if (url.toString().indexOf("https") === 0) {
           client = https;
       }
-
       client.get(url, (resp) => {
           let data = '';
 
