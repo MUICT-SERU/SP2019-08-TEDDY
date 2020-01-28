@@ -14,7 +14,7 @@
     "probot-app"
   ],
   "scripts": {
-    "testingdev": "start nodemon && /elasticsearch-2.2.0/bin/elasticsearch && mvn spring-boot:run",
+    "testingdev": "start nodemon && start mvn spring-boot:run && (cd elasticsearch-2.2.0/bin && start elasticsearch)",
     "dev": "nodemon",
     "start": "probot run ./index.js",
     "lint": "standard --fix",
