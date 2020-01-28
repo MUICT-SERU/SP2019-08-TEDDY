@@ -89,7 +89,63 @@ public class SearchController {
         JSONObject resultJSON = new JSONObject();
 
         try {
+            // String result = this.siamese.queryWithString(searchString);
             String result = this.siamese.queryWithString(searchString);
+
+            // TODO: Make sure result returned from siamese is JSON!
+            // For now, check it in parse exception
+            resultJSON = parseStringToJSON(result);
+
+            // TODO: What to Log from the result?
+            // Placeholder, clones quantity
+            // Current version 9 Mar 19, return clones: [[ { }, { }, { }, ... ]]
+            // Comment from Chaiyong mentioned that it should be [ { }, { }, { }, ... ]
+            JSONArray clones = (JSONArray) resultJSON.get("clones");
+            logger.info("query result: found {} duplications", clones.size());
+            logger.info("query result content {}", clones.toString());
+        } catch (Exception e) {
+            logger.error("exception: {}", ExceptionUtils.getStackTrace(e));
+            e.printStackTrace();
+        }
+        return resultJSON;
+    }
+
+    /////////////////// Teddy Implementation ///////////////////
+
+    // Submit the PR query from GitHub
+    // This method supposes to handles the API POST and pass the content for further querying
+    @PostMapping("/githubSearch")
+    public String searchSubmitGithub(@ModelAttribute Search search) {
+
+        logger.info("search content: {}", search.getContent());
+
+        // use the query content from the model search then trigger siamese to invoke query search
+        // display them in result html template
+        // TODO: Somehow process the raw query received and extract only the clone snippets
+        String actualQuery = search.getContent();
+
+        JSONObject resultJSON = queryResultJSONGithub(actualQuery);
+        search.setResult(resultJSON);
+        return "result";
+    }
+
+    // API ---------------------------------------
+    @PostMapping(path = "/api/githubSearchJSON", produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public JSONObject githubSearchJSON(@RequestBody Search search) {
+        logger.info("search length: {}", search.getContent().length());
+        // logger.info("search content: {}", search.getContent());
+
+        JSONObject resultJSON = queryResultJSONGithub(search.getContent());
+        return resultJSON;
+    }
+
+    private JSONObject queryResultJSONGithub(String searchString) {
+        JSONObject resultJSON = new JSONObject();
+
+        try {
+            // String result = this.siamese.queryWithString(searchString);
+            String result = this.siamese.queryWithGitHub(searchString);
 
             // TODO: Make sure result returned from siamese is JSON!
             // For now, check it in parse exception
