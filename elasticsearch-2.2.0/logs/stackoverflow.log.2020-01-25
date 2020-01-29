@@ -1,0 +1,22 @@
+[2020-01-25 18:29:59,472][INFO ][node                     ] [Jennifer Walters] version[2.2.0], pid[16172], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-01-25 18:29:59,476][INFO ][node                     ] [Jennifer Walters] initializing ...
+[2020-01-25 18:30:00,538][INFO ][plugins                  ] [Jennifer Walters] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-01-25 18:30:00,590][INFO ][env                      ] [Jennifer Walters] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [51.5gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-01-25 18:30:00,591][INFO ][env                      ] [Jennifer Walters] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-01-25 18:30:06,288][INFO ][node                     ] [Jennifer Walters] initialized
+[2020-01-25 18:30:06,288][INFO ][node                     ] [Jennifer Walters] starting ...
+[2020-01-25 18:30:06,895][INFO ][transport                ] [Jennifer Walters] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-01-25 18:30:06,917][INFO ][discovery                ] [Jennifer Walters] stackoverflow/WJxGWo3_THCeDR2ajIha_w
+[2020-01-25 18:30:11,445][INFO ][cluster.service          ] [Jennifer Walters] new_master {Jennifer Walters}{WJxGWo3_THCeDR2ajIha_w}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-01-25 18:30:11,821][INFO ][http                     ] [Jennifer Walters] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-01-25 18:30:11,822][INFO ][node                     ] [Jennifer Walters] started
+[2020-01-25 18:30:11,873][INFO ][gateway                  ] [Jennifer Walters] recovered [5] indices into cluster_state
+[2020-01-25 18:30:14,504][INFO ][cluster.routing.allocation] [Jennifer Walters] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[siamese][0]] ...]).
+[2020-01-25 18:31:29,198][INFO ][cluster.metadata         ] [Jennifer Walters] [flask_idiom] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-01-25 18:31:29,540][INFO ][cluster.routing.allocation] [Jennifer Walters] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask_idiom][0]] ...]).
+[2020-01-25 18:31:58,477][INFO ][cluster.metadata         ] [Jennifer Walters] [flask_idiom] update_mapping [siamese]
+[2020-01-25 21:39:27,578][INFO ][bootstrap                ] running graceful exit on windows
+[2020-01-25 21:39:27,663][INFO ][node                     ] [Jennifer Walters] stopping ...
+[2020-01-25 21:39:29,525][INFO ][node                     ] [Jennifer Walters] stopped
+[2020-01-25 21:39:29,526][INFO ][node                     ] [Jennifer Walters] closing ...
+[2020-01-25 21:39:29,591][INFO ][node                     ] [Jennifer Walters] closed
