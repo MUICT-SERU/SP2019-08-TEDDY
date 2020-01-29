@@ -4,6 +4,9 @@ import crest.siamese.document.JavaTerm;
 import crest.siamese.document.Document;
 import crest.siamese.document.Method;
 import crest.siamese.githubUtils.GitHubJSONFormatter;
+import crest.siamese.githubUtils.Hunk;
+import crest.siamese.githubUtils.HunkQuery;
+import crest.siamese.githubUtils.HunkResult;
 import crest.siamese.helpers.*;
 import crest.siamese.language.MethodParser;
 import crest.siamese.language.Normalizer;
@@ -21,6 +24,7 @@ import org.apache.lucene.store.FSDirectory;
 
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.NoNodeAvailableException;
+import org.json.simple.JSONObject;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -987,7 +991,15 @@ public class Siamese {
     // For Teddy bot
     // To be called by Probot or some front-end component
     // TODO: Figure how the JSON query looks like, some pre-processing needed before passing on for searching
-    public String queryWithGitHub(String query) throws Exception {
+    public JSONObject queryWithGitHub(HunkQuery hunk) throws Exception {
+
+        // Extract some values from HunkQuery that will be used for instantiating HunkResult
+        // after getting the documents result back.
+        int hunkNum = hunk.getHunkNum();
+        String hunkFileName = hunk.getFileName();
+        int hunkStart = hunk.getStartline();
+        int hunkEnd = hunk.getEndline();
+
         if (siameseClient == null) { startup(); }
 
         // initialise the n-gram generator
@@ -1003,7 +1015,27 @@ public class Siamese {
                     MyUtils.createDir(outputFolder);
                     // reading the index for query reduction
                     readESIndex(index);
-                    return searchWithGitHub(query, resultOffset, resultsSize, queryReduction);
+                    List<Document> results =  searchWithGitHub(hunk.getSource(), resultOffset, resultsSize, queryReduction);
+
+                    //Gonna use only the first document result for each hunkResult
+                    Document topDoc = results.get(0);
+
+                    // Instantiating the HunkResult with values from HunkQuery and Document
+                    HunkResult hunkResult = new HunkResult(
+                            hunkNum,
+                            hunkFileName,
+                            hunkStart,
+                            hunkEnd,
+                            topDoc.isIdiomatic(),
+                            topDoc.getRecommendIdiom()
+                    );
+
+                    //TODO: Convert hunkResult to string using JSON Formatter
+                    // This part converts individual hunkResults into JSON format
+                    GitHubJSONFormatter jsonFormatter = new GitHubJSONFormatter();
+                    JSONObject hunkResultJSON = jsonFormatter.createHunkResult(hunkResult);
+                    return hunkResultJSON;
+
                 } else {
                     // index does not exist
                     throw new Exception("index " + this.index + " does not exist.");
@@ -1014,11 +1046,11 @@ public class Siamese {
         }  catch (Exception e) {
             throw e;
         }
-        return "ERROR JOJO";
+        return null;
     }
 
     //For Teddy bot
-    private String searchWithGitHub( String query, int offset, int size, boolean queryReduction) throws Exception {
+    private List<Document> searchWithGitHub( String query, int offset, int size, boolean queryReduction) throws Exception {
         String qr = "no_qr";
         if (queryReduction) qr = "qr";
         long methodCount = 0;
@@ -1088,15 +1120,8 @@ public class Siamese {
             results = es.search(index, type, origQuery, isPrint, isDFS, offset, size);
         }
 
-        // This part converts the output results into JSON format for GitHub
-        // See GitHubJSONFormatter.java for the returned JSON format
-        String output = "";
-        GitHubJSONFormatter jsonFormatter = new GitHubJSONFormatter();
-        jsonFormatter.addIdiomatic(1, -1, results);
-        jsonFormatter.addNonidiomatic(1, -1, results);
-        output = jsonFormatter.getJSONString();
-
-        return output;
+        // return document results;
+        return results;
     }
 
 
