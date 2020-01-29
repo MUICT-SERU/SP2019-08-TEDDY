@@ -3,3 +3,6 @@
 webapp/config.properties
 .idea/misc.xml
 webapp/config.properties
+node_modules
+apache-maven-3.6.3
+elasticsearch-2.2.0
