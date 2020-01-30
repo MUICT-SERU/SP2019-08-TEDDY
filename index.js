@@ -178,7 +178,7 @@ module.exports = robot => {
     //context.github.repos.createStatus(context.repo(paramsStatus));
     //return context.github.issues.create(context.repo(params));
     //creates the comments on the PR
-    //context.github.issues.createComment(context.repo(commentparams));
+    context.github.issues.createComment(context.repo(commentparams));
 
     /*context.github.repos.getContents({
       owner: 'AGS48353',
