@@ -1,0 +1,18 @@
+[2020-01-08 00:10:49,196][INFO ][node                     ] [Stephen Colbert] version[2.2.0], pid[2692], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-01-08 00:10:49,200][INFO ][node                     ] [Stephen Colbert] initializing ...
+[2020-01-08 00:10:49,963][INFO ][plugins                  ] [Stephen Colbert] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-01-08 00:10:50,001][INFO ][env                      ] [Stephen Colbert] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [60.8gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-01-08 00:10:50,002][INFO ][env                      ] [Stephen Colbert] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-01-08 00:10:53,745][INFO ][node                     ] [Stephen Colbert] initialized
+[2020-01-08 00:10:53,745][INFO ][node                     ] [Stephen Colbert] starting ...
+[2020-01-08 00:10:54,151][INFO ][transport                ] [Stephen Colbert] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-01-08 00:10:54,167][INFO ][discovery                ] [Stephen Colbert] stackoverflow/39L_PgDNQca3TMy3RN9qJg
+[2020-01-08 00:10:58,710][INFO ][cluster.service          ] [Stephen Colbert] new_master {Stephen Colbert}{39L_PgDNQca3TMy3RN9qJg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-01-08 00:10:58,987][INFO ][gateway                  ] [Stephen Colbert] recovered [2] indices into cluster_state
+[2020-01-08 00:10:59,015][INFO ][http                     ] [Stephen Colbert] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-01-08 00:10:59,015][INFO ][node                     ] [Stephen Colbert] started
+[2020-01-08 00:11:00,368][INFO ][cluster.routing.allocation] [Stephen Colbert] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[siamese][0]] ...]).
+[2020-01-08 01:06:15,362][INFO ][node                     ] [Stephen Colbert] stopping ...
+[2020-01-08 01:06:16,588][INFO ][node                     ] [Stephen Colbert] stopped
+[2020-01-08 01:06:16,589][INFO ][node                     ] [Stephen Colbert] closing ...
+[2020-01-08 01:06:16,692][INFO ][node                     ] [Stephen Colbert] closed
