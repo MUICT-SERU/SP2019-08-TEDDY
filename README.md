@@ -16,28 +16,30 @@ There are many useless files everywhere
 
 **If you want to know about which is what just send me a message**
 
-# SP2019-TEDDY-SiameseX
+# SP2019-TEDDY
 This is a developing branch for SiameseX (Java Spring Boot) with support of both Java and Python search
 
 ## Required Components
-- Elasticsearch **2.2.0**
 - Apache Maven 3.6.3 or higher
 
 ## Setting up Elasticsearch 2.2.0
-1. In `.\config\elasticsearch.yml` file of Elasticsearch folder, add `index.query.bool.max_clause_count: 20480` and `action.auto_create_index: .marvel-*` to the file. Save and close the file.
 
-1. Using `cmd` or PowerShell Go to `.\bin` directory of your local Elasticsearch folder.
-2. Execute `.\elasticsearch` command to run an Elasticsearch instance.
+1. Using `git clone` to make a local copy of this branch on your machine, or download this branch as a `.zip` package and extract it.
 
-## Setting up TEDDY
-1. Use `git clone` to make a local copy of this branch on your machine, or download this branch as a `.zip` package and extract it.
+2. Open `cmd` or PowerShell, and go to `~\SP2019-TEDDY\elasticsearch-2.2.0\bin`.
 
-2. From `.\config\elasticsearch.yml` file in the Elasticsearch folder, check the value of the parameter `cluster.name`, then set the value of the property `cluster` inside `.\webapp\config.properties` in SP2019-TEDDY folder to be the same name.
+3. Execute `.\elasticsearch` command to run an Elasticsearch instance first. DO NOT close this terminal window.
 
-3. In `config.properties` file, be sure to set the value of property `index` to be the name of an existing index in your local Elasticsearch. (To see the list of index in your Elasticsearch, go to `localhost:9200/_cat/indices?v=pretty` on a web browser).
+## Setting up SiameseX
 
-4. Using another `cmd` or PowerShell instance, go to `.\webbapp` directory of SP2019-TEDDY folder
+4. In file `~\SP2019-TEDDY\webapp\config.properties`, make sure that the value of parameter `cluster` is the same as parameter `cluster.name` in file `~\SP2019-TEDDY\elasticsearch-2.2.0\config\elasticsearch.yml`.
 
-5. Use the command `mvn spring-boot:run` to launch Spring-boot framework and run TEDDY
+5. In file `~\SP2019-TEDDY\webapp\config.properties`, set the value of property `index` to be the name `teddy` which contains Python3 idioms. (To see the list of index in your Elasticsearch, go to `localhost:9200/_cat/indices?v=pretty` on a web browser).
 
-6. On any web browser, go to `localhost:8080/search` to start using TEDDY (Google Chrome is recommended).
+6. In file `~\SP2019-TEDDY\webapp\config.properties`, set the value of property `elasticsearchLoc` to be the absolute path of your local Elasticsearch folder (`~\SP2019-TEDDY\elasticsearch-2.2.0`).
+
+7. Open new `cmd` or PowerShell instance, and go to `~\SP2019-TEDDY\webbapp` directory
+
+8. Execute the command `mvn spring-boot:run` to launch Spring-boot framework and run TEDDY
+
+9. (Optional) On any web browser, go to `localhost:8080/search` to start using TEDDY (Google Chrome is recommended).
