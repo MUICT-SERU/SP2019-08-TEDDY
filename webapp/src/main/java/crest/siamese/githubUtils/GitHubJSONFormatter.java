@@ -21,98 +21,45 @@ public class GitHubJSONFormatter {
         this.jsonObject = new JSONObject();
     }
 
-    public void addIdiomatic(int id, int sim, ArrayList<Document> results) {
-        JSONArray jarray = new JSONArray();
-        for (crest.siamese.document.Document r: results) {
+    public void addHunktoArray(JSONObject hunkResult) {
 
-            if(r.isIdiomatic()) { jarray.add(createClone(r)); }
+         if (hunkResult.get("idiomatic").equals("true")) {
+             jIdiomatic.add(hunkResult);
+         } else {
+             jNonidiomatic.add(hunkResult);
+         }
 
-        }
-        jIdiomatic.add(jarray);
     }
 
-    public void addNonidiomatic(int id, int sim, ArrayList<Document> results) {
-        JSONArray jarray = new JSONArray();
-        for (crest.siamese.document.Document r: results) {
+    public JSONObject createHunkResult(HunkResult r) {
 
-            if(!r.isIdiomatic()) {jarray.add(createClone(r)); }
-
-        }
-        jNonidiomatic.add(jarray);
-    }
-
-    private JSONObject createClone(crest.siamese.document.Document d) {
-        String file = d.getFile().split(".java_")[0]; //+ ".java";
         JSONObject item = new JSONObject();
-        item.put("file", file);
-        item.put("start", String.valueOf(d.getStartLine()));
-        item.put("end", String.valueOf(d.getEndLine()));
-        item.put("license", d.getLicense());
-        item.put("originalSrc", d.getOriginalSource());
 
-        //More representations of the clone (not used for now)
-        item.put("tokenizedSrc", d.getTokenizedSource());
-        item.put("t2Src", d.getT2Source());
-        item.put("t1Src", d.getT1Source());
-        item.put("src", d.getSource());
+        String file = r.getFileName().split(".py_")[0];
 
-        //For Python3 idiom (not used for now)
-        item.put("recommendIdiom", d.getRecommendIdiom());
-        item.put("idiomatic", d.isIdiomatic());
+        item.put("chunknum", String.valueOf(r.getHunkNum()));
+        item.put("filename", file);
+        item.put("startline", String.valueOf(r.getStartLine()));
+        item.put("endline", String.valueOf(r.getEndLine()));
+        item.put("source", r.getSource());
+        item.put("idiomatic", String.valueOf(r.isIdiomatic()));
+        item.put("recommend", r.getRecommendIdiom());
 
         return item;
     }
 
-//    Expected Result in JSON Format
-//    {
-//        "idiomatic" : 2 ,
-//            "non-idiomatic" : 1 ,
-//            "idiomatic_hits" : [
-//        {
-//            "file" : ,
-//            "start" : ,
-//            "end" : ,
-//            "src" : ,
-//            "t2src" : ,
-//            "t1src" : ,
-//            "tokenizedSrc" : ,
-//            "origsrc" : ,
-//            "license" : ,
-//            "url" : ,
-//            "idiomatic" : ,
-//            "recommend" : ,
-//        } , {
-//        "file" : ,
-//        "start" : ,
-//        "end" : ,
-//        "src" : ,
-//        "t2src" : ,
-//        "t1src" : ,
-//        "tokenizedSrc" : ,
-//        "origsrc" : ,
-//        "license" : ,
-//        "url" : ,
-//        "idiomatic" : ,
-//        "recommend" : ,
-//    }
-//	] ,
-//        "non-idiomatic_hits" : [
-//        {
-//            "file" : ,
-//            "start" : ,
-//            "end" : ,
-//            "src" : ,
-//            "t2src" : ,
-//            "t1src" : ,
-//            "tokenizedSrc" : ,
-//            "origsrc" : ,
-//            "license" : ,
-//            "url" : ,
-//            "idiomatic" : ,
-//            "recommend" : ,
-//        }
-//	]
-//    }
+    public JSONObject createCommitResult(long commitID) {
+
+        this.jsonObject.put("commitID", String.valueOf(commitID));
+        this.jsonObject.put("totalIdiomatic", String.valueOf(jIdiomatic.size()));
+        this.jsonObject.put("totalNonidiomatic", String.valueOf(jNonidiomatic.size()));
+        this.jsonObject.put("idiomaticCommits", jIdiomatic);
+        this.jsonObject.put("nonidiomaticCommits", jNonidiomatic);
+
+        return this.jsonObject;
+
+    }
+
     public String getJSONString() {
         jsonObject.put("idiomatic", String.valueOf(jIdiomatic.size()));
         jsonObject.put("non-idiomatic", String.valueOf(jNonidiomatic.size()));
