@@ -1,7 +1,10 @@
 
 // A plugin is a Node module that exports a function which takes a `robot` argument
-module.exports = robot => {
 
+module.exports = robot => {
+  
+  
+  //variables to be moved here
   
   // Listen for a pull request being opened or synchronized
   robot.on('pull_request', async context => {
@@ -40,14 +43,14 @@ module.exports = robot => {
       var files = parse(diff);
 
       //This is just a random JSON to jog my memory on how it works
-      var data = { 
+      /*var data = { 
         hello: [1,2,3,4], 
         there: { 
             a:1, 
             b:2, 
             c:["hello", null]
         } 
-    };
+    };*/
 
       var PRWhole = [];
       var pullRequestJSON = {};
@@ -55,17 +58,17 @@ module.exports = robot => {
       var hunk=  {};
       var changeline = [];
       var chunkcount = 0;
-      var changecount = 0;
-    console.log("TEsting The JSON here");
-    console.log(data.hello);
-    console.log("TEsting The JSON here");
-    console.log(files);
+      var changelncount = 0;
+    // console.log("TEsting The JSON here");
+    // console.log(data.hello);
+    // console.log("TEsting The JSON here");
+    //console.log(files);
       //console.log(files.length); // number of patched files
       console.log(files[1].index[0].slice(9,16)); //This cuts the ID of the commmit 
       
       files.forEach(function(file) {
         chunkcount = 0;
-      //console.log(file.chunks[0].changes);
+      console.log(file);
       file.chunks.forEach(function(chunk){
         
         chunk.changes.forEach(function(change){
@@ -74,16 +77,21 @@ module.exports = robot => {
           {
             changeline.push(change.content);
             //Create a JSON OBJ here that takes in all the addition 
+            changelncount++;
           }
         });
       
         hunk = {
           "chunknum":chunkcount,
+          "startline": chunk.newStart,
+          "endline": chunk.newStart+chunk.newLines,
+          "filename": file.to,
           "edit": changeline
         };
         Commit.push(hunk);
         chunkcount = chunkcount+1;
         changeline =[];
+        changelncount = 0;
       });
       pullRequestJSON = { 
         "commitID":file.index[0].slice(9,16),
@@ -97,10 +105,24 @@ module.exports = robot => {
       
       
   });
-  console.log((PRWhole));
+  //console.log((PRWhole));
+  const axios = require('axios')
+  axios.post('http://localhost:3222', {
+  PRWhole
+})
+.then((res) => {
+  console.log(`statusCode: ${res.statusCode}`)
+  console.log(res.data)
+})
+.catch((error) => {
+  console.error(error)
+})
+
+
+
   })(finalurl);
 
-  const { exec } = require("child_process");
+  //const { exec } = require("child_process");
   //move this up top later with predefined var's 
   /*var val = "ping www.google.com";
   
@@ -117,13 +139,14 @@ module.exports = robot => {
   });*/
 
     // Parameters for the status API
+    console.log("Starting Passcheck Process");
     const paramsStatus = {
       sha: pr.head.sha,
-      context: 'Automated FAIL',
-      //state: passCheck ? 'success' : 'failure',
-      state: 'failure',
-      //description: `Your commits ${passCheck ? 'have' : 'have not'} passed all the checks`
-      description: 'Passcheck is forced to fail'
+      context: 'Automated state for PR',
+      state: passCheck ? 'success' : 'failure',
+      //state: 'success',
+      description: `Your code has ${passCheck ? 'more' : 'less'} than 50% Pythonic Idioms`
+      //description: 'An Automated System for the PR '
     }
 
     
@@ -141,20 +164,21 @@ module.exports = robot => {
     }*/
 
     //Needed for creating Comments The number is the issuenumber which is shared between issues and PR 
+    console.log("Starting Commenting Process");
     const commentparams = {
-      owner: 'MUICT-SERU',
-      repo: 'SP2019-TEDDY',
+      owner: repo.owner.login,
+      repo: repo.name,
       
-      number: 39,
-      body: 'WOW'
+      number: pullnum,
+      body: 'This version now allows the Bot to comment anything and set a passcheck state for passing or failing the PR '
     }
 
     // Create the status Depends on what we need
     //Creates the Failed status
-    context.github.repos.createStatus(context.repo(paramsStatus));
+    //context.github.repos.createStatus(context.repo(paramsStatus));
     //return context.github.issues.create(context.repo(params));
     //creates the comments on the PR
-    context.github.issues.createComment(context.repo(commentparams));
+    //context.github.issues.createComment(context.repo(commentparams));
 
     /*context.github.repos.getContents({
       owner: 'AGS48353',
