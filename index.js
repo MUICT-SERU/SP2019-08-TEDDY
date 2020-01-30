@@ -64,7 +64,7 @@ module.exports = robot => {
     // console.log("TEsting The JSON here");
     //console.log(files);
       //console.log(files.length); // number of patched files
-      console.log(files[1].index[0].slice(9,16)); //This cuts the ID of the commmit 
+      console.log(files[0].index[0].slice(files[0].index[0].length-8,files[0].index[0].length)); //This cuts the ID of the commmit 
       
       files.forEach(function(file) {
         chunkcount = 0;
@@ -94,7 +94,7 @@ module.exports = robot => {
         changelncount = 0;
       });
       pullRequestJSON = { 
-        "commitID":file.index[0].slice(9,16),
+        "commitID":file.index[0].slice(file.index[0].length-8,file.index[0].length),
         "commitData":Commit
       }
       PRWhole.push(pullRequestJSON);
