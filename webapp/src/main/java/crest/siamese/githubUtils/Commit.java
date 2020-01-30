@@ -6,21 +6,21 @@ import java.util.List;
 
 public class Commit {
 
-    private long id;
+    private String commitID;
     private List<HunkQuery> hunkList;
     private JSONObject result;
 
-    public Commit(long commit_id, List<HunkQuery> hunkList) {
-        this.id = commit_id;
-        this.hunkList = hunkList;
+    public Commit(String commit_id, List<HunkQuery> hunkList) {
+        setId(commit_id);
+        setHunkList(hunkList);
     }
 
-    public long getId() {
-        return id;
+    public String getId() {
+        return commitID;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(String id) {
+        this.commitID = id;
     }
 
     public List<HunkQuery> getHunkList() {

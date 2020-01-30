@@ -11,24 +11,29 @@ import java.util.ArrayList;
 
 public class GitHubJSONFormatter {
 
-    JSONArray jIdiomatic;
-    JSONArray jNonidiomatic;
-    JSONObject jsonObject;
+    JSONArray jIdiomaticHunks, jNonidiomaticHunks, jCommits;
+    JSONObject jPullRequest;
 
     public GitHubJSONFormatter() {
-        this.jIdiomatic = new JSONArray();
-        this.jNonidiomatic = new JSONArray();
-        this.jsonObject = new JSONObject();
+        this.jIdiomaticHunks = new JSONArray();      // Array of idiomatic chunks per one commit
+        this.jNonidiomaticHunks = new JSONArray();   // Array of nonidiomatic chunks per one commit
+        this.jCommits = new JSONArray();        // Array of commits per one pull request
+        this.jPullRequest = new JSONObject();     // The pull request
+
     }
 
     public void addHunktoArray(JSONObject hunkResult) {
 
          if (hunkResult.get("idiomatic").equals("true")) {
-             jIdiomatic.add(hunkResult);
+             jIdiomaticHunks.add(hunkResult);
          } else {
-             jNonidiomatic.add(hunkResult);
+             jNonidiomaticHunks.add(hunkResult);
          }
 
+    }
+
+    public void addCommittoArray(JSONObject commitResult) {
+        jCommits.add(commitResult);
     }
 
     public JSONObject createHunkResult(HunkResult r) {
@@ -48,24 +53,32 @@ public class GitHubJSONFormatter {
         return item;
     }
 
-    public JSONObject createCommitResult(long commitID) {
+    public JSONObject createCommitResult(String commitID, JSONArray hunks) {
 
-        this.jsonObject.put("commitID", String.valueOf(commitID));
-        this.jsonObject.put("totalIdiomatic", String.valueOf(jIdiomatic.size()));
-        this.jsonObject.put("totalNonidiomatic", String.valueOf(jNonidiomatic.size()));
-        this.jsonObject.put("idiomaticCommits", jIdiomatic);
-        this.jsonObject.put("nonidiomaticCommits", jNonidiomatic);
+        JSONObject item = new JSONObject();
 
-        return this.jsonObject;
+        item.put("commitID", commitID);
+        item.put("commitData", hunks);
+
+        return item;
 
     }
 
+    public JSONObject createPullRequestResult(JSONArray commitsResults) {
+
+        this.jPullRequest.put("PRCommits", jCommits);
+
+        return jPullRequest;
+    }
+
+    public JSONArray getjCommitsResult() {
+        return this.jCommits;
+    }
+
     public String getJSONString() {
-        jsonObject.put("idiomatic", String.valueOf(jIdiomatic.size()));
-        jsonObject.put("non-idiomatic", String.valueOf(jNonidiomatic.size()));
-        jsonObject.put("idiomatic_hits", jIdiomatic);
-        jsonObject.put("non-idiomatic_hits", jNonidiomatic);
-        return jsonObject.toString();
+
+        jPullRequest.put("commits", jCommits);
+        return jPullRequest.toString();
     }
 
 
