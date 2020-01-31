@@ -3,7 +3,7 @@
 
 module.exports = robot => {
   
-  
+
   //variables to be moved here
   
   // Listen for a pull request being opened or synchronized
@@ -26,9 +26,7 @@ module.exports = robot => {
     var pullnum = pr.number;
     var finalurl = 'https://patch-diff.githubusercontent.com/raw/'+fullreponame+'/pull/'+pullnum+'.diff'
     
-    //This needs to be reworked from issues to pull requst
-    //const autocomment = context.pulls({body: 'Probot will autocomment when running :D'})
-    //context.github.issues.createComment(autocomment)
+
     
     console.log(finalurl);
     var text;
@@ -94,7 +92,7 @@ module.exports = robot => {
         changelncount = 0;
       });
       pullRequestJSON = { 
-        "commitID":file.index[0].slice(file.index[0].length-8,file.index[0].length),
+        "commitID":file.index[0].slice(file.index[0].length-7,file.index[0].length),
         "commitData":Commit
       }
       PRWhole.push(pullRequestJSON);
@@ -106,46 +104,31 @@ module.exports = robot => {
       
   });
   //console.log((PRWhole));
+  console.log("Starting Post");
+  
   const axios = require('axios')
   axios.post('http://localhost:3222', {
   PRWhole
 })
 .then((res) => {
-  console.log(`statusCode: ${res.statusCode}`)
-  console.log(res.data)
-})
-.catch((error) => {
-  console.error(error)
-})
+  console.log(`statusCodeLogged: ${res.statusCode}`)
+  if(res.statusCode == 200)
+  {
+  Sxresponse = res.data
 
-
-
-  })(finalurl);
-
-  //const { exec } = require("child_process");
-  //move this up top later with predefined var's 
-  /*var val = "ping www.google.com";
+  console.log(Sxresponse)
   
-  exec(val, (error, stdout, stderr) => {
-      if (error) {
-          console.log(`error: ${error.message}`);
-          return;
-      }
-      if (stderr) {
-          console.log(`stderr: ${stderr}`);
-          return;
-      }
-      console.log(`stdout: ${stdout}`);
-  });*/
 
     // Parameters for the status API
+    var passCheck = 'failure';
+    console.log(Sxresponse);
     console.log("Starting Passcheck Process");
     const paramsStatus = {
       sha: pr.head.sha,
-      context: 'Automated state for PR',
+      context: 'Pythonic Idiom result',
       state: passCheck ? 'success' : 'failure',
       //state: 'success',
-      description: `Your code has ${passCheck ? 'more' : 'less'} than 50% Pythonic Idioms`
+      description: `Pass Check Feature Currently Disabled`
       //description: 'An Automated System for the PR '
     }
 
@@ -170,15 +153,18 @@ module.exports = robot => {
       repo: repo.name,
       
       number: pullnum,
-      body: 'This version now allows the Bot to comment anything and set a passcheck state for passing or failing the PR '
+      //body: JSON.stringify(Sxresponse)
+      body: 'This version will show the results as a PassCheck Method Detailed information will be shown in later versions :D '
     }
 
     // Create the status Depends on what we need
     //Creates the Failed status
+
     //context.github.repos.createStatus(context.repo(paramsStatus));
     //return context.github.issues.create(context.repo(params));
     //creates the comments on the PR
     context.github.issues.createComment(context.repo(commentparams));
+    
 
     /*context.github.repos.getContents({
       owner: 'AGS48353',
@@ -191,6 +177,37 @@ module.exports = robot => {
         const content = Buffer.from(result.data.content, 'base64').toString()
         console.log(content)
       })*/
+    }
+    else
+    {
+      console.log("ERROR STATUS CODE NOT 200 Currently Error connecting with SiameseX ");
+    }
+
+})
+.catch((error) => {
+  console.error(error)
+})
+
+
+})(finalurl);
+
+  //const { exec } = require("child_process");
+  //move this up top later with predefined var's 
+  /*var val = "ping www.google.com";
+  
+  exec(val, (error, stdout, stderr) => {
+      if (error) {
+          console.log(`error: ${error.message}`);
+          return;
+      }
+      if (stderr) {
+          console.log(`stderr: ${stderr}`);
+          return;
+      }
+      console.log(`stdout: ${stdout}`);
+  });*/
+
+
 
   
     
