@@ -3,10 +3,7 @@ package com.siamesex.standalone.controller;
 import com.siamesex.standalone.model.EchoText;
 import com.siamesex.standalone.model.Search;
 import crest.siamese.Siamese;
-import crest.siamese.githubUtils.Commit;
-import crest.siamese.githubUtils.GitHubJSONFormatter;
-import crest.siamese.githubUtils.Hunk;
-import crest.siamese.githubUtils.HunkQuery;
+import crest.siamese.githubUtils.*;
 import echotest.EchoTest;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.json.simple.JSONArray;
@@ -131,54 +128,62 @@ public class SearchController {
         // TODO: Somehow process the raw query received and extract only the clone snippets
         String actualQuery = "";
 
-        JSONObject resultJSON = queryResultJSONGithub(query.getHunkList());
+        // JSONObject resultJSON = queryResultJSONGithub(query.getHunkList());
 
         //Keep the commit ID to be used when sending back the JSON response
-        this.commitID = query.getId();
-        query.setResult(resultJSON);
+        // this.commitID = query.getId();
+        // query.setResult(resultJSON);
         return "result";
     }
 
     //--------------------------------------- API ---------------------------------------
     @PostMapping(path = "/api/searchJSONGithub", produces = "application/json; charset=UTF-8")
     @ResponseBody
-    public JSONObject githubSearchJSON(@RequestBody Commit query) {
+    public JSONObject githubSearchJSON(@RequestBody PullRequest query) {
 
-        logger.info("Commit ID : ", query.getId());
-        logger.info("Commit content : ", query.toString());
-        // logger.info("search content: {}", search.getContent());
+        logger.info("PR Content : ", query.toString());
 
-        JSONObject resultJSON = queryResultJSONGithub(query.getHunkList());
+        JSONObject resultJSON = queryResultJSONGithub(query.getCommits());
         return resultJSON;
 
-        /* What to return */
     }
 
-    private JSONObject queryResultJSONGithub(List<HunkQuery> hunks) {
+    private JSONObject queryResultJSONGithub(List<Commit> commits) {
+
         JSONObject resultJSON = new JSONObject();
 
         try {
 
             GitHubJSONFormatter formatter = new GitHubJSONFormatter();
 
-            for (HunkQuery h : hunks) {
+            for (Commit c : commits) {
 
-                /**
-                 * Each hunkResult is as this example:
-                 *  {
-                 *    "chunknum":"1",
-                 *    "filename":"gg.py",
-                 *    "startline":"2",
-                 *    "endline":"5",
-                 *    "source":"+print("Hello world")\r"
-                 *    "idiomatic":"false",
-                 *    "recommend":"Yare yare daze"
-                 *    }
-                 * **/
-                JSONObject hunkResult = this.siamese.queryWithGitHub(h);
+                List<HunkQuery> hunks = c.getHunkList();
+                JSONArray hunkArrays = new JSONArray();     // The array of JSON Hunks for each commit
 
-                formatter.addHunktoArray(hunkResult);
-                // TODO: Combine multiple hunkResults into a collection of Commit
+                for (HunkQuery h : hunks) {
+
+                    /**
+                     * Each hunkResult is as this example:
+                     *  {
+                     *    "chunknum":"1",
+                     *    "filename":"gg.py",
+                     *    "startline":"2",
+                     *    "endline":"5",
+                     *    "source":"+print("Hello world")\r"
+                     *    "idiomatic":"false",
+                     *    "recommend":"Yare yare daze"
+                     *    }
+                     * **/
+                    JSONObject hunkResult = this.siamese.queryWithGitHub(h);
+                    hunkArrays.add(hunkResult);
+                    // TODO: Combine multiple hunkResults into a collection of Commit
+                }
+
+                // Create the JSON Commit for each commit using commit ID and array of JSON Hunks
+                JSONObject commitResult = formatter.createCommitResult(c.getId(), hunkArrays);
+                formatter.addCommittoArray(commitResult);
+
             }
 
             /**The Final JSON Response Object
@@ -210,7 +215,8 @@ public class SearchController {
              *           ]
              *  }
              * **/
-            JSONObject responseBody = formatter.createCommitResult(this.commitID);
+
+            JSONObject responseBody = formatter.createPullRequestResult(formatter.getjCommitsResult());
 
             // Result logging
             // Placeholder, clones quantity
