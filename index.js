@@ -18,10 +18,6 @@ module.exports = robot => {
       head: pr.head.sha
     }));
 
-    // const passCheck = compare.data.commits.every(data => {
-    //   return data.commit.message.match(/DevelopmentBranchTesting/);
-    // });
-    //This part needs to be fixed to allow access to private git repos
     var fullreponame = repo.full_name;
     var pullnum = pr.number;
     var finalurl = 'https://patch-diff.githubusercontent.com/raw/'+fullreponame+'/pull/'+pullnum+'.diff'
@@ -33,22 +29,11 @@ module.exports = robot => {
     //async'ed for getting scripts
     (async (url) => {
       text = await getScript(url);
-      //Testing with only console log
-      //console.log(text+'+5555555');
-      //text = text + '+55555';
+
       var parse = require('parse-diff');
       var diff = text; // edit this to access the text on the internet site using POST or Get
       var files = parse(diff);
 
-      //This is just a random JSON to jog my memory on how it works
-      /*var data = { 
-        hello: [1,2,3,4], 
-        there: { 
-            a:1, 
-            b:2, 
-            c:["hello", null]
-        } 
-    };*/
 
       var PRWhole = [];
       var pullRequestJSON = {};
@@ -57,11 +42,7 @@ module.exports = robot => {
       var changeline = [];
       var chunkcount = 0;
       var changelncount = 0;
-    // console.log("TEsting The JSON here");
-    // console.log(data.hello);
-    // console.log("TEsting The JSON here");
-    //console.log(files);
-      //console.log(files.length); // number of patched files
+
       console.log(files[0].index[0].slice(files[0].index[0].length-8,files[0].index[0].length)); //This cuts the ID of the commmit 
       
       files.forEach(function(file) {
@@ -96,10 +77,7 @@ module.exports = robot => {
         "commitData":Commit
       }
       PRWhole.push(pullRequestJSON);
-      //console.log(file.chunks.length); // number of chunks
-      //console.log(file.chunks[0].changes.length) // chunk added/deleted/context lines
-      //console.log(file.deletions); // number of deletions in the patch
-      //console.log(file.additions); // number of additions in the patch
+
       
       
   });
@@ -132,21 +110,7 @@ module.exports = robot => {
       //description: 'An Automated System for the PR '
     }
 
-    
-    //New Params for issues
-    /*const params = {
-      
-      title: 'Issue Created on PullRQ',
-      body: 'Automatically Generated',
-      
-    }*/
-    /*const params = {
-      owner: 'AGS48353',
-      repo: 'TestingRepoNothing',
-      path: 'README.md'
-    }*/
 
-    //Needed for creating Comments The number is the issuenumber which is shared between issues and PR 
     console.log("Starting Commenting Process");
     const commentparams = {
       owner: repo.owner.login,
@@ -157,26 +121,12 @@ module.exports = robot => {
       body: 'This version will show the results as a PassCheck Method Detailed information will be shown in later versions :D '
     }
 
-    // Create the status Depends on what we need
-    //Creates the Failed status
 
-    //context.github.repos.createStatus(context.repo(paramsStatus));
-    //return context.github.issues.create(context.repo(params));
-    //creates the comments on the PR
+    context.github.repos.createStatus(context.repo(paramsStatus));
+
     context.github.issues.createComment(context.repo(commentparams));
     
 
-    /*context.github.repos.getContents({
-      owner: 'AGS48353',
-      repo: 'TestingRepoNothing',
-      path: 'BST/insert.java'
-    })
-    
-      .then(result => {
-        // content will be base64 encoded
-        const content = Buffer.from(result.data.content, 'base64').toString()
-        console.log(content)
-      })*/
     }
     else
     {
@@ -190,22 +140,6 @@ module.exports = robot => {
 
 
 })(finalurl);
-
-  //const { exec } = require("child_process");
-  //move this up top later with predefined var's 
-  /*var val = "ping www.google.com";
-  
-  exec(val, (error, stdout, stderr) => {
-      if (error) {
-          console.log(`error: ${error.message}`);
-          return;
-      }
-      if (stderr) {
-          console.log(`stderr: ${stderr}`);
-          return;
-      }
-      console.log(`stdout: ${stdout}`);
-  });*/
 
 
 
