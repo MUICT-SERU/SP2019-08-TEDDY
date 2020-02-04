@@ -139,9 +139,11 @@ public class SearchController {
     //--------------------------------------- API ---------------------------------------
     @PostMapping(path = "/api/searchJSONGithub", produces = "application/json; charset=UTF-8")
     @ResponseBody
-    public JSONObject githubSearchJSON(@RequestBody PullRequest query) {
+    public JSONObject githubSearchJSON(@RequestBody OverPR JSONReq) {
 
-        logger.info("PR Content : ", query.toString());
+        logger.info("PR Content : ", JSONReq.getPRWhole().toString());
+
+        PullRequest query = JSONReq.getPRWhole();
 
         JSONObject resultJSON = queryResultJSONGithub(query.getCommits());
         return resultJSON;
