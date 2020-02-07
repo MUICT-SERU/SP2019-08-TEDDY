@@ -85,7 +85,7 @@ module.exports = robot => {
   console.log("Starting Post");
   
   const axios = require('axios')
-  axios.post('http://localhost:3222', {
+  axios.post('http://localhost:8080/api/searchJSONGithub', {
   PRWhole
 })
 .then((res) => {
