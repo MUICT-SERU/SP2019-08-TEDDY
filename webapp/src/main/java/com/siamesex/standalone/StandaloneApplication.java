@@ -2,7 +2,6 @@ package com.siamesex.standalone;
 
 import crest.siamese.helpers.MyUtils;
 import crest.siamese.Siamese;
-import echotest.EchoTest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +16,6 @@ public class StandaloneApplication {
 	private static String configFile;
 	private static Siamese siamese = null;
 
-	private static EchoTest echoTest = null;
 
 	public static void main(String[] args) {
 
@@ -31,15 +29,6 @@ public class StandaloneApplication {
 		return siamese;
 	}
 
-	@Bean
-	public EchoTest echoTest()
-	{
-		if(echoTest == null)
-		{
-			echoTest = new EchoTest();
-		}
-		return echoTest;
-	}
 
 	// function to create bean of Siamese Java app
 	public static void startSiamese() {
