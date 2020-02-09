@@ -1,4 +1,4 @@
-package crest.siamese.githubUtils;
+package com.siamesex.standalone.model;
 
 import com.sun.org.apache.xpath.internal.operations.String;
 import org.json.simple.JSONObject;
