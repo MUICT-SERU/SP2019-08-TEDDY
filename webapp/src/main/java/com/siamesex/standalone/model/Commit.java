@@ -1,5 +1,6 @@
 package com.siamesex.standalone.model;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
 import org.json.simple.JSONObject;
 
 import java.util.List;
@@ -8,15 +9,15 @@ public class Commit {
 
     private String commitID;
     private List<HunkQuery> hunkList;
-    private JSONObject result;
 
-    public Commit(String commit_id, List<HunkQuery> hunkList) {
-        setId(commit_id);
-        setHunkList(hunkList);
+    public Commit(String commitID, List<HunkQuery> hunkList) {
+        this.commitID = commitID;
+        this.hunkList = hunkList;
     }
 
     public String getId() {
-        return commitID;
+
+        return this.commitID;
     }
 
     public void setId(String id) {
@@ -44,7 +45,5 @@ public class Commit {
         return hunksString.toString();
     }
 
-    public void setResult(JSONObject result) {
-        this.result = result;
-    }
+
 }

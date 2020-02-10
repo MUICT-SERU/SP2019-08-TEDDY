@@ -209,4 +209,17 @@ public class SearchController {
         // System.out.println("Password: " + user.getPassword());
     }
 
+    @PostMapping(path = "/api/commit3")
+    public void handleCommit(@RequestBody Commit commit) throws IOException {
+        System.out.println("Commit ID: " + commit.getId());
+        System.out.println("Hunk List: ");
+        for (HunkQuery hq : commit.getHunkList()) {
+           System.out.println("\tHunk no.: " + hq.getHunkNum());
+           System.out.println("\tHunk start: " + hq.getStartline());
+           System.out.println("\tHunk end: " + hq.getEndline());
+           System.out.println("\tHunk file: " + hq.getFileName());
+            System.out.println("\tSource code: " + hq.getSource());
+        }
+    }
+
 }
