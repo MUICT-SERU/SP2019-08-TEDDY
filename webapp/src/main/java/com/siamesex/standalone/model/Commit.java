@@ -1,4 +1,6 @@
 package com.siamesex.standalone.model;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import org.json.simple.JSONObject;
@@ -10,7 +12,8 @@ public class Commit {
     private String commitID;
     private List<HunkQuery> hunkList;
 
-    public Commit(String commitID, List<HunkQuery> hunkList) {
+    @JsonCreator
+    public Commit(@JsonProperty("commitID") String commitID, @JsonProperty("hunkList") List<HunkQuery> hunkList) {
         this.commitID = commitID;
         this.hunkList = hunkList;
     }

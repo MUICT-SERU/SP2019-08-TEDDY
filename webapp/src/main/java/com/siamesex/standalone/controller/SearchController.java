@@ -222,4 +222,10 @@ public class SearchController {
         }
     }
 
+    @PostMapping(path = "/api/commit4")
+    public void handlePullRequest(@RequestBody PullRequest pullRequest) throws IOException {
+        System.out.println(pullRequest.toString()); //toString() method is coded to printout everything inside in readable format.
+
+    }
+
 }
