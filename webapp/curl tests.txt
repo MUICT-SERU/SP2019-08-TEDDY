@@ -1,0 +1,3 @@
+curl -XPOST "http://localhost:8080/api/commit2" -d "{""branchID"":""123"",""member"":"{""""username"""":""""Purit"""",""""password"""":""""Earth""""}", ""items"":"[{""""name"""":""""jelly"""",""""price"""":10}","{""""name"""":""""toffee"""",""""price"""":5}]"}" -H "Content-Type:application/json"
+curl -XPOST "http://localhost:8080/api/commit3" -d "{""commitID"":""12xexy"",""hunkList"":"[{""""hunkNum"""":1,""""fileName"""":""""test"""",""""startLine"""":23,""""endLine"""":28,""""source"""":""""Helloworld""""},{""""hunkNum"""":2,""""fileName"""":""""test2"""",""""startLine"""":1,""""endLine"""":4,""""source"""":""""Hellomars""""}]"}" -H "Content-Type:application/json"
+
