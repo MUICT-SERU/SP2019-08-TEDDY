@@ -1,4 +1,4 @@
-package crest.siamese.githubUtils;
+package com.siamesex.standalone.model;
 
 public class OverPR
 {
