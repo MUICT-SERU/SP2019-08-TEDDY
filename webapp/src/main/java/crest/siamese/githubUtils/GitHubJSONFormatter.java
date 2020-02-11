@@ -1,8 +1,13 @@
 package crest.siamese.githubUtils;
 
-import com.siamesex.standalone.model.HunkResult;
+import crest.siamese.document.Document;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import crest.siamese.githubUtils.Commit;
+import crest.siamese.githubUtils.Hunk;
+import crest.siamese.githubUtils.PullRequest;
+
+import java.util.ArrayList;
 
 public class GitHubJSONFormatter {
 

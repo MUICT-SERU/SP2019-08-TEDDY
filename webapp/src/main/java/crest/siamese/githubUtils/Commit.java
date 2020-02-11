@@ -1,8 +1,5 @@
-package com.siamesex.standalone.model;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
+package crest.siamese.githubUtils;
+
 import org.json.simple.JSONObject;
 
 import java.util.List;
@@ -11,16 +8,15 @@ public class Commit {
 
     private String commitID;
     private List<HunkQuery> hunkList;
+    private JSONObject result;
 
-    @JsonCreator
-    public Commit(@JsonProperty("commitID") String commitID, @JsonProperty("hunkList") List<HunkQuery> hunkList) {
-        this.commitID = commitID;
-        this.hunkList = hunkList;
+    public Commit(String commit_id, List<HunkQuery> hunkList) {
+        setId(commit_id);
+        setHunkList(hunkList);
     }
 
     public String getId() {
-
-        return this.commitID;
+        return commitID;
     }
 
     public void setId(String id) {
@@ -48,5 +44,7 @@ public class Commit {
         return hunksString.toString();
     }
 
-
+    public void setResult(JSONObject result) {
+        this.result = result;
+    }
 }

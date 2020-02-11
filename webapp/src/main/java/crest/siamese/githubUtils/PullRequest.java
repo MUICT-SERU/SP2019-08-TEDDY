@@ -1,7 +1,5 @@
-package com.siamesex.standalone.model;
+package crest.siamese.githubUtils;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.org.apache.xpath.internal.operations.String;
 import org.json.simple.JSONObject;
 
@@ -11,17 +9,40 @@ public class PullRequest {
 
     private List<Commit> commits;
 
-    @JsonCreator
-    public PullRequest(@JsonProperty("commits") List<Commit> commits) {
+    // Following Search.java approach
+    private String content;
+    private JSONObject result;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public JSONObject getResult() {
+        return result;
+    }
+
+    public void setResult(JSONObject result) {
+        this.result = result;
+    }
+
+    public PullRequest() {
+        super();
+    }
+
+    public PullRequest(List<Commit> commits) {
         this.commits = commits;
+    }
+
+    public void addCommit(Commit newCommit) {
+        commits.add(newCommit);
     }
 
     public List<Commit> getCommits() {
         return this.commits;
-    }
-
-    public void setCommits(List<Commit> commits) {
-        this.commits = commits;
     }
 
     @Override
