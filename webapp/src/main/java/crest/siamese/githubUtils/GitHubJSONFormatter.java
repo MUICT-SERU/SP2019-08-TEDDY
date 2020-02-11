@@ -1,6 +1,6 @@
 package crest.siamese.githubUtils;
 
-import com.siamesex.standalone.model.HunkResult;
+import com.siamesex.standalone.model.ChunkResult;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -31,17 +31,17 @@ public class GitHubJSONFormatter {
         jCommits.add(commitResult);
     }
 
-    public JSONObject createHunkResult(HunkResult r) {
+    public JSONObject createHunkResult(ChunkResult r) {
 
         JSONObject item = new JSONObject();
 
         String file = r.getFileName().split(".py_")[0];
 
-        item.put("chunknum", String.valueOf(r.getHunkNum()));
-        item.put("filename", file);
+        item.put("chunknum", String.valueOf(r.getChunkNum()));
         item.put("startline", String.valueOf(r.getStartLine()));
         item.put("endline", String.valueOf(r.getEndLine()));
-        item.put("source", r.getSource());
+        item.put("filename", file);
+        item.put("edit", r.getEdit());
         item.put("idiomatic", String.valueOf(r.isIdiomatic()));
         item.put("recommend", r.getRecommendIdiom());
 

@@ -1,21 +1,18 @@
 package com.siamesex.standalone.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-import org.json.simple.JSONObject;
 
 import java.util.List;
 
 public class Commit {
 
     private String commitID;
-    private List<HunkQuery> hunkList;
+    private List<ChunkQuery> commitData;
 
     @JsonCreator
-    public Commit(@JsonProperty("commitID") String commitID, @JsonProperty("hunkList") List<HunkQuery> hunkList) {
+    public Commit(@JsonProperty("commitID") String commitID, @JsonProperty("commitData") List<ChunkQuery> commitData) {
         this.commitID = commitID;
-        this.hunkList = hunkList;
+        this.commitData = commitData;
     }
 
     public String getId() {
@@ -27,25 +24,27 @@ public class Commit {
         this.commitID = id;
     }
 
-    public List<HunkQuery> getHunkList() {
-        return hunkList;
+    public List<ChunkQuery> getCommitData() {
+        return commitData;
     }
 
-    public void setHunkList(List<HunkQuery> hunkList) {
-        this.hunkList = hunkList;
+    public void setCommitData(List<ChunkQuery> commitData) {
+        this.commitData = commitData;
     }
 
     public String toString() {
-        StringBuilder hunksString = new StringBuilder();
+        StringBuilder chunksString = new StringBuilder();
 
-        for (HunkQuery h : hunkList) {
-            hunksString.append("\nhunk no.: ").append(h.getHunkNum());
-            hunksString.append("\nfile name: ").append(h.getFileName());
-            hunksString.append("\nstart: ").append(h.getStartline()).append(", end: ").append(h.getEndline());
-            hunksString.append("\nsource: ").append(h.getSource());
+        for (ChunkQuery h : commitData) {
+            chunksString.append("\n\t\tchunknum: ").append(h.getChunkNum());
+            chunksString.append("\n\t\tstartline: ").append(h.getStartline());
+            chunksString.append("\n\t\tendline: ").append(h.getEndline());
+            chunksString.append("\n\t\tfilename: ").append(h.getFileName());
+            chunksString.append("\n\t\tedit: ");
+            chunksString.append("\n\t\t\t").append(h.getEdit());
         }
 
-        return hunksString.toString();
+        return chunksString.toString();
     }
 
 

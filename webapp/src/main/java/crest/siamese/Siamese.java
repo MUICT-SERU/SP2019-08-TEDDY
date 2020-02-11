@@ -4,8 +4,8 @@ import crest.siamese.document.JavaTerm;
 import crest.siamese.document.Document;
 import crest.siamese.document.Method;
 import crest.siamese.githubUtils.GitHubJSONFormatter;
-import com.siamesex.standalone.model.HunkQuery;
-import com.siamesex.standalone.model.HunkResult;
+import com.siamesex.standalone.model.ChunkQuery;
+import com.siamesex.standalone.model.ChunkResult;
 import crest.siamese.helpers.*;
 import crest.siamese.language.MethodParser;
 import crest.siamese.language.Normalizer;
@@ -990,11 +990,11 @@ public class Siamese {
     // For Teddy bot
     // To be called by Probot or some front-end component
     // TODO: Figure how the JSON query looks like, some pre-processing needed before passing on for searching
-    public JSONObject queryWithGitHub(HunkQuery hunk) throws Exception {
+    public JSONObject queryWithGitHub(ChunkQuery hunk) throws Exception {
 
         // Extract some values from HunkQuery that will be used for instantiating HunkResult
         // after getting the documents result back.
-        int hunkNum = hunk.getHunkNum();
+        int hunkNum = hunk.getChunkNum();
         String hunkFileName = hunk.getFileName();
         int hunkStart = hunk.getStartline();
         int hunkEnd = hunk.getEndline();
@@ -1014,17 +1014,17 @@ public class Siamese {
                     MyUtils.createDir(outputFolder);
                     // reading the index for query reduction
                     readESIndex(index);
-                    List<Document> results =  searchWithGitHub(hunk.getSource(), resultOffset, resultsSize, queryReduction);
+                    List<Document> results =  searchWithGitHub(hunk.getEditString(), resultOffset, resultsSize, queryReduction);
 
                     //Gonna use only the first document result for each hunkResult
                     Document topDoc = results.get(0);
 
                     // Instantiating the HunkResult with values from HunkQuery and Document
-                    HunkResult hunkResult = new HunkResult(
+                    ChunkResult hunkResult = new ChunkResult(
                             hunkNum,
-                            hunkFileName,
                             hunkStart,
                             hunkEnd,
+                            hunkFileName,
                             topDoc.isIdiomatic(),
                             topDoc.getRecommendIdiom()
                     );
