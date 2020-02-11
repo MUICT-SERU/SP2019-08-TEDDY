@@ -21,7 +21,6 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\TestSuite.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3MethodParser.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\LicenseExtractorTest.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\HunkResult.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\SearchResultChecker.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\LicenseExtractor.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MethodLevelEvaluator.java
@@ -30,7 +29,6 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\pytho
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\NinkaTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Commit.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Item.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\HunkQuery.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\Main.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\MethodClone.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\Antlr4Test.java
@@ -49,6 +47,7 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\pytho
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\MethodLevelEvaluatorTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\TermFreqAnalyser.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\nGramGenerator.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\ChunkResult.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\MyUtils.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\SiameseIndexReader.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Branch.java
@@ -57,7 +56,6 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\Tokenizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\IndexCreator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTermComparator.java
-D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Hunk.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTerm.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\githubUtils\GitHubJSONFormatter.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3Tokenizer.java
@@ -65,8 +63,10 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\ESConn
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\EvalResult.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\BCBExperiment.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\JavaLexerTest.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\ChunkQuery.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\JavaLexer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3NormalizerMode.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\model\Chunk.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\nGramGeneratorTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\Experiment.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\MethodParser.java

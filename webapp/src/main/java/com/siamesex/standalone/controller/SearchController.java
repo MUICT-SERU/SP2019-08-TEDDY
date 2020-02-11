@@ -1,6 +1,5 @@
 package com.siamesex.standalone.controller;
 
-
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.siamesex.standalone.model.*;
@@ -41,37 +40,32 @@ public class SearchController {
 
     }
 
-    /////////////////// Teddy Implementation ///////////////////
+    //--------------------------------------- API ---------------------------------------//
+    /**
+     * Method for testing curl with JSON PRWhole
+     * CLI Command: curl -XPOST "http://localhost:8080/api/commit4" -d "{<PRWhole>}" -H "Content-Type:application/json"
+     * **/
+    @PostMapping(path = "/api/commit4", consumes = "application/json")
+    public void handlePullRequest(@RequestBody PullRequest pullRequest) throws IOException {
+        System.out.println(pullRequest.toString()); //toString() method is coded to printout everything inside in readable format.
 
-    // Submit the PR query from GitHub
-    // This method supposes to handles the API POST and pass the content for further querying
-    @PostMapping("/githubSearch")
-    public String searchSubmitGithub(@ModelAttribute Commit query) {
-
-        logger.info("commit ID : ", query.getId());
-        logger.info("commit content : ", query.toString());
-
-        // use the query content from the model search then trigger siamese to invoke query search
-        // display them in result html template
-        // TODO: Somehow process the raw query received and extract only the clone snippets
-        String actualQuery = "";
-
-        // JSONObject resultJSON = queryResultJSONGithub(query.getHunkList());
-
-        //Keep the commit ID to be used when sending back the JSON response
-        // this.commitID = query.getId();
-        // query.setResult(resultJSON);
-        return "result";
     }
 
-    //--------------------------------------- API ---------------------------------------
-    @PostMapping(path = "/api/searchJSONGithub", produces = "application/json; charset=UTF-8")
+    /**
+     * Actual method to receive the JSON PRWhole
+     * - URI: "http://localhost:8080/api/searchJSONGithub"
+     * - Request Method: HTTP POST
+     * - Deserialize the JSON string into PullRequest >> Commit >> ChunkQuery using Jackson
+     * - Feed ChunkQuery into Siamese (go through tokenization and normalization) and ElasticSearch does the searching
+     * - Return JSON format of ChunkResult back
+     * **/
+    @PostMapping(path = "/api/searchJSONGithub", consumes = "application/json",produces = "application/json; charset=UTF-8")
     @ResponseBody
-    public JSONObject githubSearchJSON(@RequestBody OverPR JSONReq) {
+    public JSONObject githubSearchJSON(@RequestBody PullRequest PRWhole) {
 
-        logger.info("PR Content : ", JSONReq.getPRWhole().toString());
+        System.out.println(PRWhole.toString());
 
-        PullRequest query = JSONReq.getPRWhole();
+        PullRequest query = PRWhole;
 
         JSONObject resultJSON = queryResultJSONGithub(query.getCommits());
         return resultJSON;
@@ -88,19 +82,19 @@ public class SearchController {
 
             for (Commit c : commits) {
 
-                List<HunkQuery> hunks = c.getHunkList();
+                List<ChunkQuery> hunks = c.getCommitData();
                 JSONArray hunkArrays = new JSONArray();     // The array of JSON Hunks for each commit
 
-                for (HunkQuery h : hunks) {
+                for (ChunkQuery h : hunks) {
 
                     /**
-                     * Each hunkResult is as this example:
+                     * Each chunkResult is as this example:
                      *  {
                      *    "chunknum":"1",
-                     *    "filename":"gg.py",
                      *    "startline":"2",
                      *    "endline":"5",
-                     *    "source":"+print("Hello world")\r"
+                     *    "filename":"gg.py",
+                     *    "edit":"null"
                      *    "idiomatic":"false",
                      *    "recommend":"Yare yare daze"
                      *    }
@@ -181,16 +175,16 @@ public class SearchController {
         return jsonObject;
     }
 
-
-    // Testing about JSON Serialization-Deserialization
-    @PostMapping(path = "/api/commit")
-    public void handleCommit(@RequestBody User user) {
+    //---------- Methods for testing other JSON deserialization ----------//
+    // JSON with String data type
+    @PostMapping(path = "/api/commit1", consumes = "application/json")
+    public void simpleJSON(@RequestBody User user) {
         System.out.println("Username: " + user.getUsername());
         System.out.println("Password: " + user.getPassword());
     }
 
-    // Testing about JSON Serialization-Deserialization 2
-    @PostMapping(path = "/api/commit2")
+    // JSON with Object data type
+    @PostMapping(path = "/api/commit2", consumes = "application/json")
     public void handleArray(@RequestBody Branch branch) throws IOException {
         System.out.println("ID: " + branch.getBranchID());
         System.out.println("Username: " + branch.getMember().getUsername());
@@ -200,32 +194,22 @@ public class SearchController {
             System.out.println("Item name: " + i.getName() + " Item price: " + i.getPrice());
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
-
-        // User user = mapper.readValue(branch.getMember(),User.class);
-
-        // System.out.println("Username: " + user.getUsername());
-        // System.out.println("Password: " + user.getPassword());
     }
 
-    @PostMapping(path = "/api/commit3")
+    // JSON with Commit structure
+    @PostMapping(path = "/api/commit3", consumes = "application/json")
     public void handleCommit(@RequestBody Commit commit) throws IOException {
-        System.out.println("Commit ID: " + commit.getId());
-        System.out.println("Hunk List: ");
-        for (HunkQuery hq : commit.getHunkList()) {
-           System.out.println("\tHunk no.: " + hq.getHunkNum());
-           System.out.println("\tHunk start: " + hq.getStartline());
-           System.out.println("\tHunk end: " + hq.getEndline());
-           System.out.println("\tHunk file: " + hq.getFileName());
-            System.out.println("\tSource code: " + hq.getSource());
+        System.out.println("commitID: " + commit.getId() + ",");
+        System.out.println("commitData: [");
+        for (ChunkQuery cq : commit.getCommitData()) {
+            System.out.println("\tchunknum: " + cq.getChunkNum());
+            System.out.println("\tstartline: " + cq.getStartline());
+            System.out.println("\tendline: " + cq.getEndline());
+            System.out.println("\tfilename: " + cq.getFileName());
+            System.out.println("\tedit: " + cq.getEditString());
         }
     }
 
-    @PostMapping(path = "/api/commit4")
-    public void handlePullRequest(@RequestBody PullRequest pullRequest) throws IOException {
-        System.out.println(pullRequest.toString()); //toString() method is coded to printout everything inside in readable format.
 
-    }
 
 }

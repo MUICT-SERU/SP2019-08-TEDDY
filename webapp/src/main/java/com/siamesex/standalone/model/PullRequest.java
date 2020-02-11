@@ -2,26 +2,24 @@ package com.siamesex.standalone.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.org.apache.xpath.internal.operations.String;
-import org.json.simple.JSONObject;
 
 import java.util.List;
 
 public class PullRequest {
 
-    private List<Commit> commits;
+    private List<Commit> PRWhole;
 
     @JsonCreator
-    public PullRequest(@JsonProperty("commits") List<Commit> commits) {
-        this.commits = commits;
+    public PullRequest(@JsonProperty("PRWhole") List<Commit> PRWhole) {
+        this.PRWhole = PRWhole;
     }
 
     public List<Commit> getCommits() {
-        return this.commits;
+        return this.PRWhole;
     }
 
-    public void setCommits(List<Commit> commits) {
-        this.commits = commits;
+    public void setCommits(List<Commit> PRWhole) {
+        this.PRWhole = PRWhole;
     }
 
     @Override
@@ -29,28 +27,16 @@ public class PullRequest {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("{ PR Commits: [");
+        stringBuilder.append("{ PRWhole: [");
 
-        for(Commit c : commits) {
-            stringBuilder.append("\t{\n");
-            stringBuilder.append("\tcommitID: ").append(c.getId()).append(",\n");
-            stringBuilder.append("\tcommitData: [\n");
-
-            for(HunkQuery h : c.getHunkList()) {
-                stringBuilder.append("\t\t{\n");
-                stringBuilder.append("\t\thunk no.: ").append(h.getHunkNum()).append(",\n");
-                stringBuilder.append("\t\tfilename: ").append(h.getFileName()).append(",\n");
-                stringBuilder.append("\t\tstartline: ").append(h.getStartline()).append(",\n");
-                stringBuilder.append("\t\tendline: ").append(h.getEndline()).append(",\n");
-                stringBuilder.append("\t\tsrc: ").append(h.getSource()).append("\n");
-                stringBuilder.append("\t\t}\n");
-            }
-
-            stringBuilder.append("\t]\n");
-            stringBuilder.append("\t}\n");
+        for(Commit commit : PRWhole) {
+            stringBuilder.append("\n\tcommitID: ").append(commit.getId());
+            stringBuilder.append("\n\tcommitData: [");
+            stringBuilder.append(commit.toString());
+            stringBuilder.append("\n\t]");
         }
 
-        stringBuilder.append("]\n}");
+        stringBuilder.append("\n ]\n}");
 
         return stringBuilder.toString();
     }
