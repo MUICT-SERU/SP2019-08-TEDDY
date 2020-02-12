@@ -107,11 +107,7 @@ module.exports = robot => {
   console.log("Starting Post");
   
   const axios = require('axios')
-<<<<<<< HEAD
   await axios.post('http://localhost:8080/api/searchJSONGithub', {
-=======
-  axios.post('http://localhost:8080/api/searchJSONGithub', {
->>>>>>> 077453b45331db36ef7d63fd6e356df9a0cdaa61
   PRWhole
 })
 .then((res) => {
