@@ -51,7 +51,7 @@ public class StandaloneApplication {
 			configFile = "config.properties"; // TODO: currently, the config file is hardcode to the main of Siamese class
 		}
 		Date startDate = MyUtils.getCurrentTime();
-		siamese = new Siamese(configFile, overridingParams);
+		siamese = new Siamese(configFile);
 		siamese.startup();
 	}
 

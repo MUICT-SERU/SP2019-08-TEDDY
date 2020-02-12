@@ -90,6 +90,8 @@ public class ESConnector {
                         .field("origsrc", d.getOriginalSource())
                         .field("license", d.getLicense())
                         .field("url", d.getUrl())
+						.field("idiomatic",d.isIdiomatic())		 // For Python3 Idiom
+						.field("recommend", d.getRecommendIdiom()) // For Python3 Idiom
                         .endObject();
 
 				// insert document one by one
@@ -134,6 +136,8 @@ public class ESConnector {
 								.field("origsrc", d.getOriginalSource())
 								.field("license", d.getLicense())
 								.field("url", d.getUrl())
+								.field("idiomatic",d.isIdiomatic())		 // For Python3 Idiom
+								.field("recommend", d.getRecommendIdiom()) // For Python3 Idiom
                             .endObject()));
 			} catch (IOException e) {
 //				e.printStackTrace();
@@ -407,7 +411,11 @@ public class ESConnector {
                         hit.getSource().get("tokenizedsrc").toString(),
                         hit.getSource().get("origsrc").toString(),
                         hit.getSource().get("license").toString(),
-                        hit.getSource().get("url").toString());
+                        hit.getSource().get("url").toString(),
+						Boolean.parseBoolean(hit.getSource().get("idiomatic").toString()),
+						hit.getSource().get("recommend").toString()
+				);
+
                 results.add(d);
 
                 count++;
