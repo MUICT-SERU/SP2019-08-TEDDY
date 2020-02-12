@@ -1016,8 +1016,14 @@ public class Siamese {
                     readESIndex(index);
                     List<Document> results =  searchWithGitHub(hunk.getEditString(), resultOffset, resultsSize, queryReduction);
 
-                    //Gonna use only the first document result for each hunkResult
-                    Document topDoc = results.get(0);
+                    Document topDoc;
+                    if(results.size() >= 1) {
+                        //Use only the first document result for each hunkResult
+                        topDoc = results.get(0);
+                    } else {
+                        //Return an empty document in case Elastic search doesn't return any result back
+                        topDoc = new Document(0,"",0,0,"","","","","","","",false,"N/A");
+                    }
 
                     // Instantiating the HunkResult with values from HunkQuery and Document
                     ChunkResult hunkResult = new ChunkResult(
