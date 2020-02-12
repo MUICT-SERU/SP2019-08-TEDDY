@@ -4,3 +4,4 @@ def i4():
         print(home_triple)
 def _main():
         i4();
+        print("Hello world")
