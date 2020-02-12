@@ -148,10 +148,11 @@ public class SearchController {
             // Comment from Chaiyong mentioned that it should be [ { }, { }, { }, ... ]
             JSONArray idiomaticCommits = (JSONArray) resultJSON.get("idiomaticCommits");
             JSONArray nonidimaticCommits = (JSONArray) resultJSON.get("nonidiomaticCommits");
-            logger.info("Search result: found {} idiomatic commits", idiomaticCommits.size());
-            logger.info("Search result: found {} non-idiomatic commits", nonidimaticCommits.size());
-            logger.info("Idiomatic commits: {}", idiomaticCommits.toString());
-            logger.info("Nonidiomatic commits: {}", nonidimaticCommits.toJSONString());
+
+//            logger.info("Search result: found {} idiomatic commits", idiomaticCommits.size());
+//            logger.info("Search result: found {} non-idiomatic commits", nonidimaticCommits.size());
+//            logger.info("Idiomatic commits: {}", idiomaticCommits.toString());
+//            logger.info("Nonidiomatic commits: {}", nonidimaticCommits.toJSONString());
 
             return responseBody;
 
