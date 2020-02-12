@@ -61,7 +61,7 @@ public class GitHubJSONFormatter {
 
     public JSONObject createPullRequestResult(JSONArray commitsResults) {
 
-        this.jPullRequest.put("PRCommits", jCommits);
+        this.jPullRequest.put("PRWhole", jCommits);
 
         return jPullRequest;
     }
