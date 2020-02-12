@@ -1,3 +1,4 @@
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\githubUtils\HunkQuery.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\com\siamesex\standalone\controller\SearchController.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\GitHubIndexing.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\java\JavaMethodParser.java
@@ -43,6 +44,7 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\Norma
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Parameter.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\Method.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3Parser.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\githubUtils\HunkResult.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\test\MethodLevelEvaluatorTest.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\githubUtils\Commit.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\experiment\TermFreqAnalyser.java
@@ -55,6 +57,7 @@ D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\Token
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\IndexCreator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTermComparator.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\document\JavaTerm.java
+D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\githubUtils\GitHubJSONFormatter.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\language\python3\Python3Tokenizer.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\ESConnector.java
 D:\senior-project\SP2019-TEDDY\webapp\src\main\java\crest\siamese\helpers\EvalResult.java
