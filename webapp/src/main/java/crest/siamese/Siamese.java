@@ -998,6 +998,7 @@ public class Siamese {
         String hunkFileName = hunk.getFileName();
         int hunkStart = hunk.getStartline();
         int hunkEnd = hunk.getEndline();
+        List<String> hunkEdit = hunk.getEdit();
 
         if (siameseClient == null) { startup(); }
 
@@ -1031,6 +1032,7 @@ public class Siamese {
                             hunkStart,
                             hunkEnd,
                             hunkFileName,
+                            hunkEdit,
                             topDoc.isIdiomatic(),
                             topDoc.getRecommendIdiom()
                     );

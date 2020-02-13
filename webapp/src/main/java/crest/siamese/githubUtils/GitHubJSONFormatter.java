@@ -41,7 +41,7 @@ public class GitHubJSONFormatter {
         item.put("startline", String.valueOf(r.getStartLine()));
         item.put("endline", String.valueOf(r.getEndLine()));
         item.put("filename", file);
-        item.put("edit", r.getEdit());
+        item.put("edit", r.getEditString());
         item.put("idiomatic", String.valueOf(r.isIdiomatic()));
         item.put("recommend", r.getRecommendIdiom());
 
