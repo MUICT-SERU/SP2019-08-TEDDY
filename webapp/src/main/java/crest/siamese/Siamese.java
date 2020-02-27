@@ -124,6 +124,8 @@ public class Siamese {
             setOutputFolder(overridingParams[1]);
         if (!overridingParams[2].equals("")) // command
             setCommand(overridingParams[2]);
+        if (!overridingParams[3].equals("")) // ES index
+            setIndex(overridingParams[3]);
         printConfig();
         prepareTokenizers();
     }
@@ -1516,6 +1518,10 @@ public class Siamese {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 
     public void indexGitHub() throws Exception {
