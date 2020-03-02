@@ -5,15 +5,16 @@
   "description": "teddy is a tool used to manage the usage of pythonic idioms ",
   "author": "Teddy Team",
   "license": "ISC",
-  "repository": "https://github.com/AGS48353/.git",
-  "homepage": "https://github.com/AGS48353/",
-  "bugs": "https://github.com/AGS48353//issues",
+  "repository": "https://github.com/MUICT-SERU/SP2019-TEDDY.git",
+  "homepage": "https://github.com/MUICT-SERU/SP2019-TEDDY",
+  "bugs": "https://github.com/MUICT-SERU/SP2019-TEDDY/issues",
   "keywords": [
     "probot",
     "github",
     "probot-app"
   ],
   "scripts": {
+    "testingdev": "start nodemon && (cd webapp && start mvn spring-boot:run) && (cd .. && cd elasticsearch-2.2.0/bin && start elasticsearch)",
     "dev": "nodemon",
     "start": "probot run ./index.js",
     "lint": "standard --fix",
@@ -21,10 +22,13 @@
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
     "parse-diff": "^0.6.0",
     "probot": "^7.2.0"
   },
   "devDependencies": {
+    "concurrently": "^5.0.2",
     "jest": "^24.0.0",
     "nock": "^10.0.0",
     "nodemon": "^1.19.1",
