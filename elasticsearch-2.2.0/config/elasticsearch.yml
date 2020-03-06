@@ -93,7 +93,7 @@ cluster.routing.allocation.disk.threshold_enabled: false
 # Require explicit names when deleting indices:
 #
 # action.destructive_requires_name: true
-index.query.bool.max_clause_count: 20480
+index.query.bool.max_clause_count: 40960
 # 4096
 # 20480
 # cluster.routing.allocation.disk.threshold_enabled=false
