@@ -1,22 +1,32 @@
-[2020-03-06 09:25:28,841][INFO ][node                     ] [Fight-Man] version[2.2.0], pid[18236], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-03-06 09:25:28,847][INFO ][node                     ] [Fight-Man] initializing ...
-[2020-03-06 09:25:29,950][INFO ][plugins                  ] [Fight-Man] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-03-06 09:25:30,164][INFO ][env                      ] [Fight-Man] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [42.6gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
-[2020-03-06 09:25:30,165][INFO ][env                      ] [Fight-Man] heap size [910.5mb], compressed ordinary object pointers [true]
-[2020-03-06 09:25:37,254][INFO ][node                     ] [Fight-Man] initialized
-[2020-03-06 09:25:37,255][INFO ][node                     ] [Fight-Man] starting ...
-[2020-03-06 09:25:37,921][INFO ][transport                ] [Fight-Man] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2020-03-06 09:25:37,992][INFO ][discovery                ] [Fight-Man] stackoverflow/4aIhSqm4QSCGaaRLilczFA
-[2020-03-06 09:25:42,519][INFO ][cluster.service          ] [Fight-Man] new_master {Fight-Man}{4aIhSqm4QSCGaaRLilczFA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-03-06 09:25:42,805][INFO ][gateway                  ] [Fight-Man] recovered [4] indices into cluster_state
-[2020-03-06 09:25:43,115][INFO ][http                     ] [Fight-Man] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2020-03-06 09:25:43,116][INFO ][node                     ] [Fight-Man] started
-[2020-03-06 09:25:44,149][INFO ][cluster.routing.allocation] [Fight-Man] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [flask][0], [teddy][0], [flask][0]] ...]).
-[2020-03-06 09:45:26,750][INFO ][cluster.metadata         ] [Fight-Man] [flask-2] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-03-06 09:45:27,061][INFO ][cluster.routing.allocation] [Fight-Man] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask-2][0]] ...]).
-[2020-03-06 09:46:03,013][INFO ][cluster.metadata         ] [Fight-Man] [flask-2] update_mapping [siamese]
-[2020-03-06 10:18:04,175][INFO ][bootstrap                ] running graceful exit on windows
-[2020-03-06 10:18:04,176][INFO ][node                     ] [Fight-Man] stopping ...
-[2020-03-06 10:18:04,281][INFO ][node                     ] [Fight-Man] stopped
-[2020-03-06 10:18:04,281][INFO ][node                     ] [Fight-Man] closing ...
-[2020-03-06 10:18:04,330][INFO ][node                     ] [Fight-Man] closed
+[2020-03-10 19:08:25,139][INFO ][node                     ] [Wrecker] version[2.2.0], pid[245216], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-03-10 19:08:25,144][INFO ][node                     ] [Wrecker] initializing ...
+[2020-03-10 19:08:25,987][INFO ][plugins                  ] [Wrecker] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-03-10 19:08:26,083][INFO ][env                      ] [Wrecker] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [42.1gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-03-10 19:08:26,083][INFO ][env                      ] [Wrecker] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-03-10 19:08:30,644][INFO ][node                     ] [Wrecker] initialized
+[2020-03-10 19:08:30,645][INFO ][node                     ] [Wrecker] starting ...
+[2020-03-10 19:08:31,289][INFO ][transport                ] [Wrecker] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-03-10 19:08:31,346][INFO ][discovery                ] [Wrecker] stackoverflow/x9_evkDzTMmDPUHkAV9j2g
+[2020-03-10 19:08:35,874][INFO ][cluster.service          ] [Wrecker] new_master {Wrecker}{x9_evkDzTMmDPUHkAV9j2g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-03-10 19:08:36,338][INFO ][gateway                  ] [Wrecker] recovered [5] indices into cluster_state
+[2020-03-10 19:08:36,609][INFO ][http                     ] [Wrecker] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-03-10 19:08:36,610][INFO ][node                     ] [Wrecker] started
+[2020-03-10 19:08:38,203][INFO ][cluster.routing.allocation] [Wrecker] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[.kibana][0]] ...]).
+[2020-03-10 20:01:20,510][INFO ][node                     ] [Wrecker] stopping ...
+[2020-03-10 20:01:20,752][INFO ][node                     ] [Wrecker] stopped
+[2020-03-10 20:01:20,752][INFO ][node                     ] [Wrecker] closing ...
+[2020-03-10 20:01:20,762][INFO ][node                     ] [Wrecker] closed
+[2020-03-10 20:11:10,476][INFO ][node                     ] [Living Tribunal] version[2.2.0], pid[171948], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-03-10 20:11:10,477][INFO ][node                     ] [Living Tribunal] initializing ...
+[2020-03-10 20:11:11,209][INFO ][plugins                  ] [Living Tribunal] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-03-10 20:11:11,241][INFO ][env                      ] [Living Tribunal] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [41.5gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-03-10 20:11:11,242][INFO ][env                      ] [Living Tribunal] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-03-10 20:11:15,348][INFO ][node                     ] [Living Tribunal] initialized
+[2020-03-10 20:11:15,349][INFO ][node                     ] [Living Tribunal] starting ...
+[2020-03-10 20:11:16,005][INFO ][transport                ] [Living Tribunal] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-03-10 20:11:16,026][INFO ][discovery                ] [Living Tribunal] stackoverflow/iIt0P8bHTMeboH7YDQpNjw
+[2020-03-10 20:11:20,552][INFO ][cluster.service          ] [Living Tribunal] new_master {Living Tribunal}{iIt0P8bHTMeboH7YDQpNjw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-03-10 20:11:20,796][INFO ][gateway                  ] [Living Tribunal] recovered [5] indices into cluster_state
+[2020-03-10 20:11:21,427][INFO ][http                     ] [Living Tribunal] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-03-10 20:11:21,427][INFO ][node                     ] [Living Tribunal] started
+[2020-03-10 20:11:22,088][INFO ][cluster.routing.allocation] [Living Tribunal] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[.kibana][0]] ...]).
