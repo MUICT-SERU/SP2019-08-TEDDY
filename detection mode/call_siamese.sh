@@ -9,13 +9,6 @@
 # $5 - commitID
 # $6 - commit tracking number (starting from 1) of the cloned repo
 
-idiomPath = "D:\senior-project\python3-idiom"
-
-# Reading of $indexName variable is optional if Don's script can get ES index's name from the user already
-echo "Enter index name for your repository"
-read indexName
-
-
 # Indexing the cloned repo
 java -jar siamese.jar -cf ./config.properties -c index -i $1 -n $4
 

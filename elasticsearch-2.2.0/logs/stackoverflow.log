@@ -30,3 +30,7 @@
 [2020-03-10 20:11:21,427][INFO ][http                     ] [Living Tribunal] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
 [2020-03-10 20:11:21,427][INFO ][node                     ] [Living Tribunal] started
 [2020-03-10 20:11:22,088][INFO ][cluster.routing.allocation] [Living Tribunal] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[.kibana][0]] ...]).
+[2020-03-10 20:51:50,013][INFO ][node                     ] [Living Tribunal] stopping ...
+[2020-03-10 20:51:50,269][INFO ][node                     ] [Living Tribunal] stopped
+[2020-03-10 20:51:50,269][INFO ][node                     ] [Living Tribunal] closing ...
+[2020-03-10 20:51:50,283][INFO ][node                     ] [Living Tribunal] closed
