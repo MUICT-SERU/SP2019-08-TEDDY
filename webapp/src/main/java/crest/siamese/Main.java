@@ -40,29 +40,27 @@ public class Main {
 	 * @return an 3-dim array of overriding parameters [input, output, command]
 	 */
 	private static String[] processCommandLine(String[] args) {
-		String[] overridingParams = {"", "", ""};
+		String[] overridingParams = {"", "", "", ""};
 		// create the command line parser
 		CommandLineParser parser = new DefaultParser();
-		Option configOption = new Option("cf", "configFile", true,
-				"[* requried *] a configuration file");
-		Option iOption = new Option("i", "inputFolder", true,
-				"[optional] location of the input files (for index or query). " +
-						"This will override the configuration file.");
-		Option oOption = new Option("o", "outputFolder", true,
-				"[optional] location of the search result file. " +
-						"This will override the configuration file.");
-		Option cOption = new Option("c", "command", true,
-				"[optional] command to execute [index, search]. This will override the configuration file.");
+		Option configOption = new Option("cf", "configFile", true,	"[* requried *] a configuration file");
+		Option iOption = new Option("i", "inputFolder", true,"[optional] location of the input files (for index or query). " + "This will override the configuration file.");
+		Option oOption = new Option("o", "outputFolder", true, "[optional] location of the search result file. " + "This will override the configuration file.");
+		Option cOption = new Option("c", "command", true,	"[optional] command to execute [index, search]. This will override the configuration file.");
 		Option hOption = new Option("h", "help", false, "<optional> print help");
+		Option nOption = new Option("n", "indexName", true, "Name of Elasticsearh index to be created (-c index) or queried (-c search)");
 		configOption.setRequired(true);
 		iOption.setRequired(false);
 		oOption.setRequired(false);
 		cOption.setRequired(false);
+		nOption.setRequired(false);
 		options.addOption(configOption);
 		options.addOption(iOption);
 		options.addOption(oOption);
 		options.addOption(cOption);
 		options.addOption(hOption);
+		options.addOption(nOption);
+
 		// check if no parameter given, print help and quit
 		if (args.length == 0) {
 			showHelp();
@@ -83,6 +81,11 @@ public class Main {
 			}
 			if (line.hasOption("c")) {
 				overridingParams[2] = line.getOptionValue("c");
+			}
+
+			// New overriding parameters for the ES index name
+			if (line.hasOption("n")) {
+				overridingParams[3] = line.getOptionValue("n");
 			}
 		} catch (ParseException exp) {
 			showHelp();
