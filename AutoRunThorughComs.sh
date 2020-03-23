@@ -11,7 +11,7 @@ else
     echo "parameter 2 is empty"
 fi
 if [ "$3" != "" ]; then
-	echo 'Output Result Location =' $3
+	echo 'Elasticsearch index name =' $3
 else
     echo "parameter 3 is empty"
 fi
