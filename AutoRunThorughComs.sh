@@ -24,8 +24,9 @@ echo "${commitarray[$i]} $STRING"
 #Trigger Purits stuff
 git checkout ${commitarray[$i]}
 #Purit please add your functions between here
+#Umm ??? is the name for Elasticsearch index, What is this ?
 #=====================================
-./call_siamese pwd $i 
+./detection-mode/call_siamese pwd ./elastic-search-2.2.0/python-idioms $2 ??? $commitarray[$i] $i
 #=====================================
 echo "Press any Key to Continue to the next commit"
 read -n 1
