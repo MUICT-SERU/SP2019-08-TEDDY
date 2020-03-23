@@ -13,7 +13,7 @@ fi
 if [ "$3" != "" ]; then
 	echo 'Output Result Location =' $3
 else
-    echo "parameter 2 is empty"
+    echo "parameter 3 is empty"
 fi
 git clone $1 
 cd */.
