@@ -47,6 +47,5 @@ def n36():
     if !gitHubRepo(): for doc in index.getDoc: doc.setLicense(null);
     
 
-def n37():
-    num = input("Enter weight: ")
-    if num == None: print("No input found"); else print("Processing your input");
+def n37(sentence):
+        if(sentence.endswith('?')) return 'Interrogative sentence'; else return 'Informative sentence';
