@@ -29,6 +29,7 @@ def i33():
 def i34():
     num = 2
     prime_less_than_10 = num in (5,3,2,7)
+    return prime_less_than_10
 
 def i35():
     char = input("Enter a character A-Z")
@@ -36,13 +37,17 @@ def i35():
         print("Input is an vowel")
 
 def i36():
-    book_info = ' The Three Musketeers: Alexandre Dumas'
-    formatted_book_info = book_info.strip().upper().replace(':', ' by')
+    if itemListEmpty() == True: 
+        return "List is empty"
 
-def i37(setence):
-    output = sentence.capitalize().swapcase().replace('I\'m', 'I am')
-    output = output.replace('You\'re','You are').replace('can\'t','cannot')
-    return output
+def i37():
+    if name: 
+        print(name)
+        print(address)
+        count++
     
 def i38(setence):
-    return sentence.capitalize().swapcase().endswith('?')
+    if(sentence.endswith('?'))
+        return 'Interrogative sentence'
+        else
+            return 'Informative sentence'
