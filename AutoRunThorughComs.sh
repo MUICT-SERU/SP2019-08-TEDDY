@@ -21,7 +21,6 @@ ls -l
 gitclonedhead=$(git symbolic-ref --short HEAD)
 commit=$(git log --oneline --pretty=format:"%h;")
 commitarray=(${commit//;/})
-#for i in "${commitarray[@]}"
 for ((i=${#commitarray[@]};i>0;i--))
 do
 echo "$i $STRING"
