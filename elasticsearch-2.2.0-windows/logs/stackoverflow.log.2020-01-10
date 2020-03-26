@@ -1,0 +1,146 @@
+[2020-01-10 18:35:51,003][INFO ][node                     ] [Magdalena] version[2.2.0], pid[9920], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-01-10 18:35:51,008][INFO ][node                     ] [Magdalena] initializing ...
+[2020-01-10 18:35:51,811][INFO ][plugins                  ] [Magdalena] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-01-10 18:35:51,850][INFO ][env                      ] [Magdalena] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [60.7gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-01-10 18:35:51,850][INFO ][env                      ] [Magdalena] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-01-10 18:35:56,252][INFO ][node                     ] [Magdalena] initialized
+[2020-01-10 18:35:56,253][INFO ][node                     ] [Magdalena] starting ...
+[2020-01-10 18:35:56,732][INFO ][transport                ] [Magdalena] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-01-10 18:35:56,761][INFO ][discovery                ] [Magdalena] stackoverflow/eDyVmdnNSfWpk2soyFVCfg
+[2020-01-10 18:36:01,287][INFO ][cluster.service          ] [Magdalena] new_master {Magdalena}{eDyVmdnNSfWpk2soyFVCfg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-01-10 18:36:01,640][INFO ][http                     ] [Magdalena] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-01-10 18:36:01,641][INFO ][node                     ] [Magdalena] started
+[2020-01-10 18:36:01,646][INFO ][gateway                  ] [Magdalena] recovered [2] indices into cluster_state
+[2020-01-10 18:36:03,095][INFO ][cluster.routing.allocation] [Magdalena] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[siamese][0]] ...]).
+[2020-01-10 18:47:41,509][INFO ][node                     ] [Magdalena] stopping ...
+[2020-01-10 18:47:41,620][INFO ][node                     ] [Magdalena] stopped
+[2020-01-10 18:47:41,620][INFO ][node                     ] [Magdalena] closing ...
+[2020-01-10 18:47:41,624][INFO ][node                     ] [Magdalena] closed
+[2020-01-10 21:25:19,061][INFO ][node                     ] [Nebula] version[2.2.0], pid[2540], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-01-10 21:25:19,084][INFO ][node                     ] [Nebula] initializing ...
+[2020-01-10 21:25:20,120][INFO ][plugins                  ] [Nebula] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-01-10 21:25:20,183][INFO ][env                      ] [Nebula] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [61.8gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-01-10 21:25:20,183][INFO ][env                      ] [Nebula] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-01-10 21:25:23,776][INFO ][node                     ] [Nebula] initialized
+[2020-01-10 21:25:23,780][INFO ][node                     ] [Nebula] starting ...
+[2020-01-10 21:25:24,408][INFO ][transport                ] [Nebula] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-01-10 21:25:24,431][INFO ][discovery                ] [Nebula] stackoverflow/6XAARRRUTYmmasrePzq15Q
+[2020-01-10 21:25:28,975][INFO ][cluster.service          ] [Nebula] new_master {Nebula}{6XAARRRUTYmmasrePzq15Q}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-01-10 21:25:29,263][INFO ][gateway                  ] [Nebula] recovered [2] indices into cluster_state
+[2020-01-10 21:25:29,727][INFO ][http                     ] [Nebula] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-01-10 21:25:29,728][INFO ][node                     ] [Nebula] started
+[2020-01-10 21:25:30,999][INFO ][cluster.routing.allocation] [Nebula] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[siamese][0]] ...]).
+[2020-01-10 21:32:29,148][INFO ][rest.suppressed          ] /stackoverflow/siamese/1 Params: {pretty=, index=stackoverflow, id=1, type=siamese}
+[stackoverflow] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:151)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:95)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteSingleIndex(IndexNameExpressionResolver.java:208)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$AsyncSingleAction.<init>(TransportSingleShardAction.java:138)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$AsyncSingleAction.<init>(TransportSingleShardAction.java:115)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction.doExecute(TransportSingleShardAction.java:87)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction.doExecute(TransportSingleShardAction.java:51)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:351)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:351)
+	at org.elasticsearch.client.support.AbstractClient.get(AbstractClient.java:443)
+	at org.elasticsearch.rest.action.get.RestGetAction.handleRequest(RestGetAction.java:74)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:363)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-01-10 21:32:35,176][INFO ][rest.suppressed          ] /siamese/1 Params: {pretty=, index=siamese, type=1}
+java.lang.IllegalArgumentException: No feature for name [1]
+	at org.elasticsearch.action.admin.indices.get.GetIndexRequest$Feature.fromName(GetIndexRequest.java:82)
+	at org.elasticsearch.action.admin.indices.get.GetIndexRequest$Feature.convertToFeatures(GetIndexRequest.java:95)
+	at org.elasticsearch.rest.action.admin.indices.get.RestGetIndicesAction.handleRequest(RestGetIndicesAction.java:77)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:363)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-01-10 23:58:51,603][INFO ][node                     ] [Nebula] stopping ...
+[2020-01-10 23:58:51,994][INFO ][node                     ] [Nebula] stopped
+[2020-01-10 23:58:51,994][INFO ][node                     ] [Nebula] closing ...
+[2020-01-10 23:58:52,009][INFO ][node                     ] [Nebula] closed

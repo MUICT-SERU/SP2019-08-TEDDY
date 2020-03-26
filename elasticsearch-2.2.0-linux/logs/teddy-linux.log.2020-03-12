@@ -1,0 +1,18 @@
+[2020-03-12 10:43:24,748][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2020-03-12 10:43:25,100][INFO ][node                     ] [Hulk 2099] version[2.2.0], pid[8317], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-03-12 10:43:25,101][INFO ][node                     ] [Hulk 2099] initializing ...
+[2020-03-12 10:43:26,245][INFO ][plugins                  ] [Hulk 2099] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-03-12 10:43:26,286][INFO ][env                      ] [Hulk 2099] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [41.4gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
+[2020-03-12 10:43:26,287][INFO ][env                      ] [Hulk 2099] heap size [989.8mb], compressed ordinary object pointers [true]
+[2020-03-12 10:43:28,794][INFO ][node                     ] [Hulk 2099] initialized
+[2020-03-12 10:43:28,795][INFO ][node                     ] [Hulk 2099] starting ...
+[2020-03-12 10:43:28,878][INFO ][transport                ] [Hulk 2099] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2020-03-12 10:43:28,887][INFO ][discovery                ] [Hulk 2099] teddy-linux/xK8y-2UbRzauKM6c3ubOdg
+[2020-03-12 10:43:33,420][INFO ][cluster.service          ] [Hulk 2099] new_master {Hulk 2099}{xK8y-2UbRzauKM6c3ubOdg}{127.0.0.1}{127.0.0.1:9301}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-03-12 10:43:33,444][INFO ][http                     ] [Hulk 2099] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2020-03-12 10:43:33,445][INFO ][node                     ] [Hulk 2099] started
+[2020-03-12 10:43:33,533][INFO ][gateway                  ] [Hulk 2099] recovered [0] indices into cluster_state
+[2020-03-12 12:32:58,443][INFO ][node                     ] [Hulk 2099] stopping ...
+[2020-03-12 12:32:58,730][INFO ][node                     ] [Hulk 2099] stopped
+[2020-03-12 12:32:58,730][INFO ][node                     ] [Hulk 2099] closing ...
+[2020-03-12 12:32:58,769][INFO ][node                     ] [Hulk 2099] closed
