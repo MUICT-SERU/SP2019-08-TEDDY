@@ -1,0 +1,38 @@
+[2020-01-18 08:33:01,287][INFO ][node                     ] [Tyrannus] version[2.2.0], pid[13544], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-01-18 08:33:01,290][INFO ][node                     ] [Tyrannus] initializing ...
+[2020-01-18 08:33:02,085][INFO ][plugins                  ] [Tyrannus] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-01-18 08:33:02,112][INFO ][env                      ] [Tyrannus] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [61.8gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-01-18 08:33:02,112][INFO ][env                      ] [Tyrannus] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-01-18 08:33:05,686][INFO ][node                     ] [Tyrannus] initialized
+[2020-01-18 08:33:05,687][INFO ][node                     ] [Tyrannus] starting ...
+[2020-01-18 08:33:06,118][INFO ][transport                ] [Tyrannus] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-01-18 08:33:06,130][INFO ][discovery                ] [Tyrannus] stackoverflow/Q8hPF2c_Tl62e4XYJlofRg
+[2020-01-18 08:33:10,660][INFO ][cluster.service          ] [Tyrannus] new_master {Tyrannus}{Q8hPF2c_Tl62e4XYJlofRg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-01-18 08:33:10,987][INFO ][gateway                  ] [Tyrannus] recovered [4] indices into cluster_state
+[2020-01-18 08:33:11,006][INFO ][http                     ] [Tyrannus] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-01-18 08:33:11,006][INFO ][node                     ] [Tyrannus] started
+[2020-01-18 08:33:13,002][INFO ][cluster.routing.allocation] [Tyrannus] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[siamese][0]] ...]).
+[2020-01-18 08:35:22,858][INFO ][bootstrap                ] running graceful exit on windows
+[2020-01-18 08:35:22,859][INFO ][node                     ] [Tyrannus] stopping ...
+[2020-01-18 08:35:22,945][INFO ][node                     ] [Tyrannus] stopped
+[2020-01-18 08:35:22,946][INFO ][node                     ] [Tyrannus] closing ...
+[2020-01-18 08:35:22,952][INFO ][node                     ] [Tyrannus] closed
+[2020-01-18 09:01:03,491][INFO ][node                     ] [Gin Genie] version[2.2.0], pid[15944], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-01-18 09:01:03,492][INFO ][node                     ] [Gin Genie] initializing ...
+[2020-01-18 09:01:04,487][INFO ][plugins                  ] [Gin Genie] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-01-18 09:01:04,546][INFO ][env                      ] [Gin Genie] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [61.8gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-01-18 09:01:04,547][INFO ][env                      ] [Gin Genie] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-01-18 09:01:09,053][INFO ][node                     ] [Gin Genie] initialized
+[2020-01-18 09:01:09,053][INFO ][node                     ] [Gin Genie] starting ...
+[2020-01-18 09:01:09,624][INFO ][transport                ] [Gin Genie] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-01-18 09:01:09,635][INFO ][discovery                ] [Gin Genie] stackoverflow/K9ZYTok4ThOVRe6aC3a_dw
+[2020-01-18 09:01:14,159][INFO ][cluster.service          ] [Gin Genie] new_master {Gin Genie}{K9ZYTok4ThOVRe6aC3a_dw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-01-18 09:01:14,582][INFO ][http                     ] [Gin Genie] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-01-18 09:01:14,583][INFO ][node                     ] [Gin Genie] started
+[2020-01-18 09:01:14,606][INFO ][gateway                  ] [Gin Genie] recovered [4] indices into cluster_state
+[2020-01-18 09:01:16,808][INFO ][cluster.routing.allocation] [Gin Genie] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[siamese][0]] ...]).
+[2020-01-18 09:10:18,945][INFO ][bootstrap                ] running graceful exit on windows
+[2020-01-18 09:10:18,984][INFO ][node                     ] [Gin Genie] stopping ...
+[2020-01-18 09:10:19,251][INFO ][node                     ] [Gin Genie] stopped
+[2020-01-18 09:10:19,251][INFO ][node                     ] [Gin Genie] closing ...
+[2020-01-18 09:10:19,258][INFO ][node                     ] [Gin Genie] closed
