@@ -1,0 +1,82 @@
+Flask
+=========1==========
+def create_app2(foo, bar):
+    return Flask("_".join(["app2", foo, bar]))
+=========1==========
+=========2==========
+        def to_url(self, value):
+            base_to_url = super(ListConverter, self).to_url
+            return ",".join(base_to_url(x) for x in value)
+=========2==========
+=========3==========
+def test_context_available(app, client):
+    class ContextConverter(BaseConverter):
+        def to_python(self, value):
+            assert has_request_context()
+            return value
+=========3==========
+=========4==========
+        def view(*args, **kwargs):
+            self = view.view_class(*class_args, **class_kwargs)
+            return self.dispatch_request(*args, **kwargs)
+=========4==========
+=========5==========
+def _render(template, context, app):
+    """Renders the template and fires the signal"""
+
+    before_render_template.send(app, template=template, context=context)
+    rv = template.render(context)
+    template_rendered.send(app, template=template, context=context)
+    return rv
+=========5==========
+=========6==========
+def render_template(template_name_or_list, **context):
+    """Renders a template from the template folder with the given
+    context.
+    :param template_name_or_list: the name of the template to be
+                                  rendered, or an iterable with template names
+                                  the first one existing will be rendered
+    :param context: the variables that should be available in the
+                    context of the template.
+    """
+    ctx = _app_ctx_stack.top
+    ctx.app.update_template_context(context)
+    return _render(
+        ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+        context,
+        ctx.app,
+    )
+
+=========6==========
+=========7==========
+    def get(self, key, default=None):
+        self.accessed = True
+        return super(SecureCookieSession, self).get(key, default)
+=========7==========
+=========8==========
+    def _fail(self, *args, **kwargs):
+        raise RuntimeError(
+            "The session is unavailable because no secret "
+            "key was set.  Set the secret_key on the "
+            "application to something unique and secret."
+        )
+
+    __setitem__ = __delitem__ = clear = pop = popitem = update = setdefault = _fail
+    del _fail
+=========8==========
+=========9==========
+    def is_null_session(self, obj):
+        """Checks if a given object is a null session.  Null sessions are
+        not asked to be saved.
+        This checks if the object is an instance of :attr:`null_session_class`
+        by default.
+        """
+        return isinstance(obj, self.null_session_class)
+=========9==========
+=========10==========
+    def _load_unlocked(self):
+        __traceback_hide__ = True  # noqa: F841
+        self._app = rv = self.loader()
+        self._bg_loading_exc_info = None
+        return rv
+=========10==========

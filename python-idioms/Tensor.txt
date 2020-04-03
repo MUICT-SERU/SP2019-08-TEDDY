@@ -1,0 +1,114 @@
+TensorFlow
+=========1==========
+def experimental_convert_saved_model_v1_to_mlir(saved_model_path, tags,
+                                                show_debug_info):
+  return ExperimentalConvertSavedModelV1ToMlir(
+      str(saved_model_path).encode('utf-8'),
+      str(tags).encode('utf-8'), show_debug_info)
+
+=========1==========
+=========2==========
+def disable():
+  """Disables v2 behaviors."""
+  global _force_enable
+  _force_enable = False
+=========2==========
+=========3==========
+def _new__init__(self, wrapped_value, tf_should_use_helper):
+  # pylint: disable=protected-access
+  self._tf_should_use_helper = tf_should_use_helper
+  self._tf_should_use_wrapped_value = wrapped_value
+=========3==========
+=========4==========
+def _new_mark_used(self, *args, **kwargs):
+  object.__getattribute__(self, '_tf_should_use_helper').sate()
+  try:
+    mu = object.__getattribute__(
+        object.__getattribute__(self, '_tf_should_use_wrapped_value'),
+        'mark_used')
+    return mu(*args, **kwargs)
+  except AttributeError:
+    pass
+
+
+_WRAPPERS = {}
+
+
+=========4==========
+=========5==========
+def add_dispatch_support(target):
+  """Decorator that adds a dispatch handling wrapper to an op."""
+  def wrapper(*args, **kwargs):
+    """Call target, and fall back on dispatchers if there is a TypeError."""
+    try:
+      return target(*args, **kwargs)
+    except (TypeError, ValueError):
+      # Note: convert_to_eager_tensor currently raises a ValueError, not a
+      # TypeError, when given unexpected types.  So we need to catch both.
+      result = dispatch(wrapper, *args, **kwargs)
+      if result is not OpDispatcher.NOT_SUPPORTED:
+        return result
+      else:
+        raise
+
+  add_dispatch_list(wrapper)
+  return tf_decorator.make_decorator(target, wrapper)
+=========5==========
+=========6==========
+@tf_export('compat.path_to_str')
+def path_to_str(path):
+  r"""Converts input which is a `PathLike` object to `str` type.
+  Converts from any python constant representation of a `PathLike` object to
+  a string. If the input is not a `PathLike` object, simply returns the input.
+  Args:
+    path: An object that can be converted to path representation.
+  Returns:
+    A `str` object.
+  Usage:
+    In case a simplified `str` version of the path is needed from an
+    `os.PathLike` object
+  Examples:
+  ```python
+  $ tf.compat.path_to_str('C:\XYZ\tensorflow\./.././tensorflow')
+  'C:\XYZ\tensorflow\./.././tensorflow' # Windows OS
+  $ tf.compat.path_to_str(Path('C:\XYZ\tensorflow\./.././tensorflow'))
+  'C:\XYZ\tensorflow\..\tensorflow' # Windows OS
+  $ tf.compat.path_to_str(Path('./corpus'))
+  'corpus' # Linux OS
+  $ tf.compat.path_to_str('./.././Corpus')
+  './.././Corpus' # Linux OS
+  $ tf.compat.path_to_str(Path('./.././Corpus'))
+  '../Corpus' # Linux OS
+  $ tf.compat.path_to_str(Path('./..////../'))
+  '../..' # Linux OS
+  ```
+  """
+  if hasattr(path, '__fspath__'):
+    path = as_str_any(path.__fspath__())
+  return path
+
+=========6==========
+=========7==========
+
+def _is_callable_object(obj):
+  return hasattr(obj, '__call__') and tf_inspect.ismethod(obj.__call__)
+=========7==========
+=========8==========
+  def __init__(self, local_name, parent_module_globals, name, warning=None):  # pylint: disable=super-on-old-class
+    self._local_name = local_name
+    self._parent_module_globals = parent_module_globals
+    self._warning = warning
+
+    super(LazyLoader, self).__init__(name)
+
+=========8==========
+=========9==========
+  def __getattr__(self, item):
+    module = self._load()
+    return getattr(module, item)
+=========9==========
+=========10==========
+  def __dir__(self):
+    module = self._load()
+    return dir(module)
+=========10==========
