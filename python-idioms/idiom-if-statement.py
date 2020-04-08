@@ -37,7 +37,7 @@ def i35():
         print("Input is an vowel")
 
 def i36():
-    if itemListEmpty() == True: 
+    if itemListEmpty(): 
         return "List is empty"
 
 def i37():
