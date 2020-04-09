@@ -6,3 +6,4 @@ def add_title(self):
 
         self.add(square)
         self.add(title)
+

@@ -14,3 +14,4 @@ def render_template(template_name_or_list, **context):
         context,
         ctx.app,
     )
+

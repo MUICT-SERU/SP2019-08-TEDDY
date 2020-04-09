@@ -4,9 +4,5 @@ def _new_mark_used(self, *args, **kwargs):
     mu = object.__getattribute__(
         object.__getattribute__(self, '_tf_should_use_wrapped_value'),
         'mark_used')
-    return mu(*args, **kwargs)
-  except AttributeError:
-    pass
+  return mu(*args, **kwargs)
 
-
-_WRAPPERS = {}

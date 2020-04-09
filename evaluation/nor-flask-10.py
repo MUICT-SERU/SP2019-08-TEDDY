@@ -3,3 +3,4 @@ def _load_unlocked(self):
         self._app = rv = self.loader()
         self._bg_loading_exc_info = None
         return rv
+

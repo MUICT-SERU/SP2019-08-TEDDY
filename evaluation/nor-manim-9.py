@@ -20,3 +20,4 @@ def false_compliment(self):
         self.play(*list(map(FadeOut, [bubble, content])))
 
         self.bubble = bubble
+

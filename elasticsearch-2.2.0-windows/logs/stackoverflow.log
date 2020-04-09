@@ -1,36 +1,91 @@
-[2020-03-12 09:38:25,309][INFO ][node                     ] [General Orwell Taylor] version[2.2.0], pid[238928], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-03-12 09:38:25,313][INFO ][node                     ] [General Orwell Taylor] initializing ...
-[2020-03-12 09:38:26,108][INFO ][plugins                  ] [General Orwell Taylor] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-03-12 09:38:26,170][INFO ][env                      ] [General Orwell Taylor] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [41.5gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
-[2020-03-12 09:38:26,171][INFO ][env                      ] [General Orwell Taylor] heap size [910.5mb], compressed ordinary object pointers [true]
-[2020-03-12 09:38:30,348][INFO ][node                     ] [General Orwell Taylor] initialized
-[2020-03-12 09:38:30,348][INFO ][node                     ] [General Orwell Taylor] starting ...
-[2020-03-12 09:38:31,118][INFO ][transport                ] [General Orwell Taylor] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2020-03-12 09:38:31,127][INFO ][discovery                ] [General Orwell Taylor] stackoverflow/NxptfWwkRQi7QmgHS22jpQ
-[2020-03-12 09:38:35,666][INFO ][cluster.service          ] [General Orwell Taylor] new_master {General Orwell Taylor}{NxptfWwkRQi7QmgHS22jpQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-03-12 09:38:36,123][INFO ][gateway                  ] [General Orwell Taylor] recovered [6] indices into cluster_state
-[2020-03-12 09:38:36,191][INFO ][http                     ] [General Orwell Taylor] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2020-03-12 09:38:36,191][INFO ][node                     ] [General Orwell Taylor] started
-[2020-03-12 09:38:37,959][INFO ][cluster.routing.allocation] [General Orwell Taylor] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0]] ...]).
-[2020-03-12 11:38:30,160][INFO ][node                     ] [General Orwell Taylor] stopping ...
-[2020-03-12 11:38:30,386][INFO ][node                     ] [General Orwell Taylor] stopped
-[2020-03-12 11:38:30,387][INFO ][node                     ] [General Orwell Taylor] closing ...
-[2020-03-12 11:38:30,409][INFO ][node                     ] [General Orwell Taylor] closed
-[2020-03-12 11:38:48,978][INFO ][node                     ] [Flatman] version[2.2.0], pid[79080], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-03-12 11:38:48,979][INFO ][node                     ] [Flatman] initializing ...
-[2020-03-12 11:38:49,731][INFO ][plugins                  ] [Flatman] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-03-12 11:38:49,787][INFO ][env                      ] [Flatman] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [41.4gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
-[2020-03-12 11:38:49,788][INFO ][env                      ] [Flatman] heap size [910.5mb], compressed ordinary object pointers [true]
-[2020-03-12 11:38:54,024][INFO ][node                     ] [Flatman] initialized
-[2020-03-12 11:38:54,025][INFO ][node                     ] [Flatman] starting ...
-[2020-03-12 11:38:54,625][INFO ][transport                ] [Flatman] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2020-03-12 11:38:54,641][INFO ][discovery                ] [Flatman] stackoverflow/B3s5jv6RQhSNpYHZLiWeyg
-[2020-03-12 11:38:59,222][INFO ][cluster.service          ] [Flatman] new_master {Flatman}{B3s5jv6RQhSNpYHZLiWeyg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-03-12 11:38:59,680][INFO ][gateway                  ] [Flatman] recovered [6] indices into cluster_state
-[2020-03-12 11:38:59,767][INFO ][http                     ] [Flatman] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2020-03-12 11:38:59,768][INFO ][node                     ] [Flatman] started
-[2020-03-12 11:39:01,415][INFO ][cluster.routing.allocation] [Flatman] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
-[2020-03-12 11:41:28,741][INFO ][node                     ] [Flatman] stopping ...
-[2020-03-12 11:41:28,880][INFO ][node                     ] [Flatman] stopped
-[2020-03-12 11:41:28,880][INFO ][node                     ] [Flatman] closing ...
-[2020-03-12 11:41:28,885][INFO ][node                     ] [Flatman] closed
+[2020-04-09 22:22:13,243][INFO ][node                     ] [Arkady Rossovich] version[2.2.0], pid[1528], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-09 22:22:13,265][INFO ][node                     ] [Arkady Rossovich] initializing ...
+[2020-04-09 22:22:14,209][INFO ][plugins                  ] [Arkady Rossovich] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-09 22:22:14,270][INFO ][env                      ] [Arkady Rossovich] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [40.3gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-09 22:22:14,271][INFO ][env                      ] [Arkady Rossovich] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-09 22:22:17,365][INFO ][node                     ] [Arkady Rossovich] initialized
+[2020-04-09 22:22:17,365][INFO ][node                     ] [Arkady Rossovich] starting ...
+[2020-04-09 22:22:18,015][INFO ][transport                ] [Arkady Rossovich] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-09 22:22:18,024][INFO ][discovery                ] [Arkady Rossovich] stackoverflow/RcyY1co0TiupCfU_MOX--Q
+[2020-04-09 22:22:22,571][INFO ][cluster.service          ] [Arkady Rossovich] new_master {Arkady Rossovich}{RcyY1co0TiupCfU_MOX--Q}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-09 22:22:23,040][INFO ][gateway                  ] [Arkady Rossovich] recovered [6] indices into cluster_state
+[2020-04-09 22:22:23,102][INFO ][http                     ] [Arkady Rossovich] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-09 22:22:23,103][INFO ][node                     ] [Arkady Rossovich] started
+[2020-04-09 22:22:24,579][INFO ][cluster.routing.allocation] [Arkady Rossovich] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0]] ...]).
+[2020-04-09 22:28:08,919][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-09 22:28:09,373][INFO ][cluster.routing.allocation] [Arkady Rossovich] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-09 22:28:14,999][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] update_mapping [siamese]
+[2020-04-09 22:35:00,760][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-09 22:35:01,033][INFO ][cluster.routing.allocation] [Arkady Rossovich] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-09 22:35:06,637][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] update_mapping [siamese]
+[2020-04-09 22:35:41,055][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-09 22:35:41,333][INFO ][cluster.routing.allocation] [Arkady Rossovich] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-09 22:35:46,507][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] update_mapping [siamese]
+[2020-04-09 22:38:10,590][INFO ][rest.suppressed          ] /evaluation-teddy/_search Params: {q=*, pretty=, index=evaluation-teddy}
+[evaluation-teddy] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:586)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:133)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:113)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.<init>(TransportSearchTypeAction.java:121)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:73)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:67)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:64)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:53)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:99)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:351)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:351)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:574)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:363)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-04-09 22:57:30,311][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-09 22:57:30,541][INFO ][cluster.routing.allocation] [Arkady Rossovich] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-09 22:57:35,573][INFO ][cluster.metadata         ] [Arkady Rossovich] [teddy-evaluation] update_mapping [siamese]

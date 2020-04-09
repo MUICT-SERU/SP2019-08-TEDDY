@@ -5,3 +5,4 @@ def _render(template, context, app):
     rv = template.render(context)
     template_rendered.send(app, template=template, context=context)
     return rv
+

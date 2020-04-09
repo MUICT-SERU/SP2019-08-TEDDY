@@ -7,3 +7,4 @@ def _fail(self, *args, **kwargs):
 
     __setitem__ = __delitem__ = clear = pop = popitem = update = setdefault = _fail
     del _fail
+

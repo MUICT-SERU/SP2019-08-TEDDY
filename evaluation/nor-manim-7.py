@@ -7,3 +7,4 @@ def cross_out_assumption(self):
     self.play(self.bar_chart.fade, 0.7)
     self.wait(2)
     self.play(self.bar_chart.restore)
+

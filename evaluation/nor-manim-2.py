@@ -13,3 +13,4 @@ class AskWhyRewriteIt(TeacherStudentsScene):
             look_at_arg=4 * LEFT + 2 * UP
         )
         self.wait(2)
+

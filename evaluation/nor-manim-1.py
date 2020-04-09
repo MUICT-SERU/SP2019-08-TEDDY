@@ -17,3 +17,4 @@ class UpdatersExample(Scene):
             run_time=5,
         )
         self.wait()
+

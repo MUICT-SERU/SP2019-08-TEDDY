@@ -5,3 +5,4 @@ def is_null_session(self, obj):
         by default.
         """
         return isinstance(obj, self.null_session_class)
+
