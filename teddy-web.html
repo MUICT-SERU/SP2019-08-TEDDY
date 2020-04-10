@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TEDDY: Automated Tool for Pythonic Idiom Detection</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+			body {
+			  background-color:	#ffe7c8;
+			}
+
+			h1,h2{
+			font-family: 'IBM Plex Sans', sans-serif;
+			color:#6e5040;
+			}
+
+			p {
+			  font-family: 'IBM Plex Sans', sans-serif;
+			  font-color:#6e5040;
+			}
+
+			/* Create two equal columns that floats next to each other */
+			.column {
+			  float: left;
+			  width: 50%;
+			  padding: 10px;
+			  /*height: 300px; /* Should be removed. Only for demonstration */*/
+			}
+
+			/* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+
+			/* Footer at the bottom of page  */
+			.footer {
+			  position: fixed;
+			  left: 0;
+			  bottom: 0;
+			  width: 100%;
+			  background-color:#6e5040;
+			  color: #ffe7c8;
+			  text-align: center;
+			}
+
+			/* Resize for Teddy logo */
+			img.teddy-logo {
+				width: 25%;
+				height: 25%;
+			}
+
+			input[type=search], select {
+			  width: 40%;
+			  padding: 12px 20px;
+			  margin: 8px 0;
+			  display: inline-block;
+			  border: none;
+			  border-radius: 4px;
+			  box-sizing: border-box;
+			  font-size: 15px
+			}
+
+			input[type=submit] {
+			  width: 13%;
+			  background-color: #f9b83c;
+			  color: white;
+			  padding: 12px 13px;
+			  margin: 8px 0;
+			  border: none;
+			  border-radius: 4px;
+			  cursor: pointer;
+			  font-size: 15px
+			}
+
+			button {
+			  width: 13%;
+			  background-color: #f9b83c;
+			  color: white;
+			  padding: 12px 13px;
+			  margin: 8px 0;
+			  border: none;
+			  border-radius: 4px;
+			  cursor: pointer;
+			  font-size: 15px
+			}
+		</style>
+	</head>
+	<body>
+		<!--Font from IBM Plex Sans-->
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap" rel="stylesheet">
+
+		<div align="center">
+				<img class="teddy-logo" src="https://s3-ap-southeast-1.amazonaws.com/img-in-th/c3cafcaf68f0756d9ff4600879458385.png" align="center">
+				<h1 class="font" align="center">TEDDY: Automated Tool for Pythonic Idiom Detection</h1>
+		</div>
+
+		<div class="row">
+		  
+		  <div class="column" style="background-color:none; border-right: 1px; " align="center"  width=50% height=50%>
+			<!--detection mode icon here-->
+			<img src="https://s3-ap-southeast-1.amazonaws.com/img-in-th/4a0712cace3e6fee7230445162519fbf.png" style="width:15%; height:15%" align="center">
+			<h2>Detection Mode</h2>
+			<p style="color:#c1905e">See the evolution of Pythonic Idioms usage of your repo</p>
+			
+			<form action="/action_page.php">
+				<input type="search" id="gsearch" name="gsearch" placeholder="Enter your .git here">
+				<input type="submit" value="Analyze">
+			</form>
+		  </div>
+		  
+		  <div class="column" style="background-color:" align="center">
+			<!--prevention mode icon here-->
+			<img src="https://s3-ap-southeast-1.amazonaws.com/img-in-th/c418176df7b968b31486c24bfa531368.png" style="width:15%; height:15%" align="center">
+			<h2>Prevention Mode</h2>
+			<p style="color:#c1905e">Check for Pythonic Idioms in your pull requests</p>
+			
+			
+			
+			<button type="button" onclick="">Install</button>
+		  </div>
+		</div>
+		
+		<div class="footer">
+		  <p>2020 Teddy, All Rights Reserved</p>
+		</div>
+		
+	</body>
+</html>
