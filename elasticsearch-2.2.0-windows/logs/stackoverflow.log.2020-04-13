@@ -1,0 +1,55 @@
+[2020-04-13 16:26:43,981][INFO ][node                     ] [Adam II] version[2.2.0], pid[17184], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-13 16:26:43,985][INFO ][node                     ] [Adam II] initializing ...
+[2020-04-13 16:26:44,516][INFO ][plugins                  ] [Adam II] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-13 16:26:44,560][INFO ][env                      ] [Adam II] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [40.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-13 16:26:44,561][INFO ][env                      ] [Adam II] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-13 16:26:47,329][INFO ][node                     ] [Adam II] initialized
+[2020-04-13 16:26:47,330][INFO ][node                     ] [Adam II] starting ...
+[2020-04-13 16:26:48,135][INFO ][transport                ] [Adam II] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-13 16:26:48,144][INFO ][discovery                ] [Adam II] stackoverflow/0Q6tGxqhQLWK27GsjTPOGA
+[2020-04-13 16:26:52,717][INFO ][cluster.service          ] [Adam II] new_master {Adam II}{0Q6tGxqhQLWK27GsjTPOGA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-13 16:26:53,359][INFO ][http                     ] [Adam II] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-13 16:26:53,360][INFO ][node                     ] [Adam II] started
+[2020-04-13 16:26:53,491][INFO ][gateway                  ] [Adam II] recovered [7] indices into cluster_state
+[2020-04-13 16:26:55,699][INFO ][cluster.routing.allocation] [Adam II] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0]] ...]).
+[2020-04-13 18:18:44,928][INFO ][bootstrap                ] running graceful exit on windows
+[2020-04-13 18:18:44,933][INFO ][node                     ] [Adam II] stopping ...
+[2020-04-13 18:18:45,200][INFO ][node                     ] [Adam II] stopped
+[2020-04-13 18:18:45,201][INFO ][node                     ] [Adam II] closing ...
+[2020-04-13 18:18:45,214][INFO ][node                     ] [Adam II] closed
+[2020-04-13 19:23:01,426][INFO ][node                     ] [Ebenezer Laughton] version[2.2.0], pid[13164], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-13 19:23:01,465][INFO ][node                     ] [Ebenezer Laughton] initializing ...
+[2020-04-13 19:23:02,345][INFO ][plugins                  ] [Ebenezer Laughton] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-13 19:23:02,390][INFO ][env                      ] [Ebenezer Laughton] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [40.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-13 19:23:02,390][INFO ][env                      ] [Ebenezer Laughton] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-13 19:23:05,867][INFO ][node                     ] [Ebenezer Laughton] initialized
+[2020-04-13 19:23:05,867][INFO ][node                     ] [Ebenezer Laughton] starting ...
+[2020-04-13 19:23:06,718][INFO ][transport                ] [Ebenezer Laughton] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-13 19:23:06,727][INFO ][discovery                ] [Ebenezer Laughton] stackoverflow/a4-TcwJZSDWdq2LBwrUi0g
+[2020-04-13 19:23:11,252][INFO ][cluster.service          ] [Ebenezer Laughton] new_master {Ebenezer Laughton}{a4-TcwJZSDWdq2LBwrUi0g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-13 19:23:11,791][INFO ][gateway                  ] [Ebenezer Laughton] recovered [7] indices into cluster_state
+[2020-04-13 19:23:11,805][INFO ][http                     ] [Ebenezer Laughton] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-13 19:23:11,806][INFO ][node                     ] [Ebenezer Laughton] started
+[2020-04-13 19:23:13,783][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0]] ...]).
+[2020-04-13 19:26:20,206][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-13 19:26:20,497][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-13 19:26:26,131][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] update_mapping [siamese]
+[2020-04-13 19:29:13,892][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-13 19:29:14,117][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-13 19:29:19,031][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] update_mapping [siamese]
+[2020-04-13 19:34:11,097][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-13 19:34:11,334][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-13 19:34:16,916][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] update_mapping [siamese]
+[2020-04-13 19:49:34,434][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-13 19:49:34,674][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-13 19:49:41,020][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] update_mapping [siamese]
+[2020-04-13 20:58:26,696][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-13 20:58:26,938][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-13 20:58:32,728][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] update_mapping [siamese]
+[2020-04-13 21:05:30,932][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-13 21:05:31,175][INFO ][cluster.routing.allocation] [Ebenezer Laughton] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-13 21:05:37,095][INFO ][cluster.metadata         ] [Ebenezer Laughton] [teddy-evaluation] update_mapping [siamese]
+[2020-04-13 21:08:23,885][INFO ][node                     ] [Ebenezer Laughton] stopping ...
+[2020-04-13 21:08:24,033][INFO ][node                     ] [Ebenezer Laughton] stopped
+[2020-04-13 21:08:24,034][INFO ][node                     ] [Ebenezer Laughton] closing ...
+[2020-04-13 21:08:24,050][INFO ][node                     ] [Ebenezer Laughton] closed
