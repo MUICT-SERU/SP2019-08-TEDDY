@@ -4,6 +4,6 @@ WARNING: THIS WORKS ONLY ON LINUX OS
 2. Make sure there is no any folder located in this directory
 3. At this directory, execute AutoRunThorughComs.sh with following order of arguments:
 	- git URL
-	- output results location (absolute path recommended)
+	- output results location, NOT WITHIN THE REPO (absolute path recommended)
 	- name for the Elasticsearch index of the repo (no whitespace allowed)
 	Example: .\AutoRunThorughComs https://github.com/pallets/flask.git \home\flask-results flask
