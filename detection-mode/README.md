@@ -6,5 +6,5 @@
 	- `.git` URL of a GitHub repository
 	- directory for the result files, NOT within THE REPO (absolute path recommended)
 	- name for the Elasticsearch index of the repo (no whitespace allowed)
-	- **Example: `$ .\AutoRunThorughComs https://github.com/pallets/flask.git \home\flask-results flask`**
+	- **Example: `$ ./AutoRunThorughComs https://github.com/pallets/flask.git /home/flask-results flask`**
 4. NOTE: Detection mode takes a considerable amount of time to complete depending on the repository's size and number of commits present.
