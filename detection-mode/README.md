@@ -1,6 +1,6 @@
 ## USER INSTRUCTION (directly through linux terminal)
 **WARNING: THIS WORKS ONLY ON LINUX OS**
-1. On a terminal, turn on elasticsearch server at `~\elasticsearch-2.2.0-windows\bin\elasticsearch`
+1. On a terminal, turn on Elasticsearch server at `~\elasticsearch-2.2.0-linux\bin\elasticsearch`
 2. Make sure there is no any folder located in this directory (`~\detection-mode\`)
 3. Open another terminal, execute `~\detection-mode\AutoRunThorughComs.sh` with the following order of arguments:
 	- `.git` URL of a GitHub repository
