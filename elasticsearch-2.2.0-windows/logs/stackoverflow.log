@@ -1,17 +1,36 @@
-[2020-04-15 14:00:32,482][INFO ][node                     ] [Katie Power] version[2.2.0], pid[15172], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-04-15 14:00:32,491][INFO ][node                     ] [Katie Power] initializing ...
-[2020-04-15 14:00:33,685][INFO ][plugins                  ] [Katie Power] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-04-15 14:00:33,770][INFO ][env                      ] [Katie Power] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [40.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
-[2020-04-15 14:00:33,771][INFO ][env                      ] [Katie Power] heap size [910.5mb], compressed ordinary object pointers [true]
-[2020-04-15 14:00:38,470][INFO ][node                     ] [Katie Power] initialized
-[2020-04-15 14:00:38,472][INFO ][node                     ] [Katie Power] starting ...
-[2020-04-15 14:00:39,413][INFO ][transport                ] [Katie Power] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2020-04-15 14:00:39,426][INFO ][discovery                ] [Katie Power] stackoverflow/3SjvBGDDTsS7UNBVql05ig
-[2020-04-15 14:00:43,969][INFO ][cluster.service          ] [Katie Power] new_master {Katie Power}{3SjvBGDDTsS7UNBVql05ig}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-04-15 14:00:44,592][INFO ][gateway                  ] [Katie Power] recovered [7] indices into cluster_state
-[2020-04-15 14:00:44,777][INFO ][http                     ] [Katie Power] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2020-04-15 14:00:44,778][INFO ][node                     ] [Katie Power] started
-[2020-04-15 14:00:47,042][INFO ][cluster.routing.allocation] [Katie Power] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
-[2020-04-15 14:03:48,900][INFO ][cluster.metadata         ] [Katie Power] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-15 14:03:49,174][INFO ][cluster.routing.allocation] [Katie Power] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
-[2020-04-15 14:03:56,778][INFO ][cluster.metadata         ] [Katie Power] [teddy-evaluation] update_mapping [siamese]
+[2020-04-16 10:01:37,199][INFO ][node                     ] [Outlaw] version[2.2.0], pid[1276], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-16 10:01:37,204][INFO ][node                     ] [Outlaw] initializing ...
+[2020-04-16 10:01:37,741][INFO ][plugins                  ] [Outlaw] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-16 10:01:37,772][INFO ][env                      ] [Outlaw] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [38.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-16 10:01:37,773][INFO ][env                      ] [Outlaw] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-16 10:01:40,572][INFO ][node                     ] [Outlaw] initialized
+[2020-04-16 10:01:40,572][INFO ][node                     ] [Outlaw] starting ...
+[2020-04-16 10:01:41,330][INFO ][transport                ] [Outlaw] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-16 10:01:41,339][INFO ][discovery                ] [Outlaw] stackoverflow/EhucqonzTiC7R6MmUI5Pxw
+[2020-04-16 10:01:45,884][INFO ][cluster.service          ] [Outlaw] new_master {Outlaw}{EhucqonzTiC7R6MmUI5Pxw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-16 10:01:46,423][INFO ][http                     ] [Outlaw] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-16 10:01:46,423][INFO ][node                     ] [Outlaw] started
+[2020-04-16 10:01:46,457][INFO ][gateway                  ] [Outlaw] recovered [7] indices into cluster_state
+[2020-04-16 10:01:48,215][INFO ][cluster.routing.allocation] [Outlaw] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-16 11:25:32,421][INFO ][node                     ] [Outlaw] stopping ...
+[2020-04-16 11:25:32,853][INFO ][node                     ] [Outlaw] stopped
+[2020-04-16 11:25:32,854][INFO ][node                     ] [Outlaw] closing ...
+[2020-04-16 11:25:32,864][INFO ][node                     ] [Outlaw] closed
+[2020-04-16 17:01:53,747][INFO ][node                     ] [Stygorr] version[2.2.0], pid[9456], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-16 17:01:53,764][INFO ][node                     ] [Stygorr] initializing ...
+[2020-04-16 17:01:54,627][INFO ][plugins                  ] [Stygorr] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-16 17:01:54,690][INFO ][env                      ] [Stygorr] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [38.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-16 17:01:54,691][INFO ][env                      ] [Stygorr] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-16 17:01:59,854][INFO ][node                     ] [Stygorr] initialized
+[2020-04-16 17:01:59,854][INFO ][node                     ] [Stygorr] starting ...
+[2020-04-16 17:02:00,640][INFO ][transport                ] [Stygorr] publish_address {127.0.0.1:9301}, bound_addresses {127.0.0.1:9301}, {[::1]:9301}
+[2020-04-16 17:02:00,651][INFO ][discovery                ] [Stygorr] stackoverflow/J5HeFlKnRaC_PPMY9SM3Dw
+[2020-04-16 17:02:05,201][INFO ][cluster.service          ] [Stygorr] new_master {Stygorr}{J5HeFlKnRaC_PPMY9SM3Dw}{127.0.0.1}{127.0.0.1:9301}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-16 17:02:05,956][INFO ][gateway                  ] [Stygorr] recovered [7] indices into cluster_state
+[2020-04-16 17:02:05,980][INFO ][http                     ] [Stygorr] publish_address {127.0.0.1:9201}, bound_addresses {127.0.0.1:9201}, {[::1]:9201}
+[2020-04-16 17:02:05,980][INFO ][node                     ] [Stygorr] started
+[2020-04-16 17:02:08,687][INFO ][cluster.routing.allocation] [Stygorr] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-16 17:10:03,420][INFO ][node                     ] [Stygorr] stopping ...
+[2020-04-16 17:10:03,516][INFO ][node                     ] [Stygorr] stopped
+[2020-04-16 17:10:03,517][INFO ][node                     ] [Stygorr] closing ...
+[2020-04-16 17:10:03,523][INFO ][node                     ] [Stygorr] closed
