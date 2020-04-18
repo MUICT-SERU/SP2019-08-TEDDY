@@ -1,8 +1,8 @@
 ## USER INSTRUCTION (directly through linux terminal)
 **WARNING: THIS WORKS ONLY ON LINUX OS**
-1. On a terminal, turn on Elasticsearch server (`./elasticsearch`) at `~/elasticsearch-2.2.0-linux/bin`
-2. Make sure there is no any folder located in this directory (`~/detection-mode/`)
-3. Open another terminal, execute `AutoRunThorughComs.sh` at `~/detection-mode/` with the following order of arguments:
+1. Open a terminal and turn on Elasticsearch server (`./elasticsearch`) at `~/elasticsearch-2.2.0-linux/bin`
+2. Make sure there is no any folder located in the directory `~/detection-mode/`
+3. Open another terminal and execute `AutoRunThorughComs.sh` at `~/detection-mode/` with the following order of arguments:
 	- `.git` URL of a GitHub repository
 	- directory for the result files, NOT within THE REPO (absolute path recommended)
 	- name for the Elasticsearch index of the repo (no whitespace allowed)
