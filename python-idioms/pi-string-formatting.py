@@ -2,9 +2,7 @@ def i36(Store):
     output = 'ID: {s.branch_ID}, City: {s.city}, Manager: {s.manager}'.format(s=Store)
     return output
 
-def i37():
-    class Person:
-        def __init__(self, name, age, gender):
+def i37(self, name, age, gender):
         self.name = name
         self.age = age
         self.gender = gender

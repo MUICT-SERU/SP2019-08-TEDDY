@@ -4,18 +4,14 @@ def n38(Store):
 def n39(Store):
     return 'ID: %i City: %s Manager: %s' % (Store.branch_ID, Store.city, Store.Manager)
 
-def n40():
-    class Person:
-        def __init__(self, name, age, gender):
+def n40(self, name, age, gender):
         self.name = name
         self.age = age
         self.gender = gender
     person = Person("John", 36, 'M')
     return 'Name: ' + person.name + '\nAge: ' + person.age + '\nGender: ' + person.gender
 
-def n41():
-    class Person:
-        def __init__(self, name, age, gender):
+def n41(self, name, age, gender):
         self.name = name
         self.age = age
         self.gender = gender

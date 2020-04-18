@@ -8,20 +8,20 @@ def n18():
 	
 # No.2
 def n19():
-    for  i in range(len(wordList)) :
+    for i in range(len(wordList)) :
         print(wordList[i]) 
         i += 1
 
 # No.3
 def n20():
-    i = 0
-        sizeofList = len(wordList) 
-        while i < sizeofList :
-            print(wordList[i]) 
-            i += 1
+    ls = []
+    for element in range(10):
+        if not (element%2):
+            ls.append(element)
 
 # No.4
 def n21():
+    new_list = []
     for n in numbers:
         if n%2==0:
             new_list.append(n**2)
