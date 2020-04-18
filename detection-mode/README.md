@@ -1,4 +1,4 @@
-## USER INSTRUCTION (directly through linux terminal)
+## USER INSTRUCTION (directly via Linux terminal)
 **WARNING: THIS WORKS ONLY ON LINUX OS**
 1. Open a terminal and turn on Elasticsearch server (`./elasticsearch`) at `~/elasticsearch-2.2.0-linux/bin`
 2. Make sure there is no any folder located in the directory `~/detection-mode/`
