@@ -6,4 +6,4 @@
 	- git URL
 	- output results location, NOT WITHIN THE REPO (absolute path recommended)
 	- name for the Elasticsearch index of the repo (no whitespace allowed)
-	Example: `.\AutoRunThorughComs https://github.com/pallets/flask.git \home\flask-results flask`
+	- Example: `.\AutoRunThorughComs https://github.com/pallets/flask.git \home\flask-results flask`
