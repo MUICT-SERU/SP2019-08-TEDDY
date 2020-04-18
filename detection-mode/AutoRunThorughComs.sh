@@ -30,9 +30,9 @@ git checkout ${commitarray[$i]}
 ./../CallSiamese.sh $PWD ./../../python-idioms $2 $3 ${commitarray[$i]} $i
 #=====================================
 
-## Uncomment for manual iteration of commit versions
-echo "Press any Key to Continue to the next commit"
-read -n 1
+## Uncomment/Comment for manual/auto iteration of commit versions
+	#echo "Press any Key to Continue to the next commit"
+	#read -n 1
 git checkout $gitclonedhead
 done
 ## Deleting the repo folder after iteration is completed
