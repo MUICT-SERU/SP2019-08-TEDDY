@@ -1,6 +1,9 @@
 ## TEDDY DETECTION MODE USER INSTRUCTION (directly via Linux terminal)
+
 **WARNING: THIS WORKS ONLY ON LINUX OS**
+
 **DO NOT REMOVE ANY OF THE FILES IN THIS FOLDER**
+
 0. Needed dependencies and library before start using:
 	- Java JDK 1.8 or above
 	- Python 3.X.X
