@@ -39,3 +39,6 @@ done
 cd ..
 rm -r */
 ## echo or run tatts scrip
+
+# Calling shell script that runs bokeh visualization
+./CallBokeh.sh $2
