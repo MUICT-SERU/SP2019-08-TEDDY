@@ -1,36 +1,36 @@
-[2020-03-12 09:38:25,309][INFO ][node                     ] [General Orwell Taylor] version[2.2.0], pid[238928], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-03-12 09:38:25,313][INFO ][node                     ] [General Orwell Taylor] initializing ...
-[2020-03-12 09:38:26,108][INFO ][plugins                  ] [General Orwell Taylor] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-03-12 09:38:26,170][INFO ][env                      ] [General Orwell Taylor] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [41.5gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
-[2020-03-12 09:38:26,171][INFO ][env                      ] [General Orwell Taylor] heap size [910.5mb], compressed ordinary object pointers [true]
-[2020-03-12 09:38:30,348][INFO ][node                     ] [General Orwell Taylor] initialized
-[2020-03-12 09:38:30,348][INFO ][node                     ] [General Orwell Taylor] starting ...
-[2020-03-12 09:38:31,118][INFO ][transport                ] [General Orwell Taylor] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2020-03-12 09:38:31,127][INFO ][discovery                ] [General Orwell Taylor] stackoverflow/NxptfWwkRQi7QmgHS22jpQ
-[2020-03-12 09:38:35,666][INFO ][cluster.service          ] [General Orwell Taylor] new_master {General Orwell Taylor}{NxptfWwkRQi7QmgHS22jpQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-03-12 09:38:36,123][INFO ][gateway                  ] [General Orwell Taylor] recovered [6] indices into cluster_state
-[2020-03-12 09:38:36,191][INFO ][http                     ] [General Orwell Taylor] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2020-03-12 09:38:36,191][INFO ][node                     ] [General Orwell Taylor] started
-[2020-03-12 09:38:37,959][INFO ][cluster.routing.allocation] [General Orwell Taylor] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0]] ...]).
-[2020-03-12 11:38:30,160][INFO ][node                     ] [General Orwell Taylor] stopping ...
-[2020-03-12 11:38:30,386][INFO ][node                     ] [General Orwell Taylor] stopped
-[2020-03-12 11:38:30,387][INFO ][node                     ] [General Orwell Taylor] closing ...
-[2020-03-12 11:38:30,409][INFO ][node                     ] [General Orwell Taylor] closed
-[2020-03-12 11:38:48,978][INFO ][node                     ] [Flatman] version[2.2.0], pid[79080], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-03-12 11:38:48,979][INFO ][node                     ] [Flatman] initializing ...
-[2020-03-12 11:38:49,731][INFO ][plugins                  ] [Flatman] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-03-12 11:38:49,787][INFO ][env                      ] [Flatman] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [41.4gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
-[2020-03-12 11:38:49,788][INFO ][env                      ] [Flatman] heap size [910.5mb], compressed ordinary object pointers [true]
-[2020-03-12 11:38:54,024][INFO ][node                     ] [Flatman] initialized
-[2020-03-12 11:38:54,025][INFO ][node                     ] [Flatman] starting ...
-[2020-03-12 11:38:54,625][INFO ][transport                ] [Flatman] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
-[2020-03-12 11:38:54,641][INFO ][discovery                ] [Flatman] stackoverflow/B3s5jv6RQhSNpYHZLiWeyg
-[2020-03-12 11:38:59,222][INFO ][cluster.service          ] [Flatman] new_master {Flatman}{B3s5jv6RQhSNpYHZLiWeyg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-03-12 11:38:59,680][INFO ][gateway                  ] [Flatman] recovered [6] indices into cluster_state
-[2020-03-12 11:38:59,767][INFO ][http                     ] [Flatman] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
-[2020-03-12 11:38:59,768][INFO ][node                     ] [Flatman] started
-[2020-03-12 11:39:01,415][INFO ][cluster.routing.allocation] [Flatman] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
-[2020-03-12 11:41:28,741][INFO ][node                     ] [Flatman] stopping ...
-[2020-03-12 11:41:28,880][INFO ][node                     ] [Flatman] stopped
-[2020-03-12 11:41:28,880][INFO ][node                     ] [Flatman] closing ...
-[2020-03-12 11:41:28,885][INFO ][node                     ] [Flatman] closed
+[2020-04-16 10:01:37,199][INFO ][node                     ] [Outlaw] version[2.2.0], pid[1276], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-16 10:01:37,204][INFO ][node                     ] [Outlaw] initializing ...
+[2020-04-16 10:01:37,741][INFO ][plugins                  ] [Outlaw] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-16 10:01:37,772][INFO ][env                      ] [Outlaw] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [38.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-16 10:01:37,773][INFO ][env                      ] [Outlaw] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-16 10:01:40,572][INFO ][node                     ] [Outlaw] initialized
+[2020-04-16 10:01:40,572][INFO ][node                     ] [Outlaw] starting ...
+[2020-04-16 10:01:41,330][INFO ][transport                ] [Outlaw] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-16 10:01:41,339][INFO ][discovery                ] [Outlaw] stackoverflow/EhucqonzTiC7R6MmUI5Pxw
+[2020-04-16 10:01:45,884][INFO ][cluster.service          ] [Outlaw] new_master {Outlaw}{EhucqonzTiC7R6MmUI5Pxw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-16 10:01:46,423][INFO ][http                     ] [Outlaw] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-16 10:01:46,423][INFO ][node                     ] [Outlaw] started
+[2020-04-16 10:01:46,457][INFO ][gateway                  ] [Outlaw] recovered [7] indices into cluster_state
+[2020-04-16 10:01:48,215][INFO ][cluster.routing.allocation] [Outlaw] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-16 11:25:32,421][INFO ][node                     ] [Outlaw] stopping ...
+[2020-04-16 11:25:32,853][INFO ][node                     ] [Outlaw] stopped
+[2020-04-16 11:25:32,854][INFO ][node                     ] [Outlaw] closing ...
+[2020-04-16 11:25:32,864][INFO ][node                     ] [Outlaw] closed
+[2020-04-16 17:01:53,747][INFO ][node                     ] [Stygorr] version[2.2.0], pid[9456], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-16 17:01:53,764][INFO ][node                     ] [Stygorr] initializing ...
+[2020-04-16 17:01:54,627][INFO ][plugins                  ] [Stygorr] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-16 17:01:54,690][INFO ][env                      ] [Stygorr] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [38.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-16 17:01:54,691][INFO ][env                      ] [Stygorr] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-16 17:01:59,854][INFO ][node                     ] [Stygorr] initialized
+[2020-04-16 17:01:59,854][INFO ][node                     ] [Stygorr] starting ...
+[2020-04-16 17:02:00,640][INFO ][transport                ] [Stygorr] publish_address {127.0.0.1:9301}, bound_addresses {127.0.0.1:9301}, {[::1]:9301}
+[2020-04-16 17:02:00,651][INFO ][discovery                ] [Stygorr] stackoverflow/J5HeFlKnRaC_PPMY9SM3Dw
+[2020-04-16 17:02:05,201][INFO ][cluster.service          ] [Stygorr] new_master {Stygorr}{J5HeFlKnRaC_PPMY9SM3Dw}{127.0.0.1}{127.0.0.1:9301}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-16 17:02:05,956][INFO ][gateway                  ] [Stygorr] recovered [7] indices into cluster_state
+[2020-04-16 17:02:05,980][INFO ][http                     ] [Stygorr] publish_address {127.0.0.1:9201}, bound_addresses {127.0.0.1:9201}, {[::1]:9201}
+[2020-04-16 17:02:05,980][INFO ][node                     ] [Stygorr] started
+[2020-04-16 17:02:08,687][INFO ][cluster.routing.allocation] [Stygorr] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-16 17:10:03,420][INFO ][node                     ] [Stygorr] stopping ...
+[2020-04-16 17:10:03,516][INFO ][node                     ] [Stygorr] stopped
+[2020-04-16 17:10:03,517][INFO ][node                     ] [Stygorr] closing ...
+[2020-04-16 17:10:03,523][INFO ][node                     ] [Stygorr] closed

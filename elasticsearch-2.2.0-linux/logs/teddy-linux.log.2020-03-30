@@ -1,0 +1,19 @@
+[2020-03-30 23:32:13,712][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2020-03-30 23:32:14,096][INFO ][node                     ] [Orchid] version[2.2.0], pid[37], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-03-30 23:32:14,097][INFO ][node                     ] [Orchid] initializing ...
+[2020-03-30 23:32:15,158][INFO ][plugins                  ] [Orchid] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-03-30 23:32:15,231][INFO ][env                      ] [Orchid] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [40.6gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
+[2020-03-30 23:32:15,245][INFO ][env                      ] [Orchid] heap size [989.8mb], compressed ordinary object pointers [true]
+[2020-03-30 23:32:18,459][INFO ][node                     ] [Orchid] initialized
+[2020-03-30 23:32:18,460][INFO ][node                     ] [Orchid] starting ...
+[2020-03-30 23:32:18,780][INFO ][transport                ] [Orchid] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2020-03-30 23:32:18,792][INFO ][discovery                ] [Orchid] teddy-linux/UQBA8o-lR2eMkwBe4SKYvQ
+[2020-03-30 23:32:23,333][INFO ][cluster.service          ] [Orchid] new_master {Orchid}{UQBA8o-lR2eMkwBe4SKYvQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-03-30 23:32:23,353][INFO ][http                     ] [Orchid] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2020-03-30 23:32:23,354][INFO ][node                     ] [Orchid] started
+[2020-03-30 23:32:23,798][INFO ][gateway                  ] [Orchid] recovered [2] indices into cluster_state
+[2020-03-30 23:32:24,729][INFO ][cluster.routing.allocation] [Orchid] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask][0], [flask][0]] ...]).
+[2020-03-30 23:34:05,545][INFO ][node                     ] [Orchid] stopping ...
+[2020-03-30 23:34:05,589][INFO ][node                     ] [Orchid] stopped
+[2020-03-30 23:34:05,590][INFO ][node                     ] [Orchid] closing ...
+[2020-03-30 23:34:05,610][INFO ][node                     ] [Orchid] closed

@@ -1,0 +1,21 @@
+[2020-04-15 14:00:32,482][INFO ][node                     ] [Katie Power] version[2.2.0], pid[15172], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-15 14:00:32,491][INFO ][node                     ] [Katie Power] initializing ...
+[2020-04-15 14:00:33,685][INFO ][plugins                  ] [Katie Power] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-15 14:00:33,770][INFO ][env                      ] [Katie Power] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [40.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-15 14:00:33,771][INFO ][env                      ] [Katie Power] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-15 14:00:38,470][INFO ][node                     ] [Katie Power] initialized
+[2020-04-15 14:00:38,472][INFO ][node                     ] [Katie Power] starting ...
+[2020-04-15 14:00:39,413][INFO ][transport                ] [Katie Power] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-15 14:00:39,426][INFO ][discovery                ] [Katie Power] stackoverflow/3SjvBGDDTsS7UNBVql05ig
+[2020-04-15 14:00:43,969][INFO ][cluster.service          ] [Katie Power] new_master {Katie Power}{3SjvBGDDTsS7UNBVql05ig}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-15 14:00:44,592][INFO ][gateway                  ] [Katie Power] recovered [7] indices into cluster_state
+[2020-04-15 14:00:44,777][INFO ][http                     ] [Katie Power] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-15 14:00:44,778][INFO ][node                     ] [Katie Power] started
+[2020-04-15 14:00:47,042][INFO ][cluster.routing.allocation] [Katie Power] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-15 14:03:48,900][INFO ][cluster.metadata         ] [Katie Power] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-15 14:03:49,174][INFO ][cluster.routing.allocation] [Katie Power] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-15 14:03:56,778][INFO ][cluster.metadata         ] [Katie Power] [teddy-evaluation] update_mapping [siamese]
+[2020-04-15 23:11:24,614][INFO ][node                     ] [Katie Power] stopping ...
+[2020-04-15 23:11:25,412][INFO ][node                     ] [Katie Power] stopped
+[2020-04-15 23:11:25,413][INFO ][node                     ] [Katie Power] closing ...
+[2020-04-15 23:11:25,469][INFO ][node                     ] [Katie Power] closed

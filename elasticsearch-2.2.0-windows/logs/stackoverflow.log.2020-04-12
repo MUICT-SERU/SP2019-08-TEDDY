@@ -1,0 +1,22 @@
+[2020-04-12 19:47:01,922][INFO ][node                     ] [Jubilee] version[2.2.0], pid[10400], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-12 19:47:01,938][INFO ][node                     ] [Jubilee] initializing ...
+[2020-04-12 19:47:02,744][INFO ][plugins                  ] [Jubilee] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-12 19:47:02,806][INFO ][env                      ] [Jubilee] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [40.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-12 19:47:02,806][INFO ][env                      ] [Jubilee] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-12 19:47:07,972][INFO ][node                     ] [Jubilee] initialized
+[2020-04-12 19:47:07,972][INFO ][node                     ] [Jubilee] starting ...
+[2020-04-12 19:47:08,666][INFO ][transport                ] [Jubilee] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-12 19:47:08,675][INFO ][discovery                ] [Jubilee] stackoverflow/4JtHBVsWR2OyjAu7vIXL7g
+[2020-04-12 19:47:13,223][INFO ][cluster.service          ] [Jubilee] new_master {Jubilee}{4JtHBVsWR2OyjAu7vIXL7g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-12 19:47:13,768][INFO ][http                     ] [Jubilee] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-12 19:47:13,768][INFO ][node                     ] [Jubilee] started
+[2020-04-12 19:47:13,852][INFO ][gateway                  ] [Jubilee] recovered [7] indices into cluster_state
+[2020-04-12 19:47:15,939][INFO ][cluster.routing.allocation] [Jubilee] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-12 19:51:27,607][INFO ][cluster.metadata         ] [Jubilee] [teddy-evaluation] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-12 19:51:27,922][INFO ][cluster.routing.allocation] [Jubilee] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy-evaluation][0]] ...]).
+[2020-04-12 19:51:33,859][INFO ][cluster.metadata         ] [Jubilee] [teddy-evaluation] update_mapping [siamese]
+[2020-04-12 21:47:48,001][INFO ][bootstrap                ] running graceful exit on windows
+[2020-04-12 21:47:48,017][INFO ][node                     ] [Jubilee] stopping ...
+[2020-04-12 21:47:48,472][INFO ][node                     ] [Jubilee] stopped
+[2020-04-12 21:47:48,473][INFO ][node                     ] [Jubilee] closing ...
+[2020-04-12 21:47:48,537][INFO ][node                     ] [Jubilee] closed
