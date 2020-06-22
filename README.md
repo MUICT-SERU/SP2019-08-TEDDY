@@ -1,23 +1,5 @@
-# SP2019-TEDDY
-Development Branch
-A repo for the senior project team TEDDY. 
-
-## Do note the following
-The whole **branch** has many examples and originals soooooooooooooo
-
-Not all mine
-
-There are many useless files everywhere
-- same config files
-- duplicate .git
-- tons of .vscode
-- A LOT of index.js 
-  - I am create too many projects on vscode
-
-**If you want to know about which is what just send me a message**
-
-# SP2019-TEDDY-SiameseX
-This is a developing branch for SiameseX (Java Spring Boot) with support of both Java and Python search
+# Teddy: Automatic Recommendation of Pythonic Idiom Usage For Pull-Based Software Projects
+A repo for the Teddy tool. 
 
 ## Required Components
 - Elasticsearch **2.2.0**
@@ -29,7 +11,7 @@ This is a developing branch for SiameseX (Java Spring Boot) with support of both
 1. Using `cmd` or PowerShell Go to `.\bin` directory of your local Elasticsearch folder.
 2. Execute `.\elasticsearch` command to run an Elasticsearch instance.
 
-## Setting up TEDDY
+## Setting up Teddy
 1. Use `git clone` to make a local copy of this branch on your machine, or download this branch as a `.zip` package and extract it.
 
 2. From `.\config\elasticsearch.yml` file in the Elasticsearch folder, check the value of the parameter `cluster.name`, then set the value of the property `cluster` inside `.\webapp\config.properties` in SP2019-TEDDY folder to be the same name.
