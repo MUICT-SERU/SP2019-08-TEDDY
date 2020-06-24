@@ -26,6 +26,8 @@ A repo for the Teddy tool.
 
 ## PREVENTION MODE USER INSTALLATION
 
+** DON - Please work on this part **
+
 ## DETECTION MODE USER INSTRUCTION (directly via Linux terminal)
 
 **WARNING: These steps have only been tested on Linux **
