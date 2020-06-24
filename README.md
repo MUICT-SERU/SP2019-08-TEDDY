@@ -24,9 +24,11 @@ A repo for the Teddy tool.
 
 6. On any web browser, go to `localhost:8080/search` to start using TEDDY (Google Chrome is recommended).
 
+## PREVENTION MODE USER INSTALLATION
+
 ## DETECTION MODE USER INSTRUCTION (directly via Linux terminal)
 
-**WARNING: THIS WORKS ONLY ON LINUX OS**
+**WARNING: These steps have only been tested on Linux **
 
 **DO NOT REMOVE ANY OF THE FILES IN THIS FOLDER**
 
