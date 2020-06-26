@@ -28,7 +28,7 @@ def clean(path,fout):
             if '.csv' in file:
                 files.append(os.path.join(r, file))
     with open(fout, "w", newline='') as tt:
-        print("Style,IdiomName,FileName,Color,Marker,CommitID",file=tt)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO",file=tt)
 
 
     for f in files:
@@ -93,17 +93,20 @@ def clean(path,fout):
 def separate(fin,foutidiom,foutnonidiom):
 
     final=""
-
+    
+    ## Writing only IP rows into idiomatic.csv
     with open(foutidiom, 'w') as outidiom:
-        print("Style,IdiomName,FileName,Color,Marker,CommitID",file=outidiom)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO",file=outidiom)
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
                 if row[0] == 'pi':
                         final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]
                         print(final,file=outidiom)
+    
+    ## Writing only NIP rows into nonidiomatic.csv
     with open(foutnonidiom, 'w') as outnonidiom:
-        print("Style,IdiomName,FileName,Color,Marker,CommitID",file=outnonidiom)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO",file=outnonidiom)
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
@@ -125,7 +128,7 @@ def plot_graph(ip_input, nip_input):
         fnameipy =  idiomin['FileName'].astype('str'),
         coloripy = idiomin['Color'].astype('str'),
         markeripy = idiomin['Marker'].astype('str'),
-        commitIDipy = idiomin['CommitID']
+        commitNOipy = idiomin['CommitNO']
     ))
         
     sourcenipy = ColumnDataSource(data=dict(
@@ -134,7 +137,7 @@ def plot_graph(ip_input, nip_input):
         fnamenipy =  nonidiomin['FileName'].astype('str'),
         colornipy = nonidiomin['Color'].astype('str'),
         markernipy = nonidiomin['Marker'].astype('str'),
-        commitIDnipy = nonidiomin['CommitID']
+        commitNOnipy = nonidiomin['CommitNO']
     ))
 
 
@@ -143,7 +146,7 @@ def plot_graph(ip_input, nip_input):
     p = plot.figure(y_range = filename, plot_width = 1500 ,title="Pythonic and Non-pythonic Code Occurences Over the Whole Commit History",tools=['wheel_zoom','pan','reset'])
 
     ip_plot = p.scatter(
-                x='commitIDipy',
+                x='commitNOipy',
                 y=jitter('fnameipy',width=0.1, range=p.y_range),
                 marker = 'markeripy',
                 size = 10,
@@ -156,7 +159,7 @@ def plot_graph(ip_input, nip_input):
         tooltips=[
             ("style","@styleipy"),
             ("file name","@fnameipy"),
-            ("commit no.","@commitIDipy"),
+            ("commit NO","@commitNOipy"),
             ("idiom type", "@inameipy")
         ],
         renderers=[ip_plot]
@@ -165,7 +168,7 @@ def plot_graph(ip_input, nip_input):
 
 
     nip_plot = p.scatter(
-                    x='commitIDnipy',
+                    x='commitNOnipy',
                     y=jitter('fnamenipy', width=0.1, range=p.y_range),
                     marker = 'markernipy',
                     size = 10,
@@ -178,7 +181,7 @@ def plot_graph(ip_input, nip_input):
         tooltips=[
             ("style","@stylenipy"),
             ("file name","@fnamenipy"),
-            ("commit no.","@commitIDnipy"),
+            ("commit NO","@commitNOnipy"),
             ("idiom type", "@inamenipy")
         ],
         renderers=[nip_plot]
