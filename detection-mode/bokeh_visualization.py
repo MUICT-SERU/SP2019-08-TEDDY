@@ -28,7 +28,7 @@ def clean(path,fout):
             if '.csv' in file:
                 files.append(os.path.join(r, file))
     with open(fout, "w", newline='') as tt:
-        print("Style,IdiomName,FileName,Color,Marker,CommitNO",file=tt)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO,CommitID",file=tt)
 
 
     for f in files:
@@ -83,7 +83,7 @@ def clean(path,fout):
                     elif header[1] == 'variable-swapping':
                         final = final+",SquareCross"
                 
-                    final = final+","+nani[1]
+                    final = final+","+nani[1]+","+nani[2]
                     print(final,file=ttt)
 
                     a=a+1
@@ -96,26 +96,26 @@ def separate(fin,foutidiom,foutnonidiom):
     
     ## Writing only IP rows into idiomatic.csv
     with open(foutidiom, 'w') as outidiom:
-        print("Style,IdiomName,FileName,Color,Marker,CommitNO",file=outidiom)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO,CommitID",file=outidiom)
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
                 if row[0] == 'pi':
-                        final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]
+                        final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]
                         print(final,file=outidiom)
     
     ## Writing only NIP rows into nonidiomatic.csv
     with open(foutnonidiom, 'w') as outnonidiom:
-        print("Style,IdiomName,FileName,Color,Marker,CommitNO",file=outnonidiom)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO,CommitID",file=outnonidiom)
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
                 if row[0] == 'npi':
-                    final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]
+                    final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]
                     print(final,file=outnonidiom)
 
 def plot_graph(ip_input, nip_input):
-    plot.output_file("myplot.html")
+    plot.output_file("myplot_a.html")
 
 
     idiomin = pd.read_csv(ip_input)
@@ -128,7 +128,8 @@ def plot_graph(ip_input, nip_input):
         fnameipy =  idiomin['FileName'].astype('str'),
         coloripy = idiomin['Color'].astype('str'),
         markeripy = idiomin['Marker'].astype('str'),
-        commitNOipy = idiomin['CommitNO']
+        commitNOipy = idiomin['CommitNO'],
+        commitIDipy = idiomin['CommitID'].astype('str')
     ))
         
     sourcenipy = ColumnDataSource(data=dict(
@@ -137,7 +138,8 @@ def plot_graph(ip_input, nip_input):
         fnamenipy =  nonidiomin['FileName'].astype('str'),
         colornipy = nonidiomin['Color'].astype('str'),
         markernipy = nonidiomin['Marker'].astype('str'),
-        commitNOnipy = nonidiomin['CommitNO']
+        commitNOnipy = nonidiomin['CommitNO'],
+        commitIDnipy = nonidiomin['CommitID'].astype('str')
     ))
 
 
@@ -158,9 +160,9 @@ def plot_graph(ip_input, nip_input):
     ip_hover = HoverTool(
         tooltips=[
             ("style","@styleipy"),
+            ("idiom type", "@inameipy"),
             ("file name","@fnameipy"),
-            ("commit NO","@commitNOipy"),
-            ("idiom type", "@inameipy")
+            ("commit ID","@commitIDipy"),
         ],
         renderers=[ip_plot]
     )
@@ -180,9 +182,9 @@ def plot_graph(ip_input, nip_input):
     nip_hover = HoverTool(
         tooltips=[
             ("style","@stylenipy"),
+            ("idiom type", "@inamenipy"),
             ("file name","@fnamenipy"),
-            ("commit NO","@commitNOnipy"),
-            ("idiom type", "@inamenipy")
+            ("commit ID","@commitIDnipy")          
         ],
         renderers=[nip_plot]
     )
