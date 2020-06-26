@@ -1,153 +1,19 @@
-[2020-04-24 14:36:47,398][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
-[2020-04-24 14:36:47,771][INFO ][node                     ] [Pluto] version[2.2.0], pid[39], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-04-24 14:36:47,771][INFO ][node                     ] [Pluto] initializing ...
-[2020-04-24 14:36:48,576][INFO ][plugins                  ] [Pluto] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-04-24 14:36:48,630][INFO ][env                      ] [Pluto] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [38gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
-[2020-04-24 14:36:48,631][INFO ][env                      ] [Pluto] heap size [989.8mb], compressed ordinary object pointers [true]
-[2020-04-24 14:36:51,195][INFO ][node                     ] [Pluto] initialized
-[2020-04-24 14:36:51,195][INFO ][node                     ] [Pluto] starting ...
-[2020-04-24 14:36:51,320][INFO ][transport                ] [Pluto] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
-[2020-04-24 14:36:51,330][INFO ][discovery                ] [Pluto] teddy-linux/p-arl6_aRsq4SqdXTOGbiQ
-[2020-04-24 14:36:55,860][INFO ][cluster.service          ] [Pluto] new_master {Pluto}{p-arl6_aRsq4SqdXTOGbiQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-04-24 14:36:55,883][INFO ][http                     ] [Pluto] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
-[2020-04-24 14:36:55,884][INFO ][node                     ] [Pluto] started
-[2020-04-24 14:36:56,336][INFO ][gateway                  ] [Pluto] recovered [4] indices into cluster_state
-[2020-04-24 14:36:58,123][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask_idiom][0]] ...]).
-[2020-04-24 14:40:01,769][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:40:02,126][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:41:20,179][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:41:27,269][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:41:27,512][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:41:33,351][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:41:44,764][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:41:44,993][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:41:50,077][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:41:59,648][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:42:00,015][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:42:05,083][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:43:34,022][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:43:34,243][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:44:51,157][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:44:56,124][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:44:56,360][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:45:01,911][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:45:11,979][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:45:12,193][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:45:17,992][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:45:28,079][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:45:28,344][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:45:33,662][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:45:43,654][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:45:43,877][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:47:12,722][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:47:12,977][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:48:31,138][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:48:56,992][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:48:57,214][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:49:02,968][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:49:17,055][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:49:17,278][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:49:23,328][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:52:32,842][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:52:33,062][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:53:45,342][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:54:06,607][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:54:06,830][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:54:11,688][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:58:01,924][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:58:02,123][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:58:07,066][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 14:58:52,779][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 14:58:53,051][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 14:58:59,399][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:00:34,601][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:00:34,892][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:01:55,678][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:02:00,019][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:02:00,256][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:02:05,365][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:02:15,073][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:02:15,358][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:02:20,706][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:02:32,727][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:02:32,967][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:02:38,433][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:02:48,675][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:02:48,908][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:02:55,021][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:03:06,154][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:03:06,412][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:03:12,485][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:03:22,549][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:03:22,776][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:03:28,578][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:03:38,042][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:03:38,275][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:03:43,539][INFO ][cluster.metadata         ] [Pluto] [horovod] update_mapping [siamese]
-[2020-04-24 15:03:52,700][INFO ][cluster.metadata         ] [Pluto] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:03:52,916][INFO ][cluster.routing.allocation] [Pluto] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:05:02,836][INFO ][node                     ] [Pluto] stopping ...
-[2020-04-24 15:05:02,888][INFO ][node                     ] [Pluto] stopped
-[2020-04-24 15:05:02,888][INFO ][node                     ] [Pluto] closing ...
-[2020-04-24 15:05:02,895][INFO ][node                     ] [Pluto] closed
-[2020-04-24 15:06:19,327][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
-[2020-04-24 15:06:19,626][INFO ][node                     ] [Unicorn] version[2.2.0], pid[63], build[8ff36d1/2016-01-27T13:32:39Z]
-[2020-04-24 15:06:19,627][INFO ][node                     ] [Unicorn] initializing ...
-[2020-04-24 15:06:20,252][INFO ][plugins                  ] [Unicorn] modules [lang-expression, lang-groovy], plugins [], sites []
-[2020-04-24 15:06:20,285][INFO ][env                      ] [Unicorn] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [38gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
-[2020-04-24 15:06:20,285][INFO ][env                      ] [Unicorn] heap size [989.8mb], compressed ordinary object pointers [true]
-[2020-04-24 15:06:22,184][INFO ][node                     ] [Unicorn] initialized
-[2020-04-24 15:06:22,185][INFO ][node                     ] [Unicorn] starting ...
-[2020-04-24 15:06:22,267][INFO ][transport                ] [Unicorn] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
-[2020-04-24 15:06:22,277][INFO ][discovery                ] [Unicorn] teddy-linux/TFOAdpprSIe61baOhJa57g
-[2020-04-24 15:06:26,806][INFO ][cluster.service          ] [Unicorn] new_master {Unicorn}{TFOAdpprSIe61baOhJa57g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2020-04-24 15:06:26,825][INFO ][http                     ] [Unicorn] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
-[2020-04-24 15:06:26,826][INFO ][node                     ] [Unicorn] started
-[2020-04-24 15:06:27,254][INFO ][gateway                  ] [Unicorn] recovered [5] indices into cluster_state
-[2020-04-24 15:06:28,446][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[manim][0]] ...]).
-[2020-04-24 15:09:02,698][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:09:02,946][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:10:23,169][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:10:28,777][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:10:29,013][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:10:34,765][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:10:46,267][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:10:46,487][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:10:51,693][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:11:04,179][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:11:04,421][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:11:10,325][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:11:21,475][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:11:21,703][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:11:26,972][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:11:36,977][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:11:37,312][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:11:43,513][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:11:53,623][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:11:53,845][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:11:59,049][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:12:08,586][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:12:08,804][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:12:14,284][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:12:25,463][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:12:25,679][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:12:31,232][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:12:41,897][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:12:42,187][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:12:47,240][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:12:56,498][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:12:56,720][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:13:01,642][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:13:13,484][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:13:13,745][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:13:19,498][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:13:29,162][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:13:29,379][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:13:35,001][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:13:44,328][INFO ][cluster.metadata         ] [Unicorn] [horovod] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
-[2020-04-24 15:13:44,546][INFO ][cluster.routing.allocation] [Unicorn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[horovod][0]] ...]).
-[2020-04-24 15:13:50,061][INFO ][cluster.metadata         ] [Unicorn] [horovod] update_mapping [siamese]
-[2020-04-24 15:14:12,690][INFO ][node                     ] [Unicorn] stopping ...
-[2020-04-24 15:14:12,730][INFO ][node                     ] [Unicorn] stopped
-[2020-04-24 15:14:12,731][INFO ][node                     ] [Unicorn] closing ...
-[2020-04-24 15:14:12,739][INFO ][node                     ] [Unicorn] closed
+[2020-04-30 19:40:19,276][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2020-04-30 19:40:19,644][INFO ][node                     ] [Nebulon] version[2.2.0], pid[37], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-30 19:40:19,645][INFO ][node                     ] [Nebulon] initializing ...
+[2020-04-30 19:40:20,458][INFO ][plugins                  ] [Nebulon] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-30 19:40:20,502][INFO ][env                      ] [Nebulon] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [37.7gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
+[2020-04-30 19:40:20,503][INFO ][env                      ] [Nebulon] heap size [989.8mb], compressed ordinary object pointers [true]
+[2020-04-30 19:40:23,441][INFO ][node                     ] [Nebulon] initialized
+[2020-04-30 19:40:23,442][INFO ][node                     ] [Nebulon] starting ...
+[2020-04-30 19:40:23,628][INFO ][transport                ] [Nebulon] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2020-04-30 19:40:23,640][INFO ][discovery                ] [Nebulon] teddy-linux/F2A-uYC5TGiAVThNLKxe-g
+[2020-04-30 19:40:28,173][INFO ][cluster.service          ] [Nebulon] new_master {Nebulon}{F2A-uYC5TGiAVThNLKxe-g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-30 19:40:28,196][INFO ][http                     ] [Nebulon] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2020-04-30 19:40:28,197][INFO ][node                     ] [Nebulon] started
+[2020-04-30 19:40:29,024][INFO ][gateway                  ] [Nebulon] recovered [8] indices into cluster_state
+[2020-04-30 19:40:32,006][INFO ][cluster.routing.allocation] [Nebulon] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask_idiom][0]] ...]).
+[2020-04-30 19:46:03,578][INFO ][node                     ] [Nebulon] stopping ...
+[2020-04-30 19:46:03,647][INFO ][node                     ] [Nebulon] stopped
+[2020-04-30 19:46:03,648][INFO ][node                     ] [Nebulon] closing ...
+[2020-04-30 19:46:03,653][INFO ][node                     ] [Nebulon] closed

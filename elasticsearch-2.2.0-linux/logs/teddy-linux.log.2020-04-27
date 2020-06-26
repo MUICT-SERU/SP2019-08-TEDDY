@@ -1,0 +1,322 @@
+[2020-04-27 20:55:13,376][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2020-04-27 20:55:13,754][INFO ][node                     ] [Jamie Braddock] version[2.2.0], pid[70], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-27 20:55:13,755][INFO ][node                     ] [Jamie Braddock] initializing ...
+[2020-04-27 20:55:14,709][INFO ][plugins                  ] [Jamie Braddock] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-27 20:55:14,770][INFO ][env                      ] [Jamie Braddock] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [38gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
+[2020-04-27 20:55:14,787][INFO ][env                      ] [Jamie Braddock] heap size [989.8mb], compressed ordinary object pointers [true]
+[2020-04-27 20:55:17,752][INFO ][node                     ] [Jamie Braddock] initialized
+[2020-04-27 20:55:17,753][INFO ][node                     ] [Jamie Braddock] starting ...
+[2020-04-27 20:55:17,890][INFO ][transport                ] [Jamie Braddock] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2020-04-27 20:55:17,901][INFO ][discovery                ] [Jamie Braddock] teddy-linux/vetxZZGhTTOUJeqoQzzO7Q
+[2020-04-27 20:55:22,435][INFO ][cluster.service          ] [Jamie Braddock] new_master {Jamie Braddock}{vetxZZGhTTOUJeqoQzzO7Q}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-27 20:55:22,459][INFO ][http                     ] [Jamie Braddock] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2020-04-27 20:55:22,459][INFO ][node                     ] [Jamie Braddock] started
+[2020-04-27 20:55:23,125][INFO ][gateway                  ] [Jamie Braddock] recovered [5] indices into cluster_state
+[2020-04-27 20:55:25,311][INFO ][cluster.routing.allocation] [Jamie Braddock] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask_idiom][0]] ...]).
+[2020-04-27 21:27:27,995][INFO ][cluster.metadata         ] [Jamie Braddock] [single-file-index] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-27 21:27:28,338][INFO ][cluster.routing.allocation] [Jamie Braddock] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[single-file-index][0]] ...]).
+[2020-04-27 21:27:29,085][INFO ][cluster.metadata         ] [Jamie Braddock] [single-file-index] update_mapping [siamese]
+[2020-04-27 22:12:55,172][INFO ][rest.suppressed          ] /single-file-query/_search Params: {q=*, pretty=, index=single-file-query}
+[single-file-query] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:586)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:133)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:113)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.<init>(TransportSearchTypeAction.java:121)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:73)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:67)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:64)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:53)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:99)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:351)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:351)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:574)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:363)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-04-27 22:36:52,653][INFO ][cluster.metadata         ] [Jamie Braddock] [test_helpers] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-27 22:36:52,896][INFO ][cluster.routing.allocation] [Jamie Braddock] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[test_helpers][0]] ...]).
+[2020-04-27 22:36:57,441][INFO ][cluster.metadata         ] [Jamie Braddock] [test_helpers] update_mapping [siamese]
+[2020-04-27 22:37:10,959][DEBUG][action.search.type       ] [Jamie Braddock] [test_helpers][0], node[vetxZZGhTTOUJeqoQzzO7Q], [P], v[2], s[STARTED], a[id=xtpdpOagSD6mRDMnMP0drA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@497905a]
+RemoteTransportException[[Jamie Braddock][127.0.0.1:9300][indices:data/read/search[phase/query+fetch]]]; nested: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"[file:*test_helpers","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+Caused by: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"[file:*test_helpers","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:853)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:653)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:461)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:392)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:389)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [test_helpers] QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:243)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:256)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:303)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:206)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:201)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 10 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:123)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.parse(MapperQueryParser.java:848)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:227)
+	... 16 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:698)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:580)
+	at org.apache.lucene.queryparser.classic.QueryParser.Term(QueryParser.java:394)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:247)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:160)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:118)
+	... 18 more
+[2020-04-27 22:37:10,993][DEBUG][action.search.type       ] [Jamie Braddock] All shards failed for phase: [query_fetch]
+RemoteTransportException[[Jamie Braddock][127.0.0.1:9300][indices:data/read/search[phase/query+fetch]]]; nested: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"[file:*test_helpers","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+Caused by: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"[file:*test_helpers","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:853)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:653)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:461)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:392)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:389)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [test_helpers] QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:243)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:256)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:303)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:206)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:201)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 10 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:123)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.parse(MapperQueryParser.java:848)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:227)
+	... 16 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:698)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:580)
+	at org.apache.lucene.queryparser.classic.QueryParser.Term(QueryParser.java:394)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:247)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:160)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:118)
+	... 18 more
+[2020-04-27 22:37:11,028][INFO ][rest.suppressed          ] /test_helpers/_search Params: {q=[file:*test_helpers, pretty=, index=test_helpers}
+Failed to execute phase [query_fetch], all shards failed; shardFailures {[vetxZZGhTTOUJeqoQzzO7Q][test_helpers][0]: RemoteTransportException[[Jamie Braddock][127.0.0.1:9300][indices:data/read/search[phase/query+fetch]]]; nested: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"[file:*test_helpers","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; }
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.onFirstPhaseResult(TransportSearchTypeAction.java:228)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$1.onFailure(TransportSearchTypeAction.java:174)
+	at org.elasticsearch.action.ActionListenerResponseHandler.handleException(ActionListenerResponseHandler.java:46)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processException(TransportService.java:821)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:799)
+	at org.elasticsearch.transport.TransportService$4.onFailure(TransportService.java:361)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [test_helpers] QueryParsingException[Failed to parse query [[file:*test_helpers]]; nested: ParseException[Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ]; nested: ParseException[Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    ];
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:243)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:256)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:303)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:206)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:201)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:653)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:461)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:392)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:389)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	... 3 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Cannot parse '[file:*test_helpers': Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:123)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.parse(MapperQueryParser.java:848)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:227)
+	... 16 more
+Caused by: org.apache.lucene.queryparser.classic.ParseException: Encountered "<EOF>" at line 1, column 19.
+Was expecting one of:
+    "TO" ...
+    <RANGE_QUOTED> ...
+    <RANGE_GOOP> ...
+    
+	at org.apache.lucene.queryparser.classic.QueryParser.generateParseException(QueryParser.java:698)
+	at org.apache.lucene.queryparser.classic.QueryParser.jj_consume_token(QueryParser.java:580)
+	at org.apache.lucene.queryparser.classic.QueryParser.Term(QueryParser.java:394)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:247)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:160)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:118)
+	... 18 more
+[2020-04-27 22:39:10,518][INFO ][cluster.metadata         ] [Jamie Braddock] [test_helpers] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-27 22:39:10,743][INFO ][cluster.routing.allocation] [Jamie Braddock] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[test_helpers][0]] ...]).
+[2020-04-27 22:39:11,343][INFO ][cluster.metadata         ] [Jamie Braddock] [test_helpers] update_mapping [siamese]
+[2020-04-27 22:47:50,091][INFO ][cluster.metadata         ] [Jamie Braddock] [single-file-query] creating index, cause [api], templates [], shards [1]/[1], mappings [siamese]
+[2020-04-27 22:47:50,382][INFO ][cluster.routing.allocation] [Jamie Braddock] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[single-file-query][0]] ...]).
+[2020-04-27 22:47:50,759][INFO ][cluster.metadata         ] [Jamie Braddock] [single-file-query] update_mapping [siamese]
+[2020-04-27 23:57:48,111][INFO ][node                     ] [Jamie Braddock] stopping ...
+[2020-04-27 23:57:48,235][INFO ][node                     ] [Jamie Braddock] stopped
+[2020-04-27 23:57:48,235][INFO ][node                     ] [Jamie Braddock] closing ...
+[2020-04-27 23:57:48,244][INFO ][node                     ] [Jamie Braddock] closed

@@ -1,0 +1,19 @@
+[2020-04-26 09:40:24,864][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2020-04-26 09:40:25,227][INFO ][node                     ] [Chimera] version[2.2.0], pid[35], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-26 09:40:25,228][INFO ][node                     ] [Chimera] initializing ...
+[2020-04-26 09:40:26,027][INFO ][plugins                  ] [Chimera] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-26 09:40:26,066][INFO ][env                      ] [Chimera] using [1] data paths, mounts [[/mnt/d (D:\)]], net usable_space [38gb], net total_space [465.6gb], spins? [possibly], types [drvfs]
+[2020-04-26 09:40:26,068][INFO ][env                      ] [Chimera] heap size [989.8mb], compressed ordinary object pointers [true]
+[2020-04-26 09:40:28,644][INFO ][node                     ] [Chimera] initialized
+[2020-04-26 09:40:28,645][INFO ][node                     ] [Chimera] starting ...
+[2020-04-26 09:40:28,782][INFO ][transport                ] [Chimera] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2020-04-26 09:40:28,792][INFO ][discovery                ] [Chimera] teddy-linux/NqTjdR2YTVKQYVWK-PohAA
+[2020-04-26 09:40:33,323][INFO ][cluster.service          ] [Chimera] new_master {Chimera}{NqTjdR2YTVKQYVWK-PohAA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-26 09:40:33,345][INFO ][http                     ] [Chimera] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2020-04-26 09:40:33,346][INFO ][node                     ] [Chimera] started
+[2020-04-26 09:40:33,917][INFO ][gateway                  ] [Chimera] recovered [5] indices into cluster_state
+[2020-04-26 09:40:36,077][INFO ][cluster.routing.allocation] [Chimera] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[flask_idiom][0]] ...]).
+[2020-04-26 10:04:12,340][INFO ][node                     ] [Chimera] stopping ...
+[2020-04-26 10:04:12,829][INFO ][node                     ] [Chimera] stopped
+[2020-04-26 10:04:12,830][INFO ][node                     ] [Chimera] closing ...
+[2020-04-26 10:04:12,836][INFO ][node                     ] [Chimera] closed

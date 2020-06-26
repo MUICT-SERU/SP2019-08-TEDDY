@@ -1,0 +1,36 @@
+[2020-06-16 09:40:57,464][INFO ][node                     ] [Sikorsky] version[2.2.0], pid[7576], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-06-16 09:40:57,469][INFO ][node                     ] [Sikorsky] initializing ...
+[2020-06-16 09:40:58,556][INFO ][plugins                  ] [Sikorsky] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-06-16 09:40:58,715][INFO ][env                      ] [Sikorsky] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [155.3gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-06-16 09:40:58,716][INFO ][env                      ] [Sikorsky] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-06-16 09:41:04,299][INFO ][node                     ] [Sikorsky] initialized
+[2020-06-16 09:41:04,300][INFO ][node                     ] [Sikorsky] starting ...
+[2020-06-16 09:41:05,746][INFO ][transport                ] [Sikorsky] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-06-16 09:41:05,788][INFO ][discovery                ] [Sikorsky] stackoverflow/tTm7Gu_eTS-4P8TCCtrZTQ
+[2020-06-16 09:41:10,333][INFO ][cluster.service          ] [Sikorsky] new_master {Sikorsky}{tTm7Gu_eTS-4P8TCCtrZTQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-06-16 09:41:10,827][INFO ][gateway                  ] [Sikorsky] recovered [7] indices into cluster_state
+[2020-06-16 09:41:10,941][INFO ][http                     ] [Sikorsky] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-06-16 09:41:10,942][INFO ][node                     ] [Sikorsky] started
+[2020-06-16 09:41:12,759][INFO ][cluster.routing.allocation] [Sikorsky] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0]] ...]).
+[2020-06-16 10:09:33,505][INFO ][node                     ] [Sikorsky] stopping ...
+[2020-06-16 10:09:33,639][INFO ][node                     ] [Sikorsky] stopped
+[2020-06-16 10:09:33,639][INFO ][node                     ] [Sikorsky] closing ...
+[2020-06-16 10:09:33,645][INFO ][node                     ] [Sikorsky] closed
+[2020-06-16 18:23:46,273][INFO ][node                     ] [Asylum] version[2.2.0], pid[9548], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-06-16 18:23:46,285][INFO ][node                     ] [Asylum] initializing ...
+[2020-06-16 18:23:46,826][INFO ][plugins                  ] [Asylum] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-06-16 18:23:46,853][INFO ][env                      ] [Asylum] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [155.2gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-06-16 18:23:46,853][INFO ][env                      ] [Asylum] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-06-16 18:23:49,912][INFO ][node                     ] [Asylum] initialized
+[2020-06-16 18:23:49,912][INFO ][node                     ] [Asylum] starting ...
+[2020-06-16 18:23:51,839][INFO ][transport                ] [Asylum] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-06-16 18:23:51,849][INFO ][discovery                ] [Asylum] stackoverflow/opDx9z1ARAeoryMvVIJNEg
+[2020-06-16 18:23:56,419][INFO ][cluster.service          ] [Asylum] new_master {Asylum}{opDx9z1ARAeoryMvVIJNEg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-06-16 18:23:56,953][INFO ][http                     ] [Asylum] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-06-16 18:23:56,953][INFO ][node                     ] [Asylum] started
+[2020-06-16 18:23:56,980][INFO ][gateway                  ] [Asylum] recovered [7] indices into cluster_state
+[2020-06-16 18:23:58,715][INFO ][cluster.routing.allocation] [Asylum] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-06-16 19:41:40,379][INFO ][node                     ] [Asylum] stopping ...
+[2020-06-16 19:41:40,672][INFO ][node                     ] [Asylum] stopped
+[2020-06-16 19:41:40,672][INFO ][node                     ] [Asylum] closing ...
+[2020-06-16 19:41:40,682][INFO ][node                     ] [Asylum] closed
