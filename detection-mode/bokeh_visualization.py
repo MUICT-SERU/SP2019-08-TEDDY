@@ -9,11 +9,10 @@ from datetime import datetime as dt
 from bokeh.io import output_file,show
 from bokeh.models import DatetimeTickFormatter,ColumnDataSource
 from bokeh.models import HoverTool
-from bokeh.plotting import figure
+import bokeh.plotting as plot
 from bokeh.transform import jitter
 from bokeh.layouts import column,gridplot
 
-### Method to clean data from Siamese's CSV
 def clean(path,fout):
 
     mylist=[]
@@ -91,7 +90,6 @@ def clean(path,fout):
                 foo = []
                 header = []
 
-### Method to separate IPs and NIPs results in two different CSVs
 def separate(fin,foutidiom,foutnonidiom):
 
     final=""
@@ -113,16 +111,14 @@ def separate(fin,foutidiom,foutnonidiom):
                     final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]
                     print(final,file=outnonidiom)
 
-### Method to plot graph					
-def plot_graph(finidiom,finnonidiom):
-    
-    output_file("myplot.html")
+def plot_graph(ip_input, nip_input):
+    plot.output_file("myplot.html")
 
 
-    idiomin = pd.read_csv(finidiom)
-    nonidiomin = pd.read_csv(finnonidiom)
+    idiomin = pd.read_csv(ip_input)
+    nonidiomin = pd.read_csv(nip_input)
 
-    
+
     sourceipy = ColumnDataSource(data=dict(
         styleipy = idiomin['Style'].astype('str'),
         inameipy = idiomin['IdiomName'].astype('str'),
@@ -140,52 +136,80 @@ def plot_graph(finidiom,finnonidiom):
         markernipy = nonidiomin['Marker'].astype('str'),
         commitIDnipy = nonidiomin['CommitID']
     ))
-    
-    
-    thehoveripy= HoverTool(
-		tooltips=[
-			("Style","@styleipy"),
-			("File Name","@fnameipy"),
-			("Commit ID","@commitIDipy"),
-			("idiom Name", "@inameipy")
-		]
-	)
-    thehovernipy= HoverTool(
-		tooltips=[
-			("Style","@stylenipy"),
-			("File Name","@fnamenipy"),
-			("Commit ID","@commitIDnipy"),
-			("idiom Name", "@inamenipy")
-		]
-	)
+
 
     filename = idiomin['FileName'].unique().astype('str')
-    p=figure(y_range =filename ,plot_width = 1500 ,title="Non-idiomatic and Idiomatic Code Occurences in Each File of a Project in Each Commit",tools=[thehoveripy,thehovernipy,'wheel_zoom','pan','reset'])
-    
-    p.scatter(x='commitIDipy',y=jitter('fnameipy', width=0.1, range=p.y_range),marker = 'markeripy',size =10, source=sourceipy,color='coloripy',alpha=0.2,legend_label="Idiomatic (IP)")
-    p.scatter(x='commitIDnipy',y=jitter('fnamenipy', width=0.1, range=p.y_range),marker = 'markernipy',size =10, source=sourcenipy,color='colornipy',alpha=0.2,legend_label="Non-idiomatic (NIP)")
-   
+
+    p = plot.figure(y_range = filename, plot_width = 1500 ,title="Pythonic and Non-pythonic Code Occurences Over the Whole Commit History",tools=['wheel_zoom','pan','reset'])
+
+    ip_plot = p.scatter(
+                x='commitIDipy',
+                y=jitter('fnameipy',width=0.1, range=p.y_range),
+                marker = 'markeripy',
+                size = 10,
+                source=sourceipy,
+                color='coloripy',
+                alpha= 0.2,
+                legend_label="Pythonic (P)"
+                )
+    ip_hover = HoverTool(
+        tooltips=[
+            ("Style","@styleipy"),
+            ("File Name","@fnameipy"),
+            ("Commit ID","@commitIDipy"),
+            ("idiom Name", "@inameipy")
+        ],
+        renderers=[ip_plot]
+    )
+    p.add_tools(ip_hover)
+
+
+    nip_plot = p.scatter(
+                    x='commitIDnipy',
+                    y=jitter('fnamenipy', width=0.1, range=p.y_range),
+                    marker = 'markernipy',
+                    size = 10,
+                    source=sourcenipy,
+                    color='colornipy',
+                    alpha=0.2,
+                    legend_label="Non-pythonic (NP)"
+                    )  
+    nip_hover = HoverTool(
+        tooltips=[
+            ("Style","@stylenipy"),
+            ("File Name","@fnamenipy"),
+            ("Commit ID","@commitIDnipy"),
+            ("idiom Name", "@inamenipy")
+        ],
+        renderers=[nip_plot]
+    )
+    p.add_tools(nip_hover)
+        
     p.yaxis.axis_label = "File name"
     p.xaxis.axis_label = "Commit No"
-  
+
     p.legend.location = "top_right"
     p.legend.click_policy="hide"
-    show(p)
+    plot.show(p)
 
-### Main function starts here
+## Main
+### argv[1]: location of Siamese's CSVs
+### argv[2]: Bokeh's IP+NIP CSV (mixed.csv)
+### argv[3]: Bokeh's IP CSV (idiomatic.csv)
+### argv[4]: BOkeh's NIP CSV (nonidiomatic.csv)
+siamese_input = str(sys.argv[1])
+mixed_CSV = str(sys.argv[2])
+ip_CSV = str(sys.argv[3])
+nip_CSV = str(sys.argv[4])
+
+clean(siamese_input,mixed_CSV)
+separate(mixed_CSV,ip_CSV,nip_CSV)
+plot_graph(ip_CSV,nip_CSV)
+
 print("Starting visualization using Bokeh ...")
 print("=======Configuration=======")
 print("Siamese's CSV files location: ", str(sys.argv[1]))
 print("Bokeh's mixed CSV: ", str(sys.argv[2]))
-inpath = str(sys.argv[1])
-infout = str(sys.argv[2])
-clean(path = inpath,fout = infout)
-
 print("Bokeh's IP CSV: ", str(sys.argv[3]))
 print("Bokeh's NIP CSV: ", str(sys.argv[4]))
-ipoutput = str(sys.argv[3])
-nipoutput = str(sys.argv[4])
-
-separate(fin = infout,foutidiom = ipoutput, foutnonidiom = nipoutput)
-plot_graph(finidiom = ipoutput,finnonidiom = nipoutput)
 print("Your plot is ready. See myplot.html")
