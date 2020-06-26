@@ -154,10 +154,10 @@ def plot_graph(ip_input, nip_input):
                 )
     ip_hover = HoverTool(
         tooltips=[
-            ("Style","@styleipy"),
-            ("File Name","@fnameipy"),
-            ("Commit ID","@commitIDipy"),
-            ("idiom Name", "@inameipy")
+            ("style","@styleipy"),
+            ("file name","@fnameipy"),
+            ("commit no.","@commitIDipy"),
+            ("idiom type", "@inameipy")
         ],
         renderers=[ip_plot]
     )
@@ -176,10 +176,10 @@ def plot_graph(ip_input, nip_input):
                     )  
     nip_hover = HoverTool(
         tooltips=[
-            ("Style","@stylenipy"),
-            ("File Name","@fnamenipy"),
-            ("Commit ID","@commitIDnipy"),
-            ("idiom Name", "@inamenipy")
+            ("style","@stylenipy"),
+            ("file name","@fnamenipy"),
+            ("commit no.","@commitIDnipy"),
+            ("idiom type", "@inamenipy")
         ],
         renderers=[nip_plot]
     )
