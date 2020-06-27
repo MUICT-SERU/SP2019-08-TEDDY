@@ -9,11 +9,10 @@ from datetime import datetime as dt
 from bokeh.io import output_file,show
 from bokeh.models import DatetimeTickFormatter,ColumnDataSource
 from bokeh.models import HoverTool
-from bokeh.plotting import figure
+import bokeh.plotting as plot
 from bokeh.transform import jitter
 from bokeh.layouts import column,gridplot
 
-### Method to clean data from Siamese's CSV
 def clean(path,fout):
 
     mylist=[]
@@ -29,7 +28,7 @@ def clean(path,fout):
             if '.csv' in file:
                 files.append(os.path.join(r, file))
     with open(fout, "w", newline='') as tt:
-        print("Style,IdiomName,FileName,Color,Marker,CommitID",file=tt)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO,CommitID,MethodName",file=tt)
 
 
     for f in files:
@@ -55,6 +54,7 @@ def clean(path,fout):
                     foo = row[i].split('/')
                     foo2 = foo[len(foo)-1].split(".py")
                     filename = foo2[0]+".py"
+                    methodname = foo2[1].lstrip("_")
                     header.append(filename)
                     i = i+1
                 
@@ -83,53 +83,56 @@ def clean(path,fout):
                         final = final+",InvertedTriangle"
                     elif header[1] == 'variable-swapping':
                         final = final+",SquareCross"
-                
-                    final = final+","+nani[1]
+                    
+                    ### nani[1]: CommitNO, nani[2]: CommitID
+                    final = final+","+nani[1]+","+nani[2]+","+methodname
                     print(final,file=ttt)
 
                     a=a+1
                 foo = []
                 header = []
 
-### Method to separate IPs and NIPs results in two different CSVs
 def separate(fin,foutidiom,foutnonidiom):
 
     final=""
-
+    
+    ## Writing only IP rows into idiomatic.csv
     with open(foutidiom, 'w') as outidiom:
-        print("Style,IdiomName,FileName,Color,Marker,CommitID",file=outidiom)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO,CommitID,MethodName",file=outidiom)
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
                 if row[0] == 'pi':
-                        final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]
+                        final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]+","+row[7]
                         print(final,file=outidiom)
+    
+    ## Writing only NIP rows into nonidiomatic.csv
     with open(foutnonidiom, 'w') as outnonidiom:
-        print("Style,IdiomName,FileName,Color,Marker,CommitID",file=outnonidiom)
+        print("Style,IdiomName,FileName,Color,Marker,CommitNO,CommitID,MethodName",file=outnonidiom)
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
                 if row[0] == 'npi':
-                    final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]
+                    final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]+","+row[7]
                     print(final,file=outnonidiom)
 
-### Method to plot graph					
-def plot_graph(finidiom,finnonidiom):
-    
-    output_file("myplot.html")
+def plot_graph(ip_input, nip_input):
+    plot.output_file("myplot_a.html")
 
 
-    idiomin = pd.read_csv(finidiom)
-    nonidiomin = pd.read_csv(finnonidiom)
+    idiomin = pd.read_csv(ip_input)
+    nonidiomin = pd.read_csv(nip_input)
 
-    
+
     sourceipy = ColumnDataSource(data=dict(
         styleipy = idiomin['Style'].astype('str'),
         inameipy = idiomin['IdiomName'].astype('str'),
         fnameipy =  idiomin['FileName'].astype('str'),
         coloripy = idiomin['Color'].astype('str'),
         markeripy = idiomin['Marker'].astype('str'),
-        commitIDipy = idiomin['CommitID']
+        commitNOipy = idiomin['CommitNO'],
+        commitIDipy = idiomin['CommitID'].astype('str'),
+        methodNameipy = idiomin['MethodName'].astype('str')
     ))
         
     sourcenipy = ColumnDataSource(data=dict(
@@ -138,54 +141,86 @@ def plot_graph(finidiom,finnonidiom):
         fnamenipy =  nonidiomin['FileName'].astype('str'),
         colornipy = nonidiomin['Color'].astype('str'),
         markernipy = nonidiomin['Marker'].astype('str'),
-        commitIDnipy = nonidiomin['CommitID']
+        commitNOnipy = nonidiomin['CommitNO'],
+        commitIDnipy = nonidiomin['CommitID'].astype('str'),
+        methodNamenipy = nonidiomin['MethodName'].astype('str')
     ))
-    
-    
-    thehoveripy= HoverTool(
-		tooltips=[
-			("Style","@styleipy"),
-			("File Name","@fnameipy"),
-			("Commit ID","@commitIDipy"),
-			("idiom Name", "@inameipy")
-		]
-	)
-    thehovernipy= HoverTool(
-		tooltips=[
-			("Style","@stylenipy"),
-			("File Name","@fnamenipy"),
-			("Commit ID","@commitIDnipy"),
-			("idiom Name", "@inamenipy")
-		]
-	)
+
 
     filename = idiomin['FileName'].unique().astype('str')
-    p=figure(y_range =filename ,plot_width = 1500 ,title="Non-idiomatic and Idiomatic Code Occurences in Each File of a Project in Each Commit",tools=[thehoveripy,thehovernipy,'wheel_zoom','pan','reset'])
-    
-    p.scatter(x='commitIDipy',y=jitter('fnameipy', width=0.1, range=p.y_range),marker = 'markeripy',size =10, source=sourceipy,color='coloripy',alpha=0.2,legend_label="Idiomatic (IP)")
-    p.scatter(x='commitIDnipy',y=jitter('fnamenipy', width=0.1, range=p.y_range),marker = 'markernipy',size =10, source=sourcenipy,color='colornipy',alpha=0.2,legend_label="Non-idiomatic (NIP)")
-   
-    p.yaxis.axis_label = "File name"
-    p.xaxis.axis_label = "Commit No"
-  
+
+    p = plot.figure(y_range = filename, plot_width = 1500 ,title="Pythonic and Non-pythonic Code Occurences Over the Whole Commit History",tools=['wheel_zoom','pan','reset'])
+
+    ip_plot = p.scatter(
+                x='commitNOipy',
+                y=jitter('fnameipy',width=0.1, range=p.y_range),
+                marker = 'markeripy',
+                size = 10,
+                source=sourceipy,
+                color='coloripy',
+                alpha= 0.2,
+                legend_label="Pythonic (P)"
+                )
+    ip_hover = HoverTool(
+        tooltips=[
+            ("style","@styleipy"),
+            ("idiom type", "@inameipy"),
+            ("file name","@fnameipy"),
+            ("method name","@methodNameipy"),
+            ("commit ID","@commitIDipy")
+        ],
+        renderers=[ip_plot]
+    )
+    p.add_tools(ip_hover)
+
+
+    nip_plot = p.scatter(
+                    x='commitNOnipy',
+                    y=jitter('fnamenipy', width=0.1, range=p.y_range),
+                    marker = 'markernipy',
+                    size = 10,
+                    source=sourcenipy,
+                    color='colornipy',
+                    alpha=0.2,
+                    legend_label="Non-pythonic (NP)"
+                    )  
+    nip_hover = HoverTool(
+        tooltips=[
+            ("style","@stylenipy"),
+            ("idiom type", "@inamenipy"),
+            ("file name","@fnamenipy"),
+            ("method name","@methodNamenipy"),
+            ("commit ID","@commitIDnipy")          
+        ],
+        renderers=[nip_plot]
+    )
+    p.add_tools(nip_hover)
+        
+    p.yaxis.axis_label = "File Name"
+    p.xaxis.axis_label = "Commit Number"
+
     p.legend.location = "top_right"
     p.legend.click_policy="hide"
-    show(p)
+    plot.show(p)
 
-### Main function starts here
+## Main
+### argv[1]: location of Siamese's CSVs
+### argv[2]: Bokeh's IP+NIP CSV (mixed.csv)
+### argv[3]: Bokeh's IP CSV (idiomatic.csv)
+### argv[4]: BOkeh's NIP CSV (nonidiomatic.csv)
+siamese_input = str(sys.argv[1])
+mixed_CSV = str(sys.argv[2])
+ip_CSV = str(sys.argv[3])
+nip_CSV = str(sys.argv[4])
+
+clean(siamese_input,mixed_CSV)
+separate(mixed_CSV,ip_CSV,nip_CSV)
+plot_graph(ip_CSV,nip_CSV)
+
 print("Starting visualization using Bokeh ...")
 print("=======Configuration=======")
 print("Siamese's CSV files location: ", str(sys.argv[1]))
 print("Bokeh's mixed CSV: ", str(sys.argv[2]))
-inpath = str(sys.argv[1])
-infout = str(sys.argv[2])
-clean(path = inpath,fout = infout)
-
 print("Bokeh's IP CSV: ", str(sys.argv[3]))
 print("Bokeh's NIP CSV: ", str(sys.argv[4]))
-ipoutput = str(sys.argv[3])
-nipoutput = str(sys.argv[4])
-
-separate(fin = infout,foutidiom = ipoutput, foutnonidiom = nipoutput)
-plot_graph(finidiom = ipoutput,finnonidiom = nipoutput)
 print("Your plot is ready. See myplot.html")

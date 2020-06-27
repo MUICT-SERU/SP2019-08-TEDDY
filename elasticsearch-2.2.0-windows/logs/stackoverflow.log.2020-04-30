@@ -1,0 +1,18 @@
+[2020-04-30 19:46:39,898][INFO ][node                     ] [Jonathan Richards] version[2.2.0], pid[10624], build[8ff36d1/2016-01-27T13:32:39Z]
+[2020-04-30 19:46:39,903][INFO ][node                     ] [Jonathan Richards] initializing ...
+[2020-04-30 19:46:40,704][INFO ][plugins                  ] [Jonathan Richards] modules [lang-expression, lang-groovy], plugins [], sites []
+[2020-04-30 19:46:40,746][INFO ][env                      ] [Jonathan Richards] using [1] data paths, mounts [[Local Disk B (D:)]], net usable_space [37.7gb], net total_space [465.6gb], spins? [unknown], types [NTFS]
+[2020-04-30 19:46:40,747][INFO ][env                      ] [Jonathan Richards] heap size [910.5mb], compressed ordinary object pointers [true]
+[2020-04-30 19:46:45,205][INFO ][node                     ] [Jonathan Richards] initialized
+[2020-04-30 19:46:45,205][INFO ][node                     ] [Jonathan Richards] starting ...
+[2020-04-30 19:46:45,995][INFO ][transport                ] [Jonathan Richards] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2020-04-30 19:46:46,004][INFO ][discovery                ] [Jonathan Richards] stackoverflow/lr9Az5UbShyf7CUa3Sh6Kg
+[2020-04-30 19:46:50,574][INFO ][cluster.service          ] [Jonathan Richards] new_master {Jonathan Richards}{lr9Az5UbShyf7CUa3Sh6Kg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-04-30 19:46:51,090][INFO ][http                     ] [Jonathan Richards] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2020-04-30 19:46:51,090][INFO ][node                     ] [Jonathan Richards] started
+[2020-04-30 19:46:51,216][INFO ][gateway                  ] [Jonathan Richards] recovered [7] indices into cluster_state
+[2020-04-30 19:46:53,132][INFO ][cluster.routing.allocation] [Jonathan Richards] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[teddy][0], [teddy][0]] ...]).
+[2020-04-30 22:43:10,550][INFO ][node                     ] [Jonathan Richards] stopping ...
+[2020-04-30 22:43:11,164][INFO ][node                     ] [Jonathan Richards] stopped
+[2020-04-30 22:43:11,165][INFO ][node                     ] [Jonathan Richards] closing ...
+[2020-04-30 22:43:11,222][INFO ][node                     ] [Jonathan Richards] closed
