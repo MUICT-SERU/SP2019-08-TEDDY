@@ -59,9 +59,11 @@ def clean(path,fout):
                     i = i+1
                 
                     if header[0] == 'npi':
-                        final = header[0]+","+header[1]+","+header[i]+",red"
+                        # final = header[0]+","+header[1]+","+header[i]+",red" >> Old naming conventioned (changed per ICSME2020 reviewers' comment)
+                        final = "NPy,"+header[1]+","+header[i]+",red"
                     else:
-                        final = header[0]+","+header[1]+","+header[i]+",green"
+                        # final = header[0]+","+header[1]+","+header[i]+",green" >> Old naming conventioned (changed per ICSME2020 reviewers' comment)
+                        final = "Py,"+header[1]+","+header[i]+",green"
 
                     if header[1] == 'dict-comprehension':
                         final = final+",circle"
@@ -102,7 +104,8 @@ def separate(fin,foutidiom,foutnonidiom):
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
-                if row[0] == 'pi':
+                # if row[0] == 'pi': >> Old naming conventioned (changed per ICSME2020 reviewers' comment)
+                if row[0]== 'Py':
                         final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]+","+row[7]
                         print(final,file=outidiom)
     
@@ -112,12 +115,13 @@ def separate(fin,foutidiom,foutnonidiom):
         with open(fin, mode='r') as infile:
             reader = csv.reader(infile)
             for row in reader:
-                if row[0] == 'npi':
+                # if row[0] == 'npi': >> Old naming conventioned (changed per ICSME2020 reviewers' comment)
+                if row[0]== 'NPy':
                     final = row[0]+","+row[1]+","+row[2]+","+row[3]+","+row[4]+","+row[5]+","+row[6]+","+row[7]
                     print(final,file=outnonidiom)
 
 def plot_graph(ip_input, nip_input):
-    plot.output_file("myplot_a.html")
+    plot.output_file("flask_PyNPy.html")
 
 
     idiomin = pd.read_csv(ip_input)
@@ -159,7 +163,8 @@ def plot_graph(ip_input, nip_input):
                 source=sourceipy,
                 color='coloripy',
                 alpha= 0.2,
-                legend_label="Pythonic (P)"
+                # legend_label="Pythonic (P)" >> Old naming conventioned (changed per ICSME2020 reviewers' comment)
+                legend_label="Pythonic (Py)"
                 )
     ip_hover = HoverTool(
         tooltips=[
@@ -182,7 +187,8 @@ def plot_graph(ip_input, nip_input):
                     source=sourcenipy,
                     color='colornipy',
                     alpha=0.2,
-                    legend_label="Non-pythonic (NP)"
+                    # legend_label="Non-pythonic (NP)" >> Old naming conventioned (changed per ICSME2020 reviewers' comment)
+                    legend_label="Non-Pythonic (NPy)"
                     )  
     nip_hover = HoverTool(
         tooltips=[
@@ -223,4 +229,4 @@ print("Siamese's CSV files location: ", str(sys.argv[1]))
 print("Bokeh's mixed CSV: ", str(sys.argv[2]))
 print("Bokeh's IP CSV: ", str(sys.argv[3]))
 print("Bokeh's NIP CSV: ", str(sys.argv[4]))
-print("Your plot is ready. See myplot.html")
+print("Your plot is ready. See flask_PyNPY.html")
