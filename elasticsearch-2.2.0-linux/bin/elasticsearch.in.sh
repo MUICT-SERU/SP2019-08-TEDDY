@@ -50,7 +50,7 @@ fi
 
 # Add gc options. ES_GC_OPTS is unsupported, for internal testing
 if [ "x$ES_GC_OPTS" = "x" ]; then
-  ES_GC_OPTS="$ES_GC_OPTS -XX:+UseConcMarkSweepGC"
+  ES_GC_OPTS="$ES_GC_OPTS -XX:+UseG1GC"
   ES_GC_OPTS="$ES_GC_OPTS -XX:CMSInitiatingOccupancyFraction=75"
   ES_GC_OPTS="$ES_GC_OPTS -XX:+UseCMSInitiatingOccupancyOnly"
 fi
